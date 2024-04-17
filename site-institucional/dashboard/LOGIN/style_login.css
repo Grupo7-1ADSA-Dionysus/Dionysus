@@ -1,0 +1,51 @@
+*{
+/*Espaçamento*/
+padding: 0px;
+margin: 0px;
+}
+
+body{
+ /*Tamanho*/
+width: 100vw;
+height: 100vh;
+ /*Organização de elementos filho*/
+ display: flex;
+}
+
+.foto_lateral{
+ /*Tamanho*/
+ width: 33%;
+ height: 100%;
+ /*Borda*/
+ border: 2px solid #000;
+
+}
+
+.conteudo_login{
+ /*Tamanho*/
+width: 66%;
+height: 100%;
+ /*Organização de elementos filhos*/
+display: flex;
+ /*Borda*/
+border: 2px solid green;
+}
+
+.caixa_login{
+    /*Tamanho*/
+    width: 50%;
+    height: 50%;
+    /*Borda*/
+    border: 2px solid #000;
+    /*Borda*/
+    border: 2px solid blue;
+}
+
+.caixa_xxx{
+    /*Tamanho*/
+    width: 20%;
+    height: 100%;
+    /*Borda*/
+    border: 2px solid red;
+}
+
