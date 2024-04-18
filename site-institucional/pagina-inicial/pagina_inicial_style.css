@@ -1,0 +1,128 @@
+* {
+    /*Espaçamento*/
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu{
+    /*Tamanho*/
+    width: 100%;
+    /*Posição*/
+    position: fixed;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+    /*Cor*/
+    background-color: #fff;
+}
+
+.sessao-logo-menu {
+    /*Tamanho*/
+    width: 10%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Fonte*/
+    font-size: 25px;
+}
+
+.logo-menu{
+    /*Tamanho*/
+    width: 50px;
+}
+
+.sessao-botoes-menu{
+    /*Tamanho*/
+    width: 60%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.sessao-botao-entrar{
+    /*Tamanho*/
+    width: 15%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.botao-menu {
+    /*Tamanho*/
+    width: 20%;
+    /*Borda*/
+    border: 0px;
+    /*Cor*/
+    background-color: transparent;
+    /*Fonte*/
+    font-size: 18px;
+    /*Detalhes*/
+    cursor: pointer;
+}
+
+.entrar {
+    /*Tamanho*/
+    width: 70%;
+    height: 100%;
+}
+
+.div-pagina-inicial{
+    /*Tamanho*/
+    width: 100%;
+    height: 100vh;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*Fundo*/
+    background-image: url(./assets/imagens/background1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*Borda*/
+    border: 2px solid #000;
+}
+
+.caixa-mensagem-saudacao{
+    /*Tamanho*/
+    width: 35%;
+    height: 45%;
+    /*Espaçamento*/
+    margin-left: 40px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /*Cor*/
+    color: #fff;
+}
+
+.saudacao-titulo{
+    /*Fonte*/
+    font-size: 50px;
+}
+
+.saudacao-subtitulo{
+    /*Fonte*/
+    font-size: 21px;
+}
+
+.saudacao-texto{
+    /*Fonte*/
+    font-size: 21px;
+}
+
+.saiba-mais{
+    /*Tamanho*/
+    width: 45%;
+    height: 40px;
+    /*Borda*/
+    border: 2px solid #fff;
+    border-radius: 10px;
+    /*Cor*/
+    background-color: #8C52FF;
+    color: #fff;
+    /*Detalhes*/
+    cursor: pointer;
+}
