@@ -1,0 +1,180 @@
+* {
+    /*Espaçamento*/
+    padding: 0px;
+    margin: 0px;
+    /*Detalhes*/
+    overflow: hidden;
+}
+
+.menu{
+    /*Tamanho*/
+    width: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+    /*Cor*/
+    background-color: #fff;
+}
+
+.sessao-logo-menu {
+    /*Tamanho*/
+    width: 15%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Fonte*/
+    font-size: 25px;
+}
+
+.logo-menu{
+    /*Tamanho*/
+    width: 50px;
+}
+
+.sessao-botoes-menu{
+    /*Tamanho*/
+    width: 60%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.sessao-botao-entrar{
+    /*Tamanho*/
+    width: 15%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.botao-menu {
+    /*Tamanho*/
+    width: 20%;
+    /*Borda*/
+    border: 0px;
+    /*Cor*/
+    background-color: transparent;
+    /*Fonte*/
+    font-size: 18px;
+    /*Detalhes*/
+    cursor: pointer;
+}
+
+.entrar {
+    /*Tamanho*/
+    width: 70%;
+    height: 100%;
+}
+
+
+.div-simulador-financeiro{
+    /*Tamanho*/
+    width: 100vw;
+    height: 95vh;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: center;
+    /*Fundo*/
+    background-image: url(./assets/imagens/backgroundSimulador.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*Detalhes*/
+    overflow: visible;
+}
+
+.caixa-conteudo-simulador{
+    /*Tamanho*/
+    width: 90%;
+    height: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+    /*Cor*/
+    background-color: #fff;
+}
+
+.sessao-inputs-simulador{
+    /*Tamanho*/
+    width: 50%;
+    height: 100%;
+    /*Espaçamento*/
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Fonte*/
+    font-size: 25px;
+}
+
+.simulador-titulo {
+    /*Fonte*/
+    font-size: 30px;
+    /*Texto*/
+    text-align: center;
+}
+
+.input {
+    /*Tamanho*/
+    width: 100%;
+    height: 25px;
+    /*Borda*/
+    border: 0px;
+    border-bottom: 2px solid #000;
+}
+
+.calcular{
+    /*Tamanho*/
+    width: 40%;
+    height: 40px;
+    /*Borda*/
+    border: 2px solid #000;
+    border-radius: 10px;
+    /*Cor*/
+    color: #fff;
+    background-color: #8C52FF;
+    /*Detalhes*/
+    cursor: pointer;
+}
+
+.pergunta-qtd-hectar{
+    /*Tamanho*/
+    width: 100%;
+}
+
+.sessao-resultado-simulador{
+    /*Tamanho*/
+    width: 50%;
+    height: 97%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa-resultado{
+    /*Tamanho*/
+    width: 100%;
+    height: 100%;
+    /*Borda*/
+    border: 2px solid #000;
+    /*Cor*/
+    background-color: #8C52FF;
+}
+
+.resultado-titulo {
+    /*Tamanho*/
+    width: 100%;
+    height: 15%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*Fonte*/
+    font-size: 40px;
+}
