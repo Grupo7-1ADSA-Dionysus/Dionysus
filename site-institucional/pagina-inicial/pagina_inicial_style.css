@@ -2,6 +2,8 @@
     /*Espaçamento*/
     padding: 0px;
     margin: 0px;
+    /*Detalhes*/
+    overflow-x: hidden;
 }
 
 .menu{
@@ -12,6 +14,9 @@
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-between;
+    /*Borda*/
+    border: 0px;
+    border-bottom: 2px solid #000;
     /*Cor*/
     background-color: #fff;
 }
@@ -68,7 +73,7 @@
     height: 100%;
 }
 
-.div-pagina-inicial{
+.div-sessao-inicial{
     /*Tamanho*/
     width: 100%;
     height: 100vh;
@@ -88,12 +93,17 @@
     height: 45%;
     /*Espaçamento*/
     margin-left: 40px;
+    padding: 20px;
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
     gap: 15px;
+    /*Borda*/
+    border: 2px solid #000;
     /*Cor*/
-    color: #fff;
+    background-color: #fff;
+    color: #000;
+    opacity: 0.8;
 }
 
 .saudacao-titulo{
@@ -116,7 +126,7 @@
     width: 45%;
     height: 40px;
     /*Borda*/
-    border: 2px solid #fff;
+    border: 2px solid #000;
     border-radius: 10px;
     /*Cor*/
     background-color: #8C52FF;
@@ -125,3 +135,70 @@
     cursor: pointer;
 }
 
+.div-sessao-solucao{
+    /*Tamanho*/
+    width: 100%;
+    height: 100vh;
+    /*Borda*/
+    border: 2px solid #000;
+}
+
+.cabecalho-solucao{
+    /*Tamanho*/
+    width: 100%;
+    /*Espaçamento*/
+    padding-top: 10px;
+    padding-bottom: 20px;
+    /*Fonte*/
+    font-size: 30px;
+    /*Texto*/
+    text-align: center;
+}
+
+.caixa-conteudo-solucao{
+    /*Tamanho*/
+    width: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+}
+
+.textos-solucao{
+    /*Tamanho*/
+    width: 60%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /*Fonte*/
+    font-size: 30px;
+    /*Texto*/
+    text-align: center;
+}
+
+.foto-solucao{
+    /*Tamanho*/
+    width: 40%;
+    height: 500px;
+    /*Espaçamento*/
+    padding: 20px;
+    /*Organização de elementos filhos*/
+    display: flex;
+}
+
+.caixa-auxiliar-foto-solucao{
+    /*Tamanho*/
+    width: 80%;
+    height: 400px;
+    /*Borda*/
+    border: 2px solid #000;
+    /*Detalhes*/
+    overflow: visible;
+}
+
+.imagem-solucao{
+    /*Tamanho*/
+    width: 100%;
+    /*Espaçamento*/
+    margin-top: 10px;
+    margin-left: 10px;
+}
