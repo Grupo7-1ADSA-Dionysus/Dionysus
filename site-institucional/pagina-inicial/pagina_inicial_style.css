@@ -4,6 +4,7 @@
     margin: 0px;
     /*Detalhes*/
     overflow-x: hidden;
+    font-family: "Fira Code", monospace;
 }
 
 .menu{
