@@ -6,6 +6,13 @@
     overflow-x: hidden;
 }
 
+body{
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .menu{
     /*Tamanho*/
     width: 100%;
@@ -23,7 +30,7 @@
 
 .sessao-logo-menu {
     /*Tamanho*/
-    width: 10%;
+    width: 15%;
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-evenly;
@@ -139,8 +146,6 @@
     /*Tamanho*/
     width: 100%;
     height: 100vh;
-    /*Borda*/
-    border: 2px solid #000;
 }
 
 .cabecalho-solucao{
@@ -175,6 +180,11 @@
     text-align: center;
 }
 
+.palavras-roxa{
+    /*Cor*/
+    color: #8C52FF;
+}
+
 .foto-solucao{
     /*Tamanho*/
     width: 40%;
@@ -183,6 +193,8 @@
     padding: 20px;
     /*Organização de elementos filhos*/
     display: flex;
+    /*Detalhes*/
+    overflow: hidden;
 }
 
 .caixa-auxiliar-foto-solucao{
@@ -201,4 +213,41 @@
     /*Espaçamento*/
     margin-top: 10px;
     margin-left: 10px;
+    /*Detalhes*/
+    overflow: visible;
+}
+
+.div-sessao-objetivos{
+    /*Tamanho*/
+    width: 100%;
+    height: 100vh;
+    /*Borda*/
+    border: 2px solid #000;
+}
+
+.cabecalho-objetivo{
+    /*Tamanho*/
+    width: 100%;
+    /*Espaçamento*/
+    padding: 5px;
+    /*Fonte*/
+    font-size: 30px;
+    /*Texto*/
+    text-align: center;    
+}
+
+.sessao-fotos-objetivos{
+    /*Tamanho*/
+    width: 100%;
+    /*Espaçamento*/
+    padding: 10px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imagem-objetivos{
+    /*Tamanho*/
+    width: 80%;
 }
