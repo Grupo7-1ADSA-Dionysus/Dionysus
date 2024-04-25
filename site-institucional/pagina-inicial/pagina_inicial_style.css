@@ -221,8 +221,13 @@ body{
     /*Tamanho*/
     width: 100%;
     height: 100vh;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     /*Borda*/
-    border: 2px solid #000;
+    border: 0px;
+    border-top: 2px solid #000;
 }
 
 .cabecalho-objetivo{
@@ -244,10 +249,127 @@ body{
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .imagem-objetivos{
     /*Tamanho*/
     width: 80%;
 }
+
+.imagem-flechas-objetivos{
+    /*Tamanho*/
+    width: 40%;
+}
+
+.div-sessao-nome{
+    /*Tamanho*/
+    width: 100%;
+    height: 100vh;
+}
+
+.cabecalho-nome{
+    /*Tamanho*/
+    width: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo-nome{
+    /*Tamanho*/
+    width: 40%;
+    /*Espaçamento*/
+    padding-left: 30px;
+    /*Fonte*/
+    font-size: 80px;
+}
+
+.imagem-barra{
+    /*Tamanho*/
+    width: 60%;
+    height: 100%;
+}
+
+.caixa-conteudo-nome{
+    /*Tamanho*/
+    width: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+}
+
+.sessao-textos-nome{
+    /*Tamanho*/
+    width: 60%;
+    /*Espaçamento*/
+    padding-left: 30px;
+    padding-bottom: 30px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*Fonte*/
+    font-size: 30px;
+}
+
+.sessao-logo-nome{
+    /*Tamanho*/
+    width: 40%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frase-nome{
+    /*Fonte*/
+    font-size: 50px;
+}
+
+.div-sessao-equipe{
+    /*Tamanho*/
+    width: 100%;
+    height: 100vh;
+    /*Borda*/
+    border: 2px solid #000;
+}
+
+.cabecalho-equipe{
+    /*Tamanho*/
+    width: 100%;
+    height: 30%;
+    /*espaçamento*/
+    padding-top: 20px;
+    /*Cor*/
+    background-color: #8C52FF;
+    color: #fff;
+    /*Texto*/
+    text-align: center;
+}
+
+.titulo-equipe{
+    /*Espaçamento*/
+    margin-bottom: 20px;
+}
+
+.sessao-fotos-equipe{
+    /*Tamanho*/
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    /*Cor*/
+    background-color: #fff;
+    /*Borda*/
+    border: 2px solid green;
+    border-radius: 20px;
+}
+
+.caixa-auxiliar-equipe{
+    /*Tamanho*/
+    width: 100%;
+    height: 70%;
+    /*Cor*/
+    background-color: #000;
+}
+
