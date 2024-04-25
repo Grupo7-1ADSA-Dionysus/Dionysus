@@ -248,6 +248,9 @@
         }
     }
 
+    let Umidade_Minima = 40
+    let Umidade_Maxima = 60
+
 
     var data = moment().format('DD/MM/YYYY');
     var paginacao = {};
@@ -284,6 +287,14 @@
 
 
                 grafico.data.datasets[0].data.push(parseFloat(valor));
+
+                if(parseFloat(valor) > Umidade_Maxima){
+                    alert("Umidade alta!")
+                }
+                else if(parseFloat(valor) < Umidade_Minima){
+                    alert("Umidade baixa!")
+                }
+
                 grafico.update();
             })
         }
