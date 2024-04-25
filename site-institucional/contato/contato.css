@@ -1,0 +1,149 @@
+/* Configurações de Fonte Padrão */
+body {
+    /* Fonte */
+    font-family: "Fira Code", monospace;
+    /* Ajuste Óptico */
+    font-optical-sizing: auto;
+    /* Estilo */
+    font-style: normal;
+}
+
+/* Classe para Garantir a Mesma Fonte em Diferentes Elementos */
+.fira-code-uniquifier {
+    /* Fonte */
+    font-family: "Fira Code", monospace;
+    /* Ajuste Óptico */
+    font-optical-sizing: auto;
+    /* Estilo */
+    font-style: normal;
+}
+
+/* Estilos para Títulos */
+.titulos {
+    /* Espaçamento */
+    margin-top: 35px;
+    margin-left: 150px;
+    /* Tamanho da Fonte */
+    font-size: 22px;
+}
+
+/* Estilos para Subtítulos */
+.subtitulos {
+    /* Espaçamento */
+    margin-top: 15%;
+}
+
+/* Estilos para Caixa de Contato */
+.caixa_contato {
+    /* Espaçamento */
+    margin-top: 20px;
+    margin-left: 150px;
+    /* Tamanho */
+    width: 800px;
+    height: 550px;
+    /* Borda */
+    border: 3px solid #000;
+    border-radius: 10px;
+    /* Imagem de Fundo */
+    background-image: url(./imagens/Logo\ Oficial\ \(1\).png);
+    background-repeat: no-repeat;
+    background-size: 56%;
+    background-position: right center;
+    /* Organização de Elementos Filhos */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para Campo de Nome */
+.nome {
+    /* Espaçamento */
+    margin-top: 40px;
+    margin-left: -600px;
+    /* Tamanho da Fonte */
+    font-size: 22px;
+}
+
+.input_nome {
+    /* Espaçamento */
+    margin-top: -12px;
+    margin-left: -250px;
+    /* Tamanho */
+    font-size: 22px;
+    width: 400px;
+    /* Borda */
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+/* Estilos para Campo de Email */
+.email {
+    /* Espaçamento */
+    margin-top: -10px;
+    margin-left: -600px;
+    /* Tamanho da Fonte */
+    font-size: 22px;
+}
+
+.input_email {
+    /* Espaçamento */
+    margin-top: -15px;
+    margin-left: -250px;
+    /* Tamanho */
+    font-size: 22px;
+    width: 400px;
+    /* Borda */
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+/* Estilos para Campo de Mensagem */
+.mensagem {
+    /* Espaçamento */
+    margin-top: -10px;
+    margin-left: -550px;
+    /* Tamanho da Fonte */
+    font-size: 22px;
+}
+
+.input_Mensagem {
+    /* Espaçamento */
+    margin-top: -15px;
+    margin-left: -250px;
+    /* Tamanho */
+    font-size: 22px;
+    width: 400px;
+    height: 250px;
+    /* Borda */
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+/* Estilos para Botão Enviar */
+.botao_enviar {
+    /* Cor de Fundo e Texto */
+    background-color: #8C52FF;
+    color: rgb(0, 0, 0);
+    /* Borda */
+    border: 3px solid #000;
+    border-radius: 10px;
+    /* Tamanho */
+    height: 60px;
+    width: 150px;
+    font-size: 15px;
+    /* Sombra */
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+    /* Cursor */
+    cursor: pointer;
+    /* Espaçamento */
+    margin-top: -30px;
+    margin-bottom: 10px;
+    margin-left: -250px;
+}
+
+/* Estilos para Caixa de Texto Lateral */
+.caixa_texto_lateral {
+    /* Espaçamento */
+    margin-top: -740px;
+    margin-left: 830px;
+}
