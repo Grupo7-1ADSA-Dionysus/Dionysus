@@ -24,19 +24,21 @@
     </header>
     <div class="div-simulador-financeiro">
         <div class="caixa-conteudo-simulador">
+            <!-- Deixar o backgroud do input um pouco mais cinza para deixar claro que é um input -->
             <section class="sessao-inputs-simulador">
                 <h2 class="simulador-titulo">SIMULADOR <br> FINANCEIRO</h2>
                 <p class="pergunta-valor-safra">Qual é valor médio que você vende sua safra em reais?</p>
-                <input class="input valor-safra">
-                <p class="pergunta-valor-hectare">Qual o valor médio produzido em kg de uva produzidos por hectare?</p>
-                <input class="input valor-hectare">
+                <input class="input valor-safra" id="Input_ValorSafra">
+                <p class="pergunta-valor-hectare">Qual o valor médio em KG de uva produzidos por Hectare?</p>
+                <input class="input valor-hectare" id="Input_Qnt_KG_Uva">
                 <p class="pergunta-qtd-hectar">Quantidade de hectares da sua plantação?</p>
-                <input class="input qtd-hectar">
-                <button class="botao calcular">CALCULAR</button>
+                <input class="input qtd-hectar" id="Input_Qnt_Hectares">
+                <button onclick="Calculo_Financeiro()" class="botao calcular">CALCULAR</button>
             </section>
             <section class="sessao-resultado-simulador">
                 <div class="caixa-resultado">
                     <h2 class="resultado-titulo">Você sabia?</h2>
+                    <section class="resultado" id="Resultado"></section>
                     <footer class="resultado-rodape">
                         <p>© 2024 Dionysus. Todos os direitos reservados.</p>
                     </footer>
@@ -44,5 +46,7 @@
             </section>
         </div>
     </div>
+
+    <script src="simuladorFinanceiro.js"></script>
 </body>
 </html>
