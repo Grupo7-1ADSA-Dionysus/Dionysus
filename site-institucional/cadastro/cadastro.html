@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cadastro.css">
-    <title>Document</title>
+    <title>Cadastro</title>
+    <script src="cadastro.js"></script>
 </head>
 
 <body>
@@ -13,27 +14,43 @@
 
         <button class="BotaoVoltar"><img class="ImagemBotao" src="./assets/imagens/Group 99.png"></button>
         <section class="sessao-input-cadastro">
-            <h1 style="color: blueviolet;">CADASTRO</h1>
+            <h1 style="color: #8C52FF;">CADASTRO</h1>
             <div class="div-inputs">
-                <section class="sessao inputs-esquerdo">
+                <section class="sessao-inputs">
                     <b> Nome:</b>
-                    <input class="input nome">
+                    <input class="input nome" id="input_nome">
+                 
                     <b>Email:</b>
-                    <input class="input email">
+                    <input class="input email" id="input_email">
+            
+                    <span class="span-avisos" id="span_avisoEmail"></span>
+
                     <b>Senha:</b>
-                    <input class="input senha">
+                    <input class="input senha" id="input_senha">
+
+                    <span class="span-avisos" id="span_avisoSenha"></span>
                 </section>
-                <section class="sessao inputs-direito">
+                <section class="sessao-inputs">
                     <b>Sobrenome:</b>
-                    <input class="input sobrenome">
+                    <input class="input sobrenome" id="input_sobrenome">
+               
                     <b>Telefone:</b>
-                    <input class="input cpf">
+                    <input class="input" id="input_telefone">
+              
                     <b>Confirmação de senha:</b>
-                    <input class="input senha">
+                    <input class="input senha" id="input_confirmacaoSenha">
+
+                    <span class="span-avisos" id="span_avisoConfirmacaoSenha"></span>
+                 
                 </section>
 
             </div>
-            <button class="botao cadastrar" style="background-color: blueviolet; color: white;">CADASTRE-SE</button>
+
+            <span class="span-avisos" id="span_avisoCampos"></span>
+
+
+            <button class="botao cadastrar" style="background-color: #8C52FF; color: white; "
+                onclick="cadastrar()">CADASTRE-SE</button>
         </section>
 
     </div>
