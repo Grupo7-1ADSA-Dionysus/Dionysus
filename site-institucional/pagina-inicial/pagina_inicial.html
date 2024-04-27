@@ -21,10 +21,10 @@
             <button class="botao-menu pagina-inicial">Página inicial</button>
             <button class="botao-menu sobre">Sobre</button>
             <button class="botao-menu contato">Contato</button>
-            <button class="botao-menu simulador">Simulador</button>
+            <button class="botao-menu simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
         </section>
         <section class="sessao-botao-entrar">
-            <button class="botao-menu entrar">Entrar</button>
+            <button class="botao-menu entrar" onclick="navegar('../login/login.html')">Entrar</button>
         </section>
     </header>
     <div class="div-sessao-inicial">
@@ -86,14 +86,55 @@
         </div>
     </div>
     <div class="div-sessao-equipe">
+        <section class="sessao-fotos-equipe">
+            <div class="fotos-equipe-cima">
+                <div class="caixa-membro">
+                    <div class="foto-membro"></div>
+                    <h2>Nome</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+                <div class="caixa-membro">
+                    <div class="foto-membro"></div>
+                    <h2>Nome</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+                <div class="caixa-membro">
+                    <div class="foto-membro"></div>
+                    <h2>Nome</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+            </div>
+            <div class="fotos-equipe-baixo">
+                <div class="caixa-membro">
+                    <div class="foto-membro"></div>
+                    <h2>Nome</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+                <div class="caixa-membro">
+                    <div class="foto-membro"></div>
+                    <h2>Nome</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+            </div>
+        </section>
         <header class="cabecalho-equipe">
             <h1 class="titulo-equipe">CONHEÇA NOSSA EQUIPE</h1>
         </header>
-        <section class="sessao-fotos-equipe"></section>
-        <div class="caixa-auxiliar-equipe">
-            
-        </div>
+        <div class="caixa-auxiliar-equipe"></div>
+    </div>
+    <div class="div-sessao-valores">
+        <header class="cabecalho-valores">
+            <img src="./assets/imagens/xxx.png" alt="xxx" class="xxx">
+        </header>
+        <section class="sessao-conteudo-valores">
+            <h3 class="titulo-valores">NOSSOS VALORES</h3>
+            <img src="./assets/imagens/imagemValores.png" alt="valores" class="imagem-valores">
+        </section>
     </div>
 </body>
-
 </html>
+<script>
+    function navegar(pagina){
+        window.location.href = pagina;
+    }
+</script>

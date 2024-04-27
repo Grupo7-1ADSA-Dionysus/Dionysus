@@ -3,7 +3,6 @@
     padding: 0px;
     margin: 0px;
     /*Detalhes*/
-    overflow-x: hidden;
     font-family: "Fira Code", monospace;
 }
 
@@ -12,6 +11,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    /*Detalhes*/
+    overflow: visible;
+    overflow-x: hidden;
 }
 
 .menu{
@@ -19,6 +21,7 @@ body{
     width: 100%;
     /*Posição*/
     position: fixed;
+    z-index: 100;
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-between;
@@ -105,7 +108,7 @@ body{
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     /*Borda*/
     border: 2px solid #000;
     /*Cor*/
@@ -176,7 +179,7 @@ body{
     flex-direction: column;
     gap: 40px;
     /*Fonte*/
-    font-size: 30px;
+    font-size: 25px;
     /*Texto*/
     text-align: center;
 }
@@ -311,7 +314,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     /*Fonte*/
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .sessao-logo-nome{
@@ -339,7 +342,7 @@ body{
 .cabecalho-equipe{
     /*Tamanho*/
     width: 100%;
-    height: 30%;
+    height: 10%;
     /*espaçamento*/
     padding-top: 20px;
     /*Cor*/
@@ -349,28 +352,109 @@ body{
     text-align: center;
 }
 
-.titulo-equipe{
-    /*Espaçamento*/
-    margin-bottom: 20px;
-}
-
 .sessao-fotos-equipe{
     /*Tamanho*/
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 85%;
+    /*Posição*/
     position: absolute;
+    /*Espaçamento*/
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     /*Cor*/
     background-color: #fff;
     /*Borda*/
-    border: 2px solid green;
     border-radius: 20px;
 }
 
 .caixa-auxiliar-equipe{
     /*Tamanho*/
     width: 100%;
-    height: 70%;
+    height: 90%;
     /*Cor*/
     background-color: #000;
 }
 
+.fotos-equipe-cima,
+.fotos-equipe-baixo{
+    /*Tamanho*/
+    width: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.caixa-membro{
+    /*Tamanho*/
+    width: 250px;
+    height: 260px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*Borda*/
+    border: 2px solid #000;
+}
+
+.foto-membro{
+    /*Tamanho*/
+    width: 100%;
+    height: 70%;
+    /*Cor*/
+    background-color: #8C52FF;
+}
+
+.sessao-redes-sociais{
+    /*Tamanho*/
+    width: 50%;
+    height: 30px;
+    /*Borda*/
+    border: 2px solid #000;
+}
+
+.div-sessao-valores{
+    /*Tamanho*/
+    width: 100%;
+    height: 100vh;
+}
+
+.cabecalho-valores{
+    /*Tamanho*/
+    width: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.xxx{
+    /*Tamanho*/
+    width: 8%;
+}
+
+.sessao-conteudo-valores{
+    /*Tamanho*/
+    width: 100%;
+    /*Espaçamento*/
+    padding-top: 20px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.titulo-valores{
+    /*Fonte*/
+    font-size: 30px;
+}
+
+.imagem-valores{
+    width: 80%;
+}
