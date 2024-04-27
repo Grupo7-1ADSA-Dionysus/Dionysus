@@ -20,20 +20,24 @@
         <section class="sessao-botoes-menu">
             <button class="botao-menu pagina-inicial">Página inicial</button>
             <button class="botao-menu sobre">Sobre</button>
-            <button class="botao-menu contato">Contato</button>
+            <button class="botao-menu contato" onclick="navegar('../contato/contato.html')">Contato</button>
             <button class="botao-menu simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
         </section>
         <section class="sessao-botao-entrar">
-            <button class="botao-menu entrar" onclick="navegar('../login/login.html')">Entrar</button>
+            <button class="botao-menu entrar" onclick="navegar('../login/login.html')">
+                Entrar
+                <img src="./assets/imagens/imagemEntrar.png" alt="icone de entrar" class="icone-entrar">
+            </button>
         </section>
     </header>
     <div class="div-sessao-inicial">
         <section class="caixa-mensagem-saudacao">
             <h1 class=saudacao-titulo>BEM-VINDO</h1>
-            <h3 class="saudacao-subtitulo">QUER GARANTIR A PRESERVAÇÃO DE SUAS VIDEIRAS?</h3>
-            <p class="saudacao-texto">Com o nosso sensor, sua colheita atingirá níveis altos de qualidade e
-                produtividade.
-                Melhore seus resultados agora!</p>
+            <h3 class="saudacao-subtitulo">QUER GARANTIR A PRESERVAÇÃO DE SUAS <span class="palavras-roxa">VIDEIRAS?</span></h3>
+            <p class="saudacao-texto">
+                Com o nosso sensor, sua colheita atingirá níveis <span class="palavras-roxa">extraordinários</span> de qualidade e produtividade. Melhore seus 
+                resultados agora!
+            </p>
             <button class="botao saiba-mais">SAIBA MAIS</button>
         </section>
     </div>
@@ -131,6 +135,21 @@
             <img src="./assets/imagens/imagemValores.png" alt="valores" class="imagem-valores">
         </section>
     </div>
+    <footer class="rodape">
+        <section class="conteudo-rodape">
+            <h1 class="nome-rodape">DIONYSUS</h1>
+        <section class="sessao-botoes-rodape">
+            <button class="botao-rodape pagina-inicial">Página inicial</button>
+            <button class="botao-rodape sobre">Sobre</button>
+            <button class="botao-rodape contato">Contato</button>
+            <button class="botao-rodape simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
+        </section>
+        <img src="./assets/imagens/Logo_Oficial.webp" alt="logo" class="logo-rodape">
+        </section>
+        <section class="sessao-copyright">
+            <span>© 2024 Dionysus. Todos os direitos reservados.</span>
+        </section>
+    </footer>
 </body>
 </html>
 <script>

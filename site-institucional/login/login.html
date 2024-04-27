@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="foto_lateral">
-        <button class="botao_voltar" >
-            <img src="c:\Users\henri\Downloads\image-removebg-preview (1).png" alt="">
+        <button class="botao_voltar" onclick="navegar('../pagina-inicial/pagina_inicial.html')">
+            <img src="./imagens/imagemVoltar.png" alt="imagem voltar">
         </button>
     </div>
 
@@ -22,18 +22,23 @@
             <h1>LOGIN</h1>
             <h4 class="email">E-mail</h4>
             <input class="input_email" type="text" id="input_email">
-            <br><br>
+            <span class="mensagem-erro-email"></span>
             <h4 class="senha">Senha</h4>
             <input class="input_senha" type="password" id="input_senha">
-            <br><br>
+            <span class="mensagem-erro-senha"></span>
             <button class="botao_Login">ENTRAR</button>
             <br>
-            <p class="">Ainda não possui uma conta?</p>
-            <p class="cadastro"><b>Cadastre-se</b></p>
+            <p>Ainda não possui uma conta?</p>
+            <p class="cadastro" onclick="navegar('../cadastro/cadastro.html')"><b>Cadastre-se</b></p>
         </div>
         <div class="caixa_xxx">
-            <img src="./imagens/image-removebg-preview.png" alt="xxx" height="40px">
+            <img src="./imagens/xxx.png" alt="xxx" height="40px">
         </div>
     </div>
 </body>
 </html>
+<script>
+    function navegar(pagina){
+        window.location.href = pagina;
+    }
+</script>

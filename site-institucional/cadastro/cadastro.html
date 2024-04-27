@@ -12,18 +12,22 @@
 <body>
     <div class="conteudo">
 
-        <button class="BotaoVoltar"><img class="ImagemBotao" src="./assets/imagens/Group 99.png"></button>
+        <button class="BotaoVoltar" onclick="navegar('../login/login.html')">
+            <img class="ImagemBotao" src="./assets/imagens/Group 99.png">
+        </button>
         <section class="sessao-input-cadastro">
-            <h1 style="color: #8C52FF;">CADASTRO</h1>
+            <h1 style="color: #8C52FF; height: 40px;">CADASTRO</h1>
             <div class="div-inputs">
                 <section class="sessao-inputs">
                     <b> Nome:</b>
                     <input class="input nome" id="input_nome">
-                 
+
+                    <span class="span-avisos"></span>
+
                     <b>Email:</b>
                     <input class="input email" id="input_email">
             
-                    <span class="span-avisos" id="span_avisoEmail"></span>
+                    <span class="span-avisos" id="span_avisoEmail">vkfmvkmfkv</span>
 
                     <b>Senha:</b>
                     <input class="input senha" id="input_senha">
@@ -33,10 +37,14 @@
                 <section class="sessao-inputs">
                     <b>Sobrenome:</b>
                     <input class="input sobrenome" id="input_sobrenome">
+
+                    <span class="span-avisos"></span>
                
                     <b>Telefone:</b>
                     <input class="input" id="input_telefone">
               
+                    <span class="span-avisos"></span>
+
                     <b>Confirmação de senha:</b>
                     <input class="input senha" id="input_confirmacaoSenha">
 
@@ -46,7 +54,7 @@
 
             </div>
 
-            <span class="span-avisos" id="span_avisoCampos"></span>
+            <span class="span-avisos geral" id="span_avisoCampos"></span>
 
 
             <button class="botao cadastrar" style="background-color: #8C52FF; color: white; "

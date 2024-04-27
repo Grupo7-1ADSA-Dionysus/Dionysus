@@ -6,7 +6,7 @@
     font-family: "Fira Code", monospace;
 }
 
-body{
+body {
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@ body{
     overflow-x: hidden;
 }
 
-.menu{
+.menu {
     /*Tamanho*/
     width: 100%;
     /*Posição*/
@@ -43,12 +43,12 @@ body{
     font-size: 25px;
 }
 
-.logo-menu{
+.logo-menu {
     /*Tamanho*/
     width: 50px;
 }
 
-.sessao-botoes-menu{
+.sessao-botoes-menu {
     /*Tamanho*/
     width: 60%;
     /*Organização de elementos filhos*/
@@ -56,7 +56,7 @@ body{
     justify-content: space-between;
 }
 
-.sessao-botao-entrar{
+.sessao-botao-entrar {
     /*Tamanho*/
     width: 15%;
     /*Organização de elementos filhos*/
@@ -82,9 +82,18 @@ body{
     /*Tamanho*/
     width: 70%;
     height: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.div-sessao-inicial{
+.icone-entrar{
+    /*Tamanho*/
+    width: 30px;
+}
+
+.div-sessao-inicial {
     /*Tamanho*/
     width: 100%;
     height: 100vh;
@@ -98,7 +107,7 @@ body{
     background-size: 100%;
 }
 
-.caixa-mensagem-saudacao{
+.caixa-mensagem-saudacao {
     /*Tamanho*/
     width: 35%;
     height: 45%;
@@ -117,22 +126,22 @@ body{
     opacity: 0.8;
 }
 
-.saudacao-titulo{
+.saudacao-titulo {
     /*Fonte*/
     font-size: 50px;
 }
 
-.saudacao-subtitulo{
+.saudacao-subtitulo {
     /*Fonte*/
     font-size: 21px;
 }
 
-.saudacao-texto{
+.saudacao-texto {
     /*Fonte*/
     font-size: 21px;
 }
 
-.saiba-mais{
+.saiba-mais {
     /*Tamanho*/
     width: 45%;
     height: 40px;
@@ -146,13 +155,13 @@ body{
     cursor: pointer;
 }
 
-.div-sessao-solucao{
+.div-sessao-solucao {
     /*Tamanho*/
     width: 100%;
     height: 100vh;
 }
 
-.cabecalho-solucao{
+.cabecalho-solucao {
     /*Tamanho*/
     width: 100%;
     /*Espaçamento*/
@@ -164,14 +173,14 @@ body{
     text-align: center;
 }
 
-.caixa-conteudo-solucao{
+.caixa-conteudo-solucao {
     /*Tamanho*/
     width: 100%;
     /*Organização de elementos filhos*/
     display: flex;
 }
 
-.textos-solucao{
+.textos-solucao {
     /*Tamanho*/
     width: 60%;
     /*Organização de elementos filhos*/
@@ -184,12 +193,12 @@ body{
     text-align: center;
 }
 
-.palavras-roxa{
+.palavras-roxa {
     /*Cor*/
     color: #8C52FF;
 }
 
-.foto-solucao{
+.foto-solucao {
     /*Tamanho*/
     width: 40%;
     height: 500px;
@@ -201,9 +210,9 @@ body{
     overflow: hidden;
 }
 
-.caixa-auxiliar-foto-solucao{
+.caixa-auxiliar-foto-solucao {
     /*Tamanho*/
-    width: 80%;
+    width: 70%;
     height: 400px;
     /*Borda*/
     border: 2px solid #000;
@@ -211,7 +220,7 @@ body{
     overflow: visible;
 }
 
-.imagem-solucao{
+.imagem-solucao {
     /*Tamanho*/
     width: 100%;
     /*Espaçamento*/
@@ -221,7 +230,7 @@ body{
     overflow: visible;
 }
 
-.div-sessao-objetivos{
+.div-sessao-objetivos {
     /*Tamanho*/
     width: 100%;
     height: 100vh;
@@ -234,7 +243,7 @@ body{
     border-top: 2px solid #000;
 }
 
-.cabecalho-objetivo{
+.cabecalho-objetivo {
     /*Tamanho*/
     width: 100%;
     /*Espaçamento*/
@@ -242,10 +251,10 @@ body{
     /*Fonte*/
     font-size: 30px;
     /*Texto*/
-    text-align: center;    
+    text-align: center;
 }
 
-.sessao-fotos-objetivos{
+.sessao-fotos-objetivos {
     /*Tamanho*/
     width: 100%;
     /*Espaçamento*/
@@ -257,23 +266,23 @@ body{
     gap: 20px;
 }
 
-.imagem-objetivos{
+.imagem-objetivos {
     /*Tamanho*/
     width: 80%;
 }
 
-.imagem-flechas-objetivos{
+.imagem-flechas-objetivos {
     /*Tamanho*/
     width: 40%;
 }
 
-.div-sessao-nome{
+.div-sessao-nome {
     /*Tamanho*/
     width: 100%;
-    height: 100vh;
+    height: 80vh;
 }
 
-.cabecalho-nome{
+.cabecalho-nome {
     /*Tamanho*/
     width: 100%;
     /*Organização de elementos filhos*/
@@ -281,7 +290,7 @@ body{
     justify-content: space-between;
 }
 
-.titulo-nome{
+.titulo-nome {
     /*Tamanho*/
     width: 40%;
     /*Espaçamento*/
@@ -290,20 +299,20 @@ body{
     font-size: 80px;
 }
 
-.imagem-barra{
+.imagem-barra {
     /*Tamanho*/
     width: 60%;
     height: 100%;
 }
 
-.caixa-conteudo-nome{
+.caixa-conteudo-nome {
     /*Tamanho*/
     width: 100%;
     /*Organização de elementos filhos*/
     display: flex;
 }
 
-.sessao-textos-nome{
+.sessao-textos-nome {
     /*Tamanho*/
     width: 60%;
     /*Espaçamento*/
@@ -317,7 +326,7 @@ body{
     font-size: 25px;
 }
 
-.sessao-logo-nome{
+.sessao-logo-nome {
     /*Tamanho*/
     width: 40%;
     /*Organização de elementos filhos*/
@@ -326,12 +335,12 @@ body{
     align-items: center;
 }
 
-.frase-nome{
+.frase-nome {
     /*Fonte*/
     font-size: 50px;
 }
 
-.div-sessao-equipe{
+.div-sessao-equipe {
     /*Tamanho*/
     width: 100%;
     height: 100vh;
@@ -339,7 +348,7 @@ body{
     border: 2px solid #000;
 }
 
-.cabecalho-equipe{
+.cabecalho-equipe {
     /*Tamanho*/
     width: 100%;
     height: 10%;
@@ -352,7 +361,7 @@ body{
     text-align: center;
 }
 
-.sessao-fotos-equipe{
+.sessao-fotos-equipe {
     /*Tamanho*/
     width: 90%;
     height: 85%;
@@ -374,7 +383,7 @@ body{
     border-radius: 20px;
 }
 
-.caixa-auxiliar-equipe{
+.caixa-auxiliar-equipe {
     /*Tamanho*/
     width: 100%;
     height: 90%;
@@ -383,7 +392,7 @@ body{
 }
 
 .fotos-equipe-cima,
-.fotos-equipe-baixo{
+.fotos-equipe-baixo {
     /*Tamanho*/
     width: 100%;
     /*Organização de elementos filhos*/
@@ -391,7 +400,7 @@ body{
     justify-content: space-evenly;
 }
 
-.caixa-membro{
+.caixa-membro {
     /*Tamanho*/
     width: 250px;
     height: 260px;
@@ -403,7 +412,7 @@ body{
     border: 2px solid #000;
 }
 
-.foto-membro{
+.foto-membro {
     /*Tamanho*/
     width: 100%;
     height: 70%;
@@ -411,7 +420,7 @@ body{
     background-color: #8C52FF;
 }
 
-.sessao-redes-sociais{
+.sessao-redes-sociais {
     /*Tamanho*/
     width: 50%;
     height: 30px;
@@ -419,13 +428,13 @@ body{
     border: 2px solid #000;
 }
 
-.div-sessao-valores{
+.div-sessao-valores {
     /*Tamanho*/
     width: 100%;
-    height: 100vh;
+    height: 80vh;
 }
 
-.cabecalho-valores{
+.cabecalho-valores {
     /*Tamanho*/
     width: 100%;
     /*Organização de elementos filhos*/
@@ -433,12 +442,12 @@ body{
     flex-direction: row-reverse;
 }
 
-.xxx{
+.xxx {
     /*Tamanho*/
     width: 8%;
 }
 
-.sessao-conteudo-valores{
+.sessao-conteudo-valores {
     /*Tamanho*/
     width: 100%;
     /*Espaçamento*/
@@ -450,11 +459,82 @@ body{
     gap: 20px;
 }
 
-.titulo-valores{
+.titulo-valores {
     /*Fonte*/
     font-size: 30px;
 }
 
-.imagem-valores{
+.imagem-valores {
     width: 80%;
+}
+
+.rodape{
+    /*Tamanho*/
+    width: 100%;
+    height: 10vh;
+    /*Detalhes*/
+    overflow: visible;
+}
+
+.conteudo-rodape {
+    /*Tamanho*/
+    width: 100%;
+    /*Espaçamento*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Cor*/
+    background-color: #8C52FF;
+    color: #000;
+}
+
+.nome-rodape{
+    /*Fonte*/
+    font-size: 40px;
+}
+
+.sessao-botoes-rodape {
+    /*Tamanho*/
+    width: 60%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao-rodape {
+    /*Tamanho*/
+    width: 20%;
+    /*Borda*/
+    border: 0px;
+    /*Cor*/
+    background-color: transparent;
+    color: #000;
+    /*Fonte*/
+    font-size: 18px;
+    /*Detalhes*/
+    cursor: pointer;
+}
+
+.logo-rodape {
+    /*Tamanho*/
+    width: 70px;
+    /*Espaçamento*/
+    padding: 0px;
+    /*Borda*/
+    border-radius: 180px;
+    /*Cor*/
+    background-color: #fff; 
+}
+
+.sessao-copyright{
+    /*Tamanho*/
+    width: 100%;
+    /*Cor*/
+    background-color: #000;
+    color: #fff;
+    /*Texto*/
+    text-align: center;
 }

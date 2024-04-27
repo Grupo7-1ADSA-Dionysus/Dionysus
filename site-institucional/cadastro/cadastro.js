@@ -1,3 +1,9 @@
+/*Função de navegar entre telas - Lucas*/
+function navegar(pagina){
+    window.location.href = pagina;
+}
+
+/*Função de cadastro - Juliana*/
 function cadastrar(){
     const NOME = input_nome.value;
     const SOBRENOME = input_sobrenome.value;
