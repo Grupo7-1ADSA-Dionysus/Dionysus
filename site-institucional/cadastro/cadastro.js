@@ -65,9 +65,14 @@ function cadastrar(){
                     span_avisoSenha.innerHTML = "A senha deve conter pelo menos uma letra maiúscula";
 
                 } else{
+                    span_avisoConfirmacaoSenha.innerHTML = "";
+
                     if(SENHA != CONFIRMACAO_SENHA){
                         
                         span_avisoConfirmacaoSenha.innerHTML = "As senhas não conferem";
+
+                    } else{
+                        window.location.href = "../dashboard/index.html";
                     }
                 }
             } else{

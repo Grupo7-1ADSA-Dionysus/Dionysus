@@ -16,37 +16,37 @@
             <img class="ImagemBotao" src="./assets/imagens/Group 99.png">
         </button>
         <section class="sessao-input-cadastro">
-            <h1 style="color: #8C52FF; height: 40px;">CADASTRO</h1>
+            <h1>CADASTRO</h1>
             <div class="div-inputs">
                 <section class="sessao-inputs">
                     <b> Nome:</b>
-                    <input class="input nome" id="input_nome">
+                    <input class="input nome" id="input_nome" tabindex="1">
 
                     <span class="span-avisos"></span>
 
                     <b>Email:</b>
-                    <input class="input email" id="input_email">
+                    <input class="input email" id="input_email" tabindex="3">
             
-                    <span class="span-avisos" id="span_avisoEmail">vkfmvkmfkv</span>
+                    <span class="span-avisos" id="span_avisoEmail"></span>
 
                     <b>Senha:</b>
-                    <input class="input senha" id="input_senha">
+                    <input type="password"  class="input senha" id="input_senha" tabindex="5">
 
                     <span class="span-avisos" id="span_avisoSenha"></span>
                 </section>
                 <section class="sessao-inputs">
                     <b>Sobrenome:</b>
-                    <input class="input sobrenome" id="input_sobrenome">
+                    <input class="input sobrenome" id="input_sobrenome" tabindex="2">
 
                     <span class="span-avisos"></span>
                
                     <b>Telefone:</b>
-                    <input class="input" id="input_telefone">
+                    <input class="input" id="input_telefone" tabindex="4">
               
                     <span class="span-avisos"></span>
 
                     <b>Confirmação de senha:</b>
-                    <input class="input senha" id="input_confirmacaoSenha">
+                    <input type="password" class="input senha" id="input_confirmacaoSenha" tabindex="6">
 
                     <span class="span-avisos" id="span_avisoConfirmacaoSenha"></span>
                  
@@ -57,8 +57,7 @@
             <span class="span-avisos geral" id="span_avisoCampos"></span>
 
 
-            <button class="botao cadastrar" style="background-color: #8C52FF; color: white; "
-                onclick="cadastrar()">CADASTRE-SE</button>
+            <button class="botao cadastrar" onclick="cadastrar()" tabindex="7">CADASTRE-SE</button>
         </section>
 
     </div>
