@@ -1,19 +1,29 @@
 /* Configurações de Fonte Padrão */
+*{
+    /* Espaçamento*/
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+
+}
+
 body {
+     /* Tamanho*/
+    width: 100%;
+    height: 100vh;
+    /* Borda */
+    border: 2px solid #000;
     /* Fonte */
     font-family: "Fira Code", monospace;
-    /* Ajuste Óptico */
-    font-optical-sizing: auto;
     /* Estilo */
     font-style: normal;
+    /* Organização de elementos filhas */
 }
 
 /* Classe para Garantir a Mesma Fonte em Diferentes Elementos */
 .fira-code-uniquifier {
     /* Fonte */
     font-family: "Fira Code", monospace;
-    /* Ajuste Óptico */
-    font-optical-sizing: auto;
     /* Estilo */
     font-style: normal;
 }
@@ -21,102 +31,111 @@ body {
 /* Estilos para Títulos */
 .titulos {
     /* Espaçamento */
-    margin-top: 35px;
-    margin-left: 150px;
+
+    width: 100%;
+    height: 15vh;
     /* Tamanho da Fonte */
     font-size: 22px;
+    padding-left: 40px;
+
 }
 
-/* Estilos para Subtítulos */
-.subtitulos {
-    /* Espaçamento */
-    margin-top: 15%;
+.conteudo_contato{
+    width: 100%;
+    height: 80vh;
+    /* Organização de elementos filhos */
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+
 }
 
 /* Estilos para Caixa de Contato */
 .caixa_contato {
     /* Espaçamento */
-    margin-top: 20px;
-    margin-left: 150px;
+    padding: 30px;
     /* Tamanho */
-    width: 800px;
-    height: 550px;
+    width: 60%;
+    height: 75%;
     /* Borda */
     border: 3px solid #000;
     border-radius: 10px;
     /* Imagem de Fundo */
     background-image: url(./imagens/Logo\ Oficial\ \(1\).png);
     background-repeat: no-repeat;
-    background-size: 56%;
+    background-size: 53%;
     background-position: right center;
     /* Organização de Elementos Filhos */
-    align-items: center;
     display: flex;
     flex-direction: column;
+    
 }
 
 /* Estilos para Campo de Nome */
 .nome {
     /* Espaçamento */
-    margin-top: 40px;
-    margin-left: -600px;
     /* Tamanho da Fonte */
     font-size: 22px;
+    overflow: visible;
 }
 
 .input_nome {
     /* Espaçamento */
-    margin-top: -12px;
-    margin-left: -250px;
     /* Tamanho */
     font-size: 22px;
-    width: 400px;
+    width: 60%;
+    height: 35px;
     /* Borda */
     border: 2px solid #000;
     border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 /* Estilos para Campo de Email */
 .email {
     /* Espaçamento */
-    margin-top: -10px;
-    margin-left: -600px;
     /* Tamanho da Fonte */
     font-size: 22px;
+    overflow: visible;
 }
 
 .input_email {
     /* Espaçamento */
-    margin-top: -15px;
-    margin-left: -250px;
     /* Tamanho */
     font-size: 22px;
-    width: 400px;
+    width: 60%;
+    height: 35px;
     /* Borda */
     border: 2px solid #000;
     border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+
 }
 
 /* Estilos para Campo de Mensagem */
 .mensagem {
     /* Espaçamento */
-    margin-top: -10px;
-    margin-left: -550px;
+
     /* Tamanho da Fonte */
     font-size: 22px;
+    overflow: visible;
 }
 
 .input_Mensagem {
     /* Espaçamento */
-    margin-top: -15px;
-    margin-left: -250px;
+
     /* Tamanho */
     font-size: 22px;
-    width: 400px;
-    height: 250px;
+    width: 60%;
+    height: 30%;
     /* Borda */
     border: 2px solid #000;
     border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+
 }
 
 /* Estilos para Botão Enviar */
@@ -136,14 +155,96 @@ body {
     /* Cursor */
     cursor: pointer;
     /* Espaçamento */
-    margin-top: -30px;
-    margin-bottom: 10px;
-    margin-left: -250px;
 }
 
 /* Estilos para Caixa de Texto Lateral */
 .caixa_texto_lateral {
+    /* Borda */
+    /* Tamanho */
+    width: 25%;
     /* Espaçamento */
-    margin-top: -740px;
-    margin-left: 830px;
+}
+
+.img_lateral{
+    /* tamanho */
+    width: 100%;
+}
+.menu {
+    /*Tamanho*/
+    width: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+    /*Borda*/
+    border: 0px;
+    border-bottom: 2px solid #000;
+    /*Cor*/
+    background-color: #fff;
+
+}
+
+.sessao-logo-menu {
+    /*Tamanho*/
+    width: 15%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Fonte*/
+    font-size: 25px;
+}
+
+.logo-menu {
+    /*Tamanho*/
+    width: 50px;
+}
+
+.sessao-botoes-menu {
+    /*Tamanho*/
+    width: 60%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.sessao-botao-entrar {
+    /*Tamanho*/
+    width: 15%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.botao-menu {
+    /*Tamanho*/
+    width: 20%;
+    /*Borda*/
+    border: 0px;
+    /*Cor*/
+    background-color: transparent;
+    /*Fonte*/
+    font-size: 18px;
+    /*Detalhes*/
+    cursor: pointer;
+}
+
+.botao-menu:hover{
+    /*Cor*/
+    color: #8C52FF;
+}
+
+.entrar {
+    /*Tamanho*/
+    width: 70%;
+    height: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone-entrar{
+    /*Tamanho*/
+    width: 30px;
 }

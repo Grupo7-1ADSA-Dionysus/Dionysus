@@ -2,11 +2,12 @@
     /*Espaçamento*/
     padding: 0px;
     margin: 0px;
+
 }
 
 body {
     /*Tamanho*/
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     /*Organização de elementos filho*/
     display: flex;
@@ -46,7 +47,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 10%;
 }
 
 h1 {

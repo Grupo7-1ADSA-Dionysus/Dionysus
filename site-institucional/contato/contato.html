@@ -12,25 +12,49 @@
     <title>Contato</title>
 </head>
 <body>
+    <header class="menu">
+        <section class="sessao-logo-menu">
+            <img src="./imagens/Logo_Oficial.webp" alt="Logo" class="logo-menu">
+            <p>DIONYSUS</p>
+        </section>
+        <section class="sessao-botoes-menu">
+            <button onclick="navegar('../pagina-inicial/pagina_inicial.html')"class="botao-menu pagina-inicial">Página inicial</button>
+            <button class="botao-menu sobre">Sobre</button>
+            <button class="botao-menu contato" onclick="navegar('../contato/contato.html')">Contato</button>
+            <button class="botao-menu simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
+        </section>
+        <section class="sessao-botao-entrar">
+            <button class="botao-menu entrar" onclick="navegar('../login/login.html')">
+                Entrar
+                <img src="./imagens/imagemEntrar.png" alt="icone de entrar" class="icone-entrar">
+            </button>
+        </section>
+    </header>
     <div class="titulos">
         <h1 class="titulo">Fale Conosco!</h1>
         <p class="subtitulo">Envie sua mensagem ou entre em contato pelas redes socias.</p>
     </div>
+    <div class="conteudo_contato">
+        <div class="caixa_contato">
+            <p class="nome">Nome</p>
+            <input id="input_idNome" class="input_nome" type="text" placeholder="Seu Nome">
+            <p class="email">Email</p>
+            <input id="input_idEmail" class="input_email" type="text" placeholder="Seu E-mail">
+            <p class="mensagem">Mensagem</p>
+            <textarea id="input_idMensagem" class="input_Mensagem" type="text"></textarea>
+            <button class="botao_enviar"><b>ENVIAR</b></button>
+        </div>
+        <div class="caixa_texto_lateral">
+            <img class="img_lateral" src="./imagens/Group 100.png" alt="">
+        </div>
+    </div>
 
-    <div class="caixa_contato">
-        <p class="nome">Nome</p>
-        <input id="input_idNome" class="input_nome" type="text" placeholder="Seu Nome">
-        <br><br>
-        <p class="email">Email</p>
-        <input id="input_idEmail" class="input_email" type="text" placeholder="Seu E-mail">
-        <br><br>
-        <p class="mensagem">Mensagem</p>
-        <input id="input_idMensagem" class="input_Mensagem" type="text">
-        <br><br>
-        <button class="botao_enviar"><b>ENVIAR</b></button>
-    </div>
-    <div class="caixa_texto_lateral">
-        <img src="./imagens/Group 100.png" alt="">
-    </div>
+  
 </body>
 </html>
+
+<script>
+    function navegar(pagina) {
+        window.location.href = pagina;
+    }
+</script>
