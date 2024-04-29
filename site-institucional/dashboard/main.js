@@ -30,8 +30,8 @@ const serial = async (
             // altere!
             // Credenciais do banco de dados
             host: 'localhost',
-            user: 'aluno',
-            password: 'sptech',
+            user: 'proprietario',
+            password: 'proprietario',
             database: 'Dionysus',
             port: 3306
         }

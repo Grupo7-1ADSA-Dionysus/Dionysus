@@ -10,13 +10,13 @@
 
 .alerta {
     /*Tamanho*/
-    width: 400px;
+    width: 450px;
     height: 320px;
     /*Posição*/
     position: absolute;
-    display: none;
+    /* display: none; */
     /*Espaçamento*/
-    margin-top: 5%;
+    margin-top: 14%;
     margin-left: 35%;
     margin-right: 35%;
     /*Cor*/
