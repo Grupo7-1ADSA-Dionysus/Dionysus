@@ -83,6 +83,13 @@ body {
     color: #8C52FF;
 }
 
+.pagina-inicial{
+    /*Borda*/
+    border-bottom: 3px solid #8C52FF;
+    /*Cor*/
+    color: #8C52FF;
+}
+
 .entrar {
     /*Tamanho*/
     width: 70%;

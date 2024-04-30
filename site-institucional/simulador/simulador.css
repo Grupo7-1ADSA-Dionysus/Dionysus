@@ -66,10 +66,26 @@
     cursor: pointer;
 }
 
+.botao-menu:hover{
+    /*Cor*/
+    color: #8C52FF;
+}
+
+.simulador{
+    /*Borda*/
+    border-bottom: 3px solid #8C52FF;
+    /*Cor*/
+    color: #8C52FF;
+}
+
 .entrar {
     /*Tamanho*/
     width: 70%;
     height: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 
@@ -172,7 +188,7 @@
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     /*Borda*/
     border: 2px solid #000;

@@ -245,20 +245,20 @@
 
     let Maior_Umidade_Registrada = null
 
-        let hectar = select_hectar.value;
+    let hectar = select_hectar.value;
 
-        if (hectar == 'hectarA') {
-            grafico_umidade.style.display = 'flex';
-            grafico_umidade_2.style.display = 'none';
+    if (hectar == 'hectarA') {
+        grafico_umidade.style.display = 'flex';
+        grafico_umidade_2.style.display = 'none';
 
-            titulo_umidade.innerHTML = 'Umidade Hectar A';
-        } else if (hectar == 'hectarB') {
-            grafico_umidade.style.display = 'none';
-            grafico_umidade_2.style.display = 'flex';
+        titulo_umidade.innerHTML = 'Umidade Hectar A';
+    } else if (hectar == 'hectarB') {
+        grafico_umidade.style.display = 'none';
+        grafico_umidade_2.style.display = 'flex';
 
-            titulo_umidade.innerHTML = 'Umidade Hectar B';
-        }
-    
+        titulo_umidade.innerHTML = 'Umidade Hectar B';
+    }
+
 
     let Umidade_Baixa = 45;
     let Umidade_Elevada = 65;
@@ -302,36 +302,36 @@
 
             grafico.data.datasets[0].data.push(parseFloat(valor));
 
-            
-            if(Maior_Umidade_Registrada == null || parseFloat(valor) > Maior_Umidade_Registrada ){
+
+            if (Maior_Umidade_Registrada == null || parseFloat(valor) > Maior_Umidade_Registrada) {
                 Maior_Umidade_Registrada = parseFloat(valor);
 
                 document.getElementById("p_KPI_Maxima").innerHTML = `${Maior_Umidade_Registrada}%`;
             }
 
             if (parseFloat(valor) > Umidade_Elevada && parseFloat(valor) <= Umidade_Maxima) {
-                document.getElementById("p_alerta").innerHTML="Umidade Elevada!";
-                div_alerta.style.display = 'block';
-                
-            } else if (parseFloat(valor) < Umidade_Baixa && parseFloat(valor) > umidade_Minima) {
-                document.getElementById("p_alerta").innerHTML="Umidade Baixa!";
-                div_alerta.style.display = 'block';
-                
-            } else if(parseFloat(valor) > Umidade_Maxima){
-                document.getElementById("p_alerta").innerHTML="Umidade Acima de 75%!";
-                document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
-                document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
-                bt_fechar_alerta.style.backgroundColor = "#FF3838";
-                
+                document.getElementById("p_alerta").innerHTML = "Umidade Elevada!";
                 div_alerta.style.display = 'block';
 
-            } else if(parseFloat(valor) < umidade_Minima){
-                document.getElementById("p_alerta").innerHTML="Umidade Abaixo de 40%!";
-        
+            } else if (parseFloat(valor) < Umidade_Baixa && parseFloat(valor) > umidade_Minima) {
+                document.getElementById("p_alerta").innerHTML = "Umidade Baixa!";
+                div_alerta.style.display = 'block';
+
+            } else if (parseFloat(valor) > Umidade_Maxima) {
+                document.getElementById("p_alerta").innerHTML = "Umidade Acima de 75%!";
                 document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
                 document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
                 bt_fechar_alerta.style.backgroundColor = "#FF3838";
-                
+
+                div_alerta.style.display = 'block';
+
+            } else if (parseFloat(valor) < umidade_Minima) {
+                document.getElementById("p_alerta").innerHTML = "Umidade Abaixo de 40%!";
+
+                document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
+                document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
+                bt_fechar_alerta.style.backgroundColor = "#FF3838";
+
                 div_alerta.style.display = 'block';
             }
 

@@ -234,6 +234,13 @@ body {
     color: #8C52FF;
 }
 
+.contato{
+    /*Borda*/
+    border-bottom: 3px solid #8C52FF;
+    /*Cor*/
+    color: #8C52FF;
+}
+
 .entrar {
     /*Tamanho*/
     width: 70%;
