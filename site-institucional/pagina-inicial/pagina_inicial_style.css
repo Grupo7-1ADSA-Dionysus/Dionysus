@@ -115,7 +115,6 @@ body {
 .caixa-mensagem-saudacao {
     /*Tamanho*/
     width: 35%;
-    height: 45%;
     /*Espaçamento*/
     margin-left: 40px;
     padding: 20px;
@@ -183,19 +182,22 @@ body {
     width: 100%;
     /*Organização de elementos filhos*/
     display: flex;
+    justify-content: space-between;
 }
 
 .textos-solucao {
     /*Tamanho*/
     width: 60%;
+    /*Espaçamento*/
+    padding-left: 15px;
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
     gap: 40px;
     /*Fonte*/
-    font-size: 25px;
+    font-size: 22px;
     /*Texto*/
-    text-align: center;
+    text-align: left;
 }
 
 .palavras-roxa {
@@ -203,16 +205,21 @@ body {
     color: #8C52FF;
 }
 
+.subtitulo{
+    /*Texto*/
+    text-align: center;
+}
+
 .foto-solucao {
     /*Tamanho*/
-    width: 40%;
-    height: 500px;
+    width: 35%;
+    height: 100%;
     /*Espaçamento*/
     padding: 20px;
     /*Organização de elementos filhos*/
     display: flex;
     /*Detalhes*/
-    overflow: hidden;
+    overflow: visible;
 }
 
 .caixa-auxiliar-foto-solucao {
@@ -246,6 +253,7 @@ body {
     /*Borda*/
     border: 0px;
     border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
 }
 
 .cabecalho-objetivo {
@@ -284,7 +292,7 @@ body {
 .div-sessao-negocio{
     /*Tamanho*/
     width: 100%;
-    height: 100vh;
+    padding: 2px;
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
@@ -298,13 +306,17 @@ body {
 
 .diagrama-negocio{
     /*Tamanho*/
-    width: 70%;
+    width: 80%;
 }
 
 .div-sessao-nome {
     /*Tamanho*/
     width: 100%;
-    height: 80vh;
+    height: 100vh;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .cabecalho-nome {
@@ -321,7 +333,7 @@ body {
     /*Espaçamento*/
     padding-left: 30px;
     /*Fonte*/
-    font-size: 80px;
+    font-size: 50px;
 }
 
 .imagem-barra {
@@ -362,7 +374,7 @@ body {
 
 .frase-nome {
     /*Fonte*/
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .div-sessao-equipe {
