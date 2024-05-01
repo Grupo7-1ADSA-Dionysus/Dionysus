@@ -37,11 +37,10 @@
         </div>
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
-                <button class="botao-menu material-symbols-outlined">Menu</button>
-                <button class="botao-menu material-symbols-outlined">Home</button>
-                <button class="botao-menu material-symbols-outlined">Humidity_Percentage</button>
-                <button class="botao-menu material-symbols-outlined">Analytics</button>
-                <button class="botao-menu material-symbols-outlined">Settings</button>
+                <button class="botao-menu material-symbols-outlined">Account_Circle</button>
+                <button class="botao-menu material-symbols-outlined" onclick="mudarSessao(home, 'Suas Propriedades')">Home</button>
+                <button class="botao-menu material-symbols-outlined" onclick="mudarSessao(dashboard, 'Dashboard')">Monitoring</button>
+                <button class="botao-menu material-symbols-outlined" onclick="mudarSessao(ticket, 'Ticket')">Headset</button>
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined">Logout</button>
@@ -49,57 +48,98 @@
         </aside>
         <aside class="caixa-conteudo">
             <header class="cabecalho">
-                <h1>Dashboard</h1>
+                <h1 id="titulo_cabecalho">Suas Propriedades</h1>
             </header>
-            <section class="sessao-indicadores">
-                <div class="indicador">
-                    <h3 class="titulo">Umidade Atual</h3>
-                    <p class="conteudo-indicador">0%</p>
-                </div>
-                <div class="indicador">
-                    <h3 class="titulo">Umidade minima registrada</h3>
-                    <p class="conteudo-indicador">0%</p>
-                </div>
-                <div class="indicador">
-                    <h3 class="titulo">Umidade máxima registrada</h3>
-                    <p class="conteudo-indicador" id="p_KPI_Maxima">0%</p>
-                </div>
-                <div class="indicador">
-                    <h3 class="titulo">Umidade média</h3>
-                    <p class="conteudo-indicador">0%</p>
-                </div>
-            </section>
-            <section class="sessao-graficos">
-                <div class="grafico-1">
-                    <h3 class="titulo-grafico1">Histórico semanal</h3>
-                    <section class="sessao-grafico-media">
-                        <canvas id="grafico-media-semanal" style="height: 100%;"></canvas>
+            <div class="sessao-conteudo-dashboard" id="dashboard"> 
+                <section class="sessao-indicadores">
+                    <div class="indicador">
+                        <h3 class="titulo">Umidade Atual</h3>
+                        <p class="conteudo-indicador">0%</p>
+                    </div>
+                    <div class="indicador">
+                        <h3 class="titulo">Umidade minima registrada</h3>
+                        <p class="conteudo-indicador">0%</p>
+                    </div>
+                    <div class="indicador">
+                        <h3 class="titulo">Umidade máxima registrada</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Maxima">0%</p>
+                    </div>
+                    <div class="indicador">
+                        <h3 class="titulo">Umidade média</h3>
+                        <p class="conteudo-indicador">0%</p>
+                    </div>
+                </section>
+                <section class="sessao-graficos">
+                    <div class="grafico-1">
+                        <h3 class="titulo-grafico1">Histórico semanal</h3>
+                        <section class="sessao-grafico-media">
+                            <canvas id="grafico-media-semanal" style="height: 100%;"></canvas>
+                        </section>
+                    </div>
+                    <div class="grafico-2">
+                        <header class="cabecalho-grafico2">
+                            <h3 class="titulo-grafico2" id="titulo_umidade">Umidade Hectar A</h3>
+                            <select id="select_hectar" class="select_hectar">
+                                <option>Selecione um hectar para acompanhar</option>
+                                <option value="hectarA">Hectar A</option>
+                                <option value="hectarB">Hectar B</option>
+                            </select>
+                            <button onclick="mudarGrafico()" class="botao-hectar">Escolher</button>
+                        </header>
+                        <section class="sessao-grafico-umidade">
+                            <canvas id="dht11Umidade"></canvas>
+                            <canvas id="grafico_umidade_2" style="display: none;"></canvas>
+                        </section>
+                    </div>
+                </section>
+            </div>
+            <div class="sessao-conteudo-home" id="home">
+                <section class="caixa-propriedades">
+                    <h1>Propriedades Registradas</h1>
+                    <div class="lista-propriedades">
+                        <div class="propriedade">
+                            <div class="nome-propriedade">
+                                <div class="bolinha"></div>
+                                <p>Fazenda</p>
+                            </div>
+                            <div class="opcoes-propriedade">
+                                <span class="configuracoes material-symbols-outlined">Settings</span>
+                                <span class="deletar material-symbols-outlined">Delete</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="sessao-conteudo-ticket" id="ticket">
+                <h1 class="titulo-ticket">Abra um ticket</h1>
+                <div class="caixa-ticket">
+                    <h2>Enviar uma solicitação</h2>
+                    <p>Está com algum problema?  Estamos aqui para te ajudar!</p>
+                    <section class="sessao-inputs">
+                        <p>Assunto</p>
+                        <input class="input-assunto" placeholder="Insira aqui o assunto da mensagem">
+                        <p>Mensagem</p>
+                        <textarea class="caixa-texto-mensagem" placeholder="Insira aqui sua mensagem"></textarea>
                     </section>
+                    <button class="botao-enviar">ENVIAR</button>
                 </div>
-                <div class="grafico-2">
-                    <header class="cabecalho-grafico2">
-                        <h3 class="titulo-grafico2" id="titulo_umidade">Umidade Hectar A</h3>
-                        <select id="select_hectar" class="select_hectar">
-                            <option>Selecione um hectar para acompanhar</option>
-                            <option value="hectarA">Hectar A</option>
-                            <option value="hectarB">Hectar B</option>
-                        </select>
-                        <button onclick="mudarGrafico()" class="botao-hectar">Escolher</button>
-                    </header>
-                    <section class="sessao-grafico-umidade">
-                        <canvas id="dht11Umidade"></canvas>
-                        <canvas id="grafico_umidade_2" style="display: none;"></canvas>
-                    </section>
-                </div>
-            </section>
+            </div>
         </aside>
     </div>
-
-
 </body>
 
 </html>
 <script>
+    function mudarSessao(sessaoAparecer, tituloPagina){
+        home.style.display = 'none';
+        dashboard.style.display = 'none';
+        ticket.style.display = 'none';
+
+        sessaoAparecer.style.display = 'flex';
+
+        titulo_cabecalho.innerHTML = tituloPagina;
+    }
+
     const Media_semanal = document.getElementById('grafico-media-semanal');
     const labels1 = ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'];
     const data1 = {
@@ -148,7 +188,6 @@
         contextoDht11Umidade,
         {
             type: 'line',
-
             data: {
                 // labels: labels2,
                 datasets: [{
@@ -159,7 +198,13 @@
                 }]
             },
             options: {
+                responsive: true,
                 scales: {
+                    y: {
+                        min: 0,
+                        max: 100,
+                    },
+
                     xAxes: [{
                         distribution: 'series',
 
