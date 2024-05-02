@@ -86,7 +86,7 @@
 
                     <!---------------------------------------------- Minima Registrada ---------------------------------------------------------------->
                     <div class="indicador">
-                        <h3 class="titulo">Umidade</h3>
+                        <h3 class="titulo">Temperatura</h3>
                         <p class="conteudo-indicador" id="p_KPI_Temp_Min">0%</p>
                     </div>
                     <div class="indicador">
@@ -98,7 +98,7 @@
                     <!---------------------------------------------- Media  ---------------------------------------------------------------->
 
                     <div class="indicador">
-                        <h3 class="titulo">Umidade</h3>
+                        <h3 class="titulo">Temperatura</h3>
                         <p class="conteudo-indicador" id="p_KPI_Temp_Media">0%</p>
                     </div>
                     <div class="indicador">
@@ -118,8 +118,8 @@
                         </section>
                     </div>
 
-                    <!--------------------------------------------------------------------------------------------------------------------->
-                    <!-- <div class="grafico-2">
+                    <!-- ------------------------------------------------------------------------------------------------------------------->
+                    <div class="grafico-2">
                         <header class="cabecalho-grafico2">
                             <h3 class="titulo-grafico2" id="titulo_umidade">Umidade Hectar A</h3>
                             <select id="select_hectar" class="select_hectar">
@@ -140,7 +140,7 @@
 
                        
                     </div>
-                </section> -->
+                </section>
             </div>
 
             <!-- Página Home: Propriedades Registradas-->
@@ -351,6 +351,8 @@
     var data = moment().format('DD/MM/YYYY');
     var paginacao = {};
     var tempo = {};
+    var dados = [2];
+    var contador = 0;
 
     function obterDados(grafico, endpoint) {
         var http = new XMLHttpRequest();
@@ -364,9 +366,6 @@
             tempo[endpoint] = 0;
         }
 
-
-        const umidade = require('http://localhost:3302/sensores/dht11/umidade');
-        console.log(umidade);
 
         // Exibir à partir do último elemento exibido anteriormente
         var ultimaPaginacao = paginacao[endpoint];
@@ -384,6 +383,16 @@
                 tempo[endpoint] = 0;
             }
 
+            if(contador % 2 == 0){
+
+                dados[0] = valor;
+                
+            } else{
+
+                dados[1] = valor;
+            }
+            contador += 1;
+
             grafico.data.labels.push(tempo[endpoint]++);
             grafico.data.datasets[0].data.push(parseFloat(valor));
             grafico.update();
@@ -391,66 +400,70 @@
             // LÓGICA KPI ========================================================================================================================
 
             // ATUAL ------------------------------------------------------------------------------------------------------------
-            document.getElementById("p_KPI_Temp_Atual").innerHTML = `${parseFloat(valor)}ºC`;
-            document.getElementById("p_KPI_Umid_Atual").innerHTML = `${parseFloat(valor)}%`;
+            document.getElementById("p_KPI_Temp_Atual").innerHTML = `${dados[1]}ºC`;
+            document.getElementById("p_KPI_Umid_Atual").innerHTML = `${dados[0]}%`;
+            // console.log(valores);
 
 
             // MÁXIMA ------------------------------------------------------------------------------------------------------------
-            if (Maior_Temperatura_Registrada == null || parseFloat(valor) > Maior_Temperatura_Registrada) {
-                Maior_Temperatura_Registrada = parseFloat(valor);
+            if (Maior_Temperatura_Registrada == null || dados[1] > Maior_Temperatura_Registrada) {
+                Maior_Temperatura_Registrada = dados[1];
 
-                document.getElementById("p_KPI_Temp_Max").innerHTML = `${Maior_Umidade_Registrada}%`;
+                document.getElementById("p_KPI_Temp_Max").innerHTML = `${Maior_Temperatura_Registrada}ºC`;
+
             }
 
-            if (Maior_Umidade_Registrada == null || parseFloat(valor) > Maior_Umidade_Registrada) {
-                Maior_Umidade_Registrada = parseFloat(valor);
+            if (Maior_Umidade_Registrada == null || dados[0] > Maior_Umidade_Registrada) {
+                Maior_Umidade_Registrada = dados[0];
 
-                document.getElementById("p_KPI_Umid_Atual").innerHTML = `${Maior_Umidade_Registrada}%`;
+                document.getElementById("p_KPI_Umid_Max").innerHTML = `${Maior_Umidade_Registrada}%`;
+
             }
 
             // MÍNIMA ------------------------------------------------------------------------------------------------------------
-            if (Menor_Temperatura_Registrada == null || parseFloat(valor) < Menor_Temperatura_Registrada) {
-                Menor_Umidade_Registrada = parseFloat(valor);
+            if (Menor_Temperatura_Registrada == null || dados[1] < Menor_Temperatura_Registrada) {
+                Menor_Temperatura_Registrada = dados[1];
 
-                document.getElementById("p_KPI_Temp_Min").innerHTML = `${Maior_Umidade_Registrada}%`;
+                document.getElementById("p_KPI_Temp_Min").innerHTML = `${Menor_Temperatura_Registrada}ºC`;
+                console.log(Menor_Temperatura_Registrada)
             }
 
-            if (Menor_Umidade_Registrada == null || parseFloat(valor) < Menor_Umidade_Registrada) {
-                Menor_Umidade_Registrada = parseFloat(valor);
+            if (Menor_Umidade_Registrada == null || dados[0] < Menor_Umidade_Registrada) {
+                Menor_Umidade_Registrada = dados[0];
 
-                document.getElementById("p_KPI_Umid_Min").innerHTML = `${Maior_Umidade_Registrada}%`;
+                document.getElementById("p_KPI_Umid_Min").innerHTML = `${Menor_Umidade_Registrada}%`;
             }
 
 
             // LÓGICA ALERTAS ========================================================================================================================
 
-            if (parseFloat(valor) > Umidade_Elevada && parseFloat(valor) <= Umidade_Maxima) {
-                document.getElementById("p_alerta").innerHTML = "Umidade Elevada!";
-                div_alerta.style.display = 'block';
+            // if (parseFloat(valor) > Umidade_Elevada && parseFloat(valor) <= Umidade_Maxima) {
+            //     document.getElementById("p_alerta").innerHTML = "Umidade Elevada!";
+            //     div_alerta.style.display = 'block';
 
-            } else if (parseFloat(valor) < Umidade_Baixa && parseFloat(valor) > umidade_Minima) {
-                document.getElementById("p_alerta").innerHTML = "Umidade Baixa!";
-                div_alerta.style.display = 'block';
+            // } else if (parseFloat(valor) < Umidade_Baixa && parseFloat(valor) > umidade_Minima) {
+            //     document.getElementById("p_alerta").innerHTML = "Umidade Baixa!";
+            //     div_alerta.style.display = 'block';
 
-            } else if (parseFloat(valor) > Umidade_Maxima) {
-                document.getElementById("p_alerta").innerHTML = "Umidade Acima de 60%!";
-                document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
-                document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
-                bt_fechar_alerta.style.backgroundColor = "#FF3838";
+            // } else if (parseFloat(valor) > Umidade_Maxima) {
+            //     document.getElementById("p_alerta").innerHTML = "Umidade Acima de 60%!";
+            //     document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
+            //     document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
+            //     bt_fechar_alerta.style.backgroundColor = "#FF3838";
 
-                div_alerta.style.display = 'block';
+            //     div_alerta.style.display = 'block';
 
-            } else if (parseFloat(valor) < umidade_Minima) {
-                document.getElementById("p_alerta").innerHTML = "Umidade Abaixo de 40%!";
+            // } else if (parseFloat(valor) < umidade_Minima) {
+            //     document.getElementById("p_alerta").innerHTML = "Umidade Abaixo de 40%!";
 
-                document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
-                document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
-                bt_fechar_alerta.style.backgroundColor = "#FF3838";
+            //     document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
+            //     document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
+            //     bt_fechar_alerta.style.backgroundColor = "#FF3838";
 
-                div_alerta.style.display = 'block';
-            }
+            //     div_alerta.style.display = 'block';
+            // }
 
-            grafico.update();
+            
         })
     }
 
