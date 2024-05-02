@@ -109,6 +109,8 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     /* coloca espaço em tudo*/
+    /*detalhes*/
+    overflow: visible;
 
 }
 
@@ -118,6 +120,9 @@ body{
     /*borda*/
     border: 0px;
     border-bottom: 2px solid black;
+    /*espaçamento*/
+    margin-bottom: 10px;
+    
 }
 
 
