@@ -6,19 +6,100 @@
     overflow: hidden;
     /*Fonte*/
     font-family: "Oswald", sans-serif;
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+*/
+}
+
+.alerta {
+    /*Tamanho*/
+    width: 450px;
+    height: 320px;
+    /*Posição*/
+    position: absolute;
+    /* display: none; */
+    /*Espaçamento*/
+    margin-top: 14%;
+    margin-left: 35%;
+    margin-right: 35%;
+    /*Cor*/
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.sessao-imagem-alerta {
+    /*Tamanho*/
+    width: 100%;
+    height: 50%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    /*Borda*/
+    border-bottom: 2px solid #000;
+    /*Cor*/
+    background-color: #FFF740;
+    /*Fonte*/
+    font-size: 30px;
+}
+
+.icone-alerta {
+    /*Tamanho*/
+    width: 80px;
+}
+
+.sessao-frase-alerta {
+    /*Tamanho*/
+    width: 100%;
+    height: 49%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /*Cor*/
+    background-color: #FFF;
+    color: #000;
+}
+
+.frase-alerta {
+    /*Cor*/
+    color: #000;
+    background-color: #FFF740;
+    /*Espaçamento*/
+    padding-left: 5px;
+    padding-right: 5px;
+    /*Fonte*/
+    font-size: 30px;
+}
+
+.botao-fechar-alerta {
+    /*Tamanho*/
+    width: 40%;
+    /*Borda*/
+    border: 2px solid #000;
+    border-radius: 10px;
+    /*Cor*/
+    background-color: #FFF740;
+    /*Fonte*/
+    font-size: 20px;
+    /*Detalhes*/
+    cursor: pointer;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
 
-.material-symbols-outlined:hover{
-    font-variation-settings: 
-    'FILL' 1    
+.material-symbols-outlined:hover {
+    font-variation-settings:
+        'FILL' 1
 }
 
 .dashboard-container {
@@ -32,7 +113,7 @@
     border: 2px solid #000;
 }
 
-.menu-lateral{
+.menu-lateral {
     /*Tamanho*/
     width: 5%;
     height: 99%;
@@ -43,10 +124,11 @@
     flex-direction: column;
     justify-content: space-between;
     /*Borda*/
-    border: 2px solid #4CAF50;
+    border: 2px solid #8C52FF;
+    border-radius: 10px;
 }
 
-.sessao{
+.sessao {
     /*Tamanho*/
     width: 100%;
     /*Organização de elementos filhos*/
@@ -55,14 +137,14 @@
     justify-content: space-between;
 }
 
-.botoes-principais{
+.botoes-principais {
     /*Tamanho*/
     height: 40%;
     /*Espaçamento*/
     padding-top: 20px;
 }
 
-.botao-menu{
+.botao-menu {
     /*Borda*/
     border: 0px;
     /*Cor*/
@@ -73,7 +155,7 @@
     cursor: pointer;
 }
 
-.caixa-conteudo{
+.caixa-conteudo {
     /*Tamanho*/
     width: 95%;
     height: 100%;
@@ -85,33 +167,44 @@
     gap: 5px;
 }
 
-.cabecalho{
+.sessao-conteudo-dashboard {
     /*Tamanho*/
-    width: 98.4%;
+    width: 100%;
+    height: 95%;
+    /*Organização de elementos filhos*/
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cabecalho {
+    /*Tamanho*/
+    width: 99%;
     height: 10%;
-    /*Espaçamento*/
-    padding-left: 5px;
     /*Organização de elementos filhos*/
     display: flex;
     align-items: center;
+    justify-content: center;
     /*Borda*/
-    border: 2px solid #4CAF50;
     border-radius: 10px;
+    /*Cor*/
+    background-color: #8C52FF;
+    color: #FFF;
     /*Fonte*/
     font-size: 25px;
 }
 
-.sessao-indicadores{
+.sessao-indicadores {
     /*Tamanho*/
     width: 99%;
-    height: 20%;
+    height: 22%;
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.indicador{
+.indicador {
     /*Tamanho*/
     width: 24%;
     height: 97%;
@@ -120,11 +213,11 @@
     border-radius: 10px;
     /*Cor*/
     color: #000;
-     /*Texto*/
-     text-align: center;
+    /*Texto*/
+    text-align: center;
 }
 
-.conteudo-indicador{
+.conteudo-indicador {
     /*Tamanho*/
     width: 100%;
     height: 80%;
@@ -141,7 +234,7 @@
 .sessao-graficos {
     /*Tamanho*/
     width: 99%;
-    height: 65%;
+    height: 70%;
     /*Espaçamento*/
     padding-bottom: 5px;
     /*Organização de elementos filhos*/
@@ -150,7 +243,7 @@
 }
 
 .grafico-1,
-.grafico-2{
+.grafico-2 {
     /*Tamanho*/
     height: 100%;
     /*Organização de elementos filhos*/
@@ -162,22 +255,22 @@
     border-radius: 10px;
 }
 
-.grafico-1{
+.grafico-1 {
     /*Tamanho*/
     width: 24%;
 }
 
-.titulo-grafico1{
+.titulo-grafico1 {
     /*Texto*/
     text-align: center;
 }
 
-.grafico-2{
+.grafico-2 {
     /*Tamanho*/
-    width: 74.5%;
+    width: 100%;
 }
 
-.cabecalho-grafico2{
+.cabecalho-grafico2 {
     /*Tamanho*/
     width: 95%;
     /*Organização de elementos filhos*/
@@ -185,23 +278,23 @@
     justify-content: space-evenly;
 }
 
-.titulo-grafico2{
+.titulo-grafico2 {
     /*Tamanho*/
     width: 60%;
     /*Texto*/
     text-align: center;
 }
 
-.select_hectar{
+.select_hectar {
     /*Borda*/
-    border-bottom: 2px solid #000;    
+    border-bottom: 2px solid #000;
     /*Cor*/
     background-color: transparent;
     /*Detalhes*/
     cursor: pointer;
 }
 
-.botao-hectar{
+.botao-hectar {
     /*Espacamento*/
     padding: 2px;
     /*Borda*/
@@ -214,14 +307,14 @@
     cursor: pointer;
 }
 
-.sessao-grafico-media{
+.sessao-grafico-media {
     /*Tamanho*/
     width: 100%;
     height: 80%;
 }
 
 .sessao-grafico-umidade,
-.sessao-grafico-umidade2{
+.sessao-grafico-umidade2 {
     /*Tamanho*/
     width: 75%;
     height: 80%;
@@ -230,10 +323,144 @@
     justify-content: center;
 }
 
-.sessao-grafico-umidade2{
+.sessao-grafico-umidade2 {
     /*Disposição na tela*/
     display: none;
 }
 
+.sessao-conteudo-home {
+    /*Tamanho*/
+    width: 100%;
+    height: 95%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.caixa-propriedades {
+    /*Tamanho*/
+    width: 40%;
+    height: 75%;
+    /*Espaçamento*/
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Borda*/
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+}
 
+.lista-propriedades {
+    /*Tamanho*/
+    width: 90%;
+    height: 80%;
+}
+
+.propriedade {
+    /*Tamanho*/
+    width: 99%;
+    height: 40px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+    /*Borda*/
+    border: 2px solid #8C52FF;
+    border-radius: 10px;
+}
+
+.nome-propriedade {
+    /*Tamanho*/
+    width: 40%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bolinha {
+    /*Tamanho*/
+    width: 20px;
+    height: 20px;
+    /*Borda*/
+    border-radius: 90px;
+    /*Cor*/
+    background-color: #4CAF50;
+}
+
+.opcoes-propriedade {
+    /*Tamanho*/
+    width: 20%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Detalhes*/
+    overflow: hidden;
+}
+
+.sessao-conteudo-ticket{
+    /*Tamanho*/
+    width: 100%;
+    height: 95%;
+    /*Organização de elementos filhos*/
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.titulo-ticket{
+    /*Fonte*/
+    font-size: 30px;
+}
+
+.caixa-ticket{
+    /*Tamanho*/
+    width: 60%;
+    height: 75%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Borda*/
+    border: 2px solid #4CAF50;
+    border-radius: 20px;
+}
+
+.sessao-inputs{
+    /*Tamanho*/
+    width: 80%;
+    height: 60%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+}
+
+.input-assunto{
+    /*Espaçamento*/
+    margin-bottom: 30px;
+}
+
+.caixa-texto-mensagem{
+    /*Tamanho*/
+    height: 60%;
+    /*Borda*/
+    border: 2px solid #000;
+}
+
+.botao-enviar{
+    /*Tamanho*/
+    width: 25%;
+    /*Borda*/
+    border: 2px solid #000;
+    border-radius: 10px;
+    /*Fonte*/
+    font-size: 20px;
+    /*Cor*/
+    background-color: #8C52FF;
+    color: #FFF;
+}

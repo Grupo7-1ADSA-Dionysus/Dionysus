@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./Assets/imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./contato.css">
     <link rel="stylesheet" href="./simulador.css">
     <title>Simulador Financeiro</title>
 </head>
@@ -13,30 +18,35 @@
             <p>DIONYSUS</p>
         </section>
         <section class="sessao-botoes-menu">
-            <button class="botao-menu pagina-inicial">Página inicial</button>
-            <button class="botao-menu sobre">Sobre</button>
-            <button class="botao-menu contato">Contato</button>
+            <button class="botao-menu pagina-inicial" onclick="navegar('../pagina-inicial/pagina_inicial.html')">Página inicial</button>
+            <button class="botao-menu sobre" onclick="navegar('../pagina-inicial/pagina_inicial.html')">Sobre</button>
+            <button class="botao-menu contato" onclick="navegar('../contato/contato.html')">Contato</button>
             <button class="botao-menu simulador">Simulador</button>
         </section>
         <section class="sessao-botao-entrar">
-            <button class="botao-menu entrar">Entrar</button>
+            <button class="botao-menu entrar" onclick="navegar('../login/login.html')">
+                Entrar
+                <img src="./assets/imagens/imagemEntrar.png" alt="icone de entrar" class="icone-entrar">
+            </button>
         </section>
     </header>
     <div class="div-simulador-financeiro">
         <div class="caixa-conteudo-simulador">
+            <!-- Deixar o backgroud do input um pouco mais cinza para deixar claro que é um input -->
             <section class="sessao-inputs-simulador">
                 <h2 class="simulador-titulo">SIMULADOR <br> FINANCEIRO</h2>
                 <p class="pergunta-valor-safra">Qual é valor médio que você vende sua safra em reais?</p>
-                <input class="input valor-safra">
-                <p class="pergunta-valor-hectare">Qual o valor médio produzido em kg de uva produzidos por hectare?</p>
-                <input class="input valor-hectare">
+                <input class="input valor-safra" id="Input_ValorSafra">
+                <p class="pergunta-valor-hectare">Qual o valor médio em KG de uva produzidos por Hectare?</p>
+                <input class="input valor-hectare" id="Input_Qnt_KG_Uva">
                 <p class="pergunta-qtd-hectar">Quantidade de hectares da sua plantação?</p>
-                <input class="input qtd-hectar">
-                <button class="botao calcular">CALCULAR</button>
+                <input class="input qtd-hectar" id="Input_Qnt_Hectares">
+                <button onclick="Calculo_Financeiro()" class="botao calcular">CALCULAR</button>
             </section>
             <section class="sessao-resultado-simulador">
                 <div class="caixa-resultado">
-                    <h2 class="resultado-titulo">Você sabia?</h2>
+                    <h2 class="resultado-titulo">*Logo Branca Aqui</h2>
+                    <section class="resultado" id="Resultado"></section>
                     <footer class="resultado-rodape">
                         <p>© 2024 Dionysus. Todos os direitos reservados.</p>
                     </footer>
@@ -44,5 +54,13 @@
             </section>
         </div>
     </div>
+
+    <script src="simuladorFinanceiro.js"></script>
 </body>
 </html>
+
+<script>
+    function navegar(pagina){
+        window.location.href = pagina
+    }
+</script>

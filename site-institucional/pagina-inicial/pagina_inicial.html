@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pagina_inicial_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./assets/imagens/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
     <title>Dionysus</title>
 </head>
+
 <body>
     <header class="menu">
         <section class="sessao-logo-menu">
@@ -18,19 +21,24 @@
         <section class="sessao-botoes-menu">
             <button class="botao-menu pagina-inicial">Página inicial</button>
             <button class="botao-menu sobre">Sobre</button>
-            <button class="botao-menu contato">Contato</button>
-            <button class="botao-menu simulador">Simulador</button>
+            <button class="botao-menu contato" onclick="navegar('../contato/contato.html')">Contato</button>
+            <button class="botao-menu simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
         </section>
         <section class="sessao-botao-entrar">
-            <button class="botao-menu entrar">Entrar</button>
+            <button class="botao-menu entrar" onclick="navegar('../login/login.html')">
+                Entrar
+                <img src="./assets/imagens/imagemEntrar.png" alt="icone de entrar" class="icone-entrar">
+            </button>
         </section>
     </header>
     <div class="div-sessao-inicial">
         <section class="caixa-mensagem-saudacao">
             <h1 class=saudacao-titulo>BEM-VINDO</h1>
-            <h3 class="saudacao-subtitulo">QUER GARANTIR A PRESERVAÇÃO DE SUAS VIDEIRAS?</h3>
-            <p class="saudacao-texto">Com o nosso sensor, sua colheita atingirá níveis altos de qualidade e produtividade.
-                 Melhore seus resultados agora!</p>
+            <h3 class="saudacao-subtitulo">QUER GARANTIR A PRESERVAÇÃO DE SUAS <span class="palavras-roxa">VIDEIRAS?</span></h3>
+            <p class="saudacao-texto">
+                Com o nosso sensor, sua colheita atingirá níveis <span class="palavras-roxa">extraordinários</span> de qualidade e produtividade. Melhore seus 
+                resultados agora!
+            </p>
             <button class="botao saiba-mais">SAIBA MAIS</button>
         </section>
     </div>
@@ -40,11 +48,14 @@
         </header>
         <div class="caixa-conteudo-solucao">
             <section class="textos-solucao">
-                <p>Desenvolvemos sensores inteligentes capazes de capturar e monitorar dados da umidade relativa ao longo da extensão da plantação de videiras, qualificados para auxiliar no controle do Míldio.</p>
-                <h3 class="palavras-roxa">DHT11</h3>
-                <p>O sensor DHT11 oferece precisão e eficiência ao monitorar a umidade para combater o Míldio, sendo essencial para soluções personalizadas e prevenção de perdas na produção. DIONYSUS é a escolha ideal para supervisionar plantações.
+                <p>Desenvolvemos sensores inteligentes capazes de capturar e monitorar dados da umidade relativa ao
+                    longo da extensão da plantação de videiras, qualificados para auxiliar no controle do Míldio.</p>
+                <h3 class="palavras-roxa subtitulo">DHT11</h3>
+                <p>O sensor DHT11 oferece precisão e eficiência ao monitorar a umidade para combater o Míldio, sendo
+                    essencial para soluções personalizadas e prevenção de perdas na produção. DIONYSUS é a escolha ideal
+                    para supervisionar plantações.
                 </p>
-                <h3>O FUTURO É <span class="palavras-roxa">AQUI.</span></h3>
+                <h3 class="subtitulo">O FUTURO É <span class="palavras-roxa">AQUI.</span></h3>
             </section>
             <section class="foto-solucao">
                 <div class="caixa-auxiliar-foto-solucao">
@@ -59,8 +70,95 @@
         </header>
         <section class="sessao-fotos-objetivos">
             <img src="./assets/imagens/imagemObjetivos.png" alt="Imagem de objetivos" class="imagem-objetivos">
-            <img src="" alt="">
+            <img src="./assets/imagens/imagemFlechas.png" alt="Imagem de flechas" class="imagem-flechas-objetivos">
         </section>
     </div>
+    <div class="div-sessao-negocio">
+        <h1 class="titulo-negocio">VISÃO DE NEGÓCIO</h1>
+        <img src="./assets/imagens/diagramaVisaoNegocio.jpeg" alt="Diagrama de visão de negócio" class="diagrama-negocio">
+    </div>
+    <div class="div-sessao-nome">
+        <header class="cabecalho-nome">
+            <h1 class="titulo-nome">DIONYSUS</h1>
+            <img src="./assets/imagens/barraNome.png" alt="Imagem de barra" class="imagem-barra">
+        </header>
+        <div class="caixa-conteudo-nome">
+            <section class="sessao-textos-nome">
+                <p>Dionísio, o deus grego do vinho, era celebrado como o protetor das vinhas, ressaltando a importância
+                    do cuidado meticuloso dos vinhedos. Inspirados por essa tradição milenar, na Dionysus, nos dedicamos
+                    incansavelmente ao aprimoramento e à excelência na produção de uvas.</p>
+                <h3 class="frase-nome">Faça <span class="palavras-roxa">história</span> conosco!</h3>
+            </section>
+            <section class="sessao-logo-nome">
+                <img src="./assets/imagens/Logo_Oficial.webp" alt="Imagem da logo" class="logo-nome">
+            </section>
+        </div>
+    </div>
+    <div class="div-sessao-equipe">
+        <section class="sessao-fotos-equipe">
+            <div class="fotos-equipe-cima">
+                <div class="caixa-membro">
+                    <div class="foto-membro"></div>
+                    <h2>HENRIQUE PIMENTA</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+                <div class="caixa-membro">
+                    <div class="foto-membro"></div>
+                    <h2>HENRIQUE SERIKOV</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+                <div class="caixa-membro">
+                    <img src="./assets/imagens/murakami.png" alt="" class="foto-membro">
+                    <h2>JULIANA MURAKAMI</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+            </div>
+            <div class="fotos-equipe-baixo">
+                <div class="caixa-membro">
+                    <img src="./assets/imagens/LucasBarbosa.png" alt="" class="foto-membro">
+                    <h2>LUCAS BARBOSA</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+                <div class="caixa-membro">
+                    <img src="./assets/imagens/mayara.png" alt="" class="foto-membro">
+                    <h2>MAYARA DAMAS</h2>
+                    <section class="sessao-redes-sociais"></section>
+                </div>
+            </div>
+        </section>
+        <header class="cabecalho-equipe">
+            <h1 class="titulo-equipe">CONHEÇA NOSSA EQUIPE</h1>
+        </header>
+        <div class="caixa-auxiliar-equipe"></div>
+    </div>
+    <div class="div-sessao-valores">
+        <header class="cabecalho-valores">
+            <img src="./assets/imagens/xxx.png" alt="xxx" class="xxx">
+        </header>
+        <section class="sessao-conteudo-valores">
+            <h3 class="titulo-valores">NOSSOS VALORES</h3>
+            <img src="./assets/imagens/imagemValores.png" alt="valores" class="imagem-valores">
+        </section>
+    </div>
+    <footer class="rodape">
+        <section class="conteudo-rodape">
+            <h1 class="nome-rodape">DIONYSUS</h1>
+        <section class="sessao-botoes-rodape">
+            <button class="botao-rodape pagina-inicial">Página inicial</button>
+            <button class="botao-rodape sobre">Sobre</button>
+            <button class="botao-rodape contato">Contato</button>
+            <button class="botao-rodape simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
+        </section>
+        <img src="./assets/imagens/Logo_Oficial.webp" alt="logo" class="logo-rodape">
+        </section>
+        <section class="sessao-copyright">
+            <span>© 2024 Dionysus. Todos os direitos reservados.</span>
+        </section>
+    </footer>
 </body>
 </html>
+<script>
+    function navegar(pagina){
+        window.location.href = pagina;
+    }
+</script>
