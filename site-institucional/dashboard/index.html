@@ -8,15 +8,17 @@
     <link rel="icon" href="./assets/imagens/favicon.png" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <!--link do css-->
     <link rel="stylesheet" href="./dashboard.css">
-    <!--link da fonta-->
+
+    <!--link da fonte-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <!--scrip dos graficos-->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!--script dos graficos-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
@@ -25,6 +27,7 @@
 
 <body>
     <div class="dashboard-container">
+        <!-- Exibir os alertas -->
         <div class="alerta umidade-baixa" id="div_alerta">
             <section class="sessao-imagem-alerta" id="sessao_alerta">
                 <img src="./assets/imagens/icone-alert.png" alt="icone de alerta" class="icone-alerta">
@@ -35,40 +38,78 @@
                 <button class="botao-fechar-alerta" onclick="fecharAlerta()" id="bt_fechar_alerta">FECHAR</button>
             </section>
         </div>
+
+        <!-- Menu Lateral -->
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
-                <button class="botao-menu material-symbols-outlined" onclick="mudarSessao(home, 'Suas Propriedades')">Home</button>
-                <button class="botao-menu material-symbols-outlined" onclick="mudarSessao(dashboard, 'Dashboard')">Monitoring</button>
-                <button class="botao-menu material-symbols-outlined" onclick="mudarSessao(ticket, 'Ticket')">Headset</button>
+                <button class="botao-menu material-symbols-outlined"
+                    onclick="mudarSessao(home, 'Suas Propriedades')">Home</button>
+                <button class="botao-menu material-symbols-outlined"
+                    onclick="mudarSessao(dashboard, 'Dashboard')">Monitoring</button>
+                <button class="botao-menu material-symbols-outlined"
+                    onclick="mudarSessao(ticket, 'Ticket')">Headset</button>
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined">Logout</button>
             </section>
         </aside>
+
+        <!-- KPIs -->
         <aside class="caixa-conteudo">
             <header class="cabecalho">
                 <h1 id="titulo_cabecalho">Suas Propriedades</h1>
             </header>
-            <div class="sessao-conteudo-dashboard" id="dashboard"> 
+            <div class="sessao-conteudo-dashboard" id="dashboard">
                 <section class="sessao-indicadores">
                     <div class="indicador">
-                        <h3 class="titulo">Umidade Atual</h3>
-                        <p class="conteudo-indicador">0%</p>
+                        <!---------------------------------------------- Atual ---------------------------------------------------------------->
+                        <h3 class="titulo">Temperatura</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Temp_Atual">0%</p>
                     </div>
                     <div class="indicador">
-                        <h3 class="titulo">Umidade minima registrada</h3>
-                        <p class="conteudo-indicador">0%</p>
+                        <h3 class="titulo">Umidade</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Umid_Atual">0%</p>
+                    </div>
+                    <!--------------------------------------------------------------------------------------------------------------------->
+
+                    <!---------------------------------------------- Maxima Registrada ---------------------------------------------------------------->
+                    <div class="indicador">
+                        <h3 class="titulo">Temperatura</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Temp_Max">0%</p>
                     </div>
                     <div class="indicador">
-                        <h3 class="titulo">Umidade máxima registrada</h3>
-                        <p class="conteudo-indicador" id="p_KPI_Maxima">0%</p>
+                        <h3 class="titulo">Umidade</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Umid_Max">0%</p>
+                    </div>
+                    <!--------------------------------------------------------------------------------------------------------------------->
+
+                    <!---------------------------------------------- Minima Registrada ---------------------------------------------------------------->
+                    <div class="indicador">
+                        <h3 class="titulo">Umidade</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Temp_Min">0%</p>
                     </div>
                     <div class="indicador">
-                        <h3 class="titulo">Umidade média</h3>
-                        <p class="conteudo-indicador">0%</p>
+                        <h3 class="titulo">Umidade</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Umid_Min">0%</p>
+                    </div>
+                    <!--------------------------------------------------------------------------------------------------------------------->
+
+                    <!---------------------------------------------- Media  ---------------------------------------------------------------->
+
+                    <div class="indicador">
+                        <h3 class="titulo">Umidade</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Temp_Media">0%</p>
+                    </div>
+                    <div class="indicador">
+                        <h3 class="titulo">Umidade</h3>
+                        <p class="conteudo-indicador" id="p_KPI_Umid_Media">0%</p>
                     </div>
                 </section>
+                <!--------------------------------------------------------------------------------------------------------------------->
+
+
+                <!-- Gráfico Histórico Semanal -->
                 <section class="sessao-graficos">
                     <div class="grafico-1">
                         <h3 class="titulo-grafico1">Histórico semanal</h3>
@@ -76,7 +117,9 @@
                             <canvas id="grafico-media-semanal" style="height: 100%;"></canvas>
                         </section>
                     </div>
-                    <div class="grafico-2">
+
+                    <!--------------------------------------------------------------------------------------------------------------------->
+                    <!-- <div class="grafico-2">
                         <header class="cabecalho-grafico2">
                             <h3 class="titulo-grafico2" id="titulo_umidade">Umidade Hectar A</h3>
                             <select id="select_hectar" class="select_hectar">
@@ -86,13 +129,21 @@
                             </select>
                             <button onclick="mudarGrafico()" class="botao-hectar">Escolher</button>
                         </header>
+                         <section style="width: 100%;">
+                            <canvas id="dht11Temperatura"></canvas>
+                        </section>
+                        
                         <section class="sessao-grafico-umidade">
                             <canvas id="dht11Umidade"></canvas>
                             <canvas id="grafico_umidade_2" style="display: none;"></canvas>
                         </section>
+
+                       
                     </div>
-                </section>
+                </section> -->
             </div>
+
+            <!-- Página Home: Propriedades Registradas-->
             <div class="sessao-conteudo-home" id="home">
                 <section class="caixa-propriedades">
                     <h1>Propriedades Registradas</h1>
@@ -110,11 +161,13 @@
                     </div>
                 </section>
             </div>
+
+            <!-- Página Ticket -->
             <div class="sessao-conteudo-ticket" id="ticket">
                 <h1 class="titulo-ticket">Abra um ticket</h1>
                 <div class="caixa-ticket">
                     <h2>Enviar uma solicitação</h2>
-                    <p>Está com algum problema?  Estamos aqui para te ajudar!</p>
+                    <p>Está com algum problema? Estamos aqui para te ajudar!</p>
                     <section class="sessao-inputs">
                         <p>Assunto</p>
                         <input class="input-assunto" placeholder="Insira aqui o assunto da mensagem">
@@ -130,7 +183,7 @@
 
 </html>
 <script>
-    function mudarSessao(sessaoAparecer, tituloPagina){
+    function mudarSessao(sessaoAparecer, tituloPagina) {
         home.style.display = 'none';
         dashboard.style.display = 'none';
         ticket.style.display = 'none';
@@ -140,6 +193,8 @@
         titulo_cabecalho.innerHTML = tituloPagina;
     }
 
+
+    // Gráfico Média Semanal
     const Media_semanal = document.getElementById('grafico-media-semanal');
     const labels1 = ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'];
     const data1 = {
@@ -163,38 +218,24 @@
         }
     });
 
+    //----------------------------------------------------------------------------------------------------------------------
 
+    // Gráfico de UMIDADE
     const Umidade = document.getElementById('grafico_umidade');
     const Umidade2 = document.getElementById('grafico_umidade_2');
 
     var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-
-    // const labels2 = ['0h', '1h', '2', '3', '4h', '5h', '6h', '7h', '8h', '9h', '10h', '11h', '12h',
-    //     '13h', '14h', '15h', '16h', '17h', '18h', '19h', '20h', '21h', '22h', '23h'];
-    // const data2 = {
-    //     labels: labels2,
-    //     datasets: [{
-    //         label: 'Umidade resgistrada por hora',
-
-    //         fill: false,
-    //         borderColor: '#8C52FF',
-    //         tension: 0.1
-    //     }]
-    // };
-
-    // const labels2 = ['0h', '1h', '2h', '3h', '4h', '5h', '6h'];
 
     var dht11Umidade = new Chart(
         contextoDht11Umidade,
         {
             type: 'line',
             data: {
-                // labels: labels2,
                 datasets: [{
                     label: 'Umidade',
                     type: 'line',
                     borderColor: ['#45b3e7'],
-                    backgroundColor: ['transparent']
+                    backgroundColor: ['#45b3e7']
                 }]
             },
             options: {
@@ -234,62 +275,49 @@
         }
     );
 
+    // Gráfico de TEMPERATURA ==================================================================================
 
-    // const data3 = {
-    //     labels: labels2,
-    //     datasets: [{
-    //         label: 'Umidade resgistrada por hora',
-    //         data: [29, 33, 67, 81, 76, 50, 64],
-    //         fill: false,
-    //         borderColor: '#8C52FF',
-    //         tension: 0.1
-    //     }]
-    // };
+    var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
+    contextoDht11Temperatura.canvas.width = 1000;
+    contextoDht11Temperatura.canvas.height = 300;
+    var dht11Temperatura = new Chart(
+        contextoDht11Temperatura,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: "Temperatura",
+                    type: 'line',
+                    borderColor: ['#ff3232'],
+                    backgroundColor: ['#ff7f7f']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Luminosidade'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
 
-    // new Chart(Umidade, {
-    //     type: 'line',
-    //     data: data2,
-    //     options: {
-    //         scales: {
-    //             y: {
-    //                 beginAtZero: true
-    //             },
-    //             xAxes: [{
-    //                         distribution: 'series',
-    //                         ticks: {
-    //                             beginAtZero: true
-    //                         }
-    //                     }],
-    //                     yAxes: [{
-    //                         scaleLabel: {
-    //                             display: true,
-    //                             labelString: 'Umidade'
-    //                         },
-    //                         ticks: {
-    //                             beginAtZero: true
-    //                         }
-    //                     }]
-    //         },
-    //         animation: {
-    //                     duration: 0
-    //                 }
-    //     }
-    // });
-
-    // new Chart(Umidade2, {
-    //     type: 'line',
-    //     data: data3,
-    //     options: {
-    //         scales: {
-    //             y: {
-    //                 beginAtZero: true
-    //             }
-    //         }
-    //     }
-    // });
-
-    let Maior_Umidade_Registrada = null
-
+    // Trocar de Hectare (gráfico)
     let hectar = select_hectar.value;
 
     if (hectar == 'hectarA') {
@@ -304,16 +332,26 @@
         titulo_umidade.innerHTML = 'Umidade Hectar B';
     }
 
+    // Variáveis para os KPIs    
+    let Maior_Umidade_Registrada = null
+    let Menor_Umidade_Registrada = null
+    let Maior_Temperatura_Registrada = null
+    let Menor_Temperatura_Registrada = null
+    let Media_Umidade = null
+    let Media_temperatura = null
 
-    let Umidade_Baixa = 45;
-    let Umidade_Elevada = 65;
-    let Umidade_Maxima = 75;
-    let umidade_Minima = 40;
+
+    // Variáveis para os alertas 
+    let Umidade_Baixa = 35;
+    let Umidade_Elevada = 55;
+    let Umidade_Maxima = 60;
+    let umidade_Minima = 30;
 
 
     var data = moment().format('DD/MM/YYYY');
     var paginacao = {};
     var tempo = {};
+
     function obterDados(grafico, endpoint) {
         var http = new XMLHttpRequest();
         http.open('GET', 'http://localhost:3302/sensores/' + endpoint, false);
@@ -325,6 +363,11 @@
         if (tempo[endpoint] == null) {
             tempo[endpoint] = 0;
         }
+
+
+        const umidade = require('http://localhost:3302/sensores/dht11/umidade');
+        console.log(umidade);
+
         // Exibir à partir do último elemento exibido anteriormente
         var ultimaPaginacao = paginacao[endpoint];
         paginacao[endpoint] = valores.length;
@@ -342,17 +385,44 @@
             }
 
             grafico.data.labels.push(tempo[endpoint]++);
-            // grafico.data.labels.push(data);
-
-
             grafico.data.datasets[0].data.push(parseFloat(valor));
+            grafico.update();
 
+            // LÓGICA KPI ========================================================================================================================
+
+            // ATUAL ------------------------------------------------------------------------------------------------------------
+            document.getElementById("p_KPI_Temp_Atual").innerHTML = `${parseFloat(valor)}ºC`;
+            document.getElementById("p_KPI_Umid_Atual").innerHTML = `${parseFloat(valor)}%`;
+
+
+            // MÁXIMA ------------------------------------------------------------------------------------------------------------
+            if (Maior_Temperatura_Registrada == null || parseFloat(valor) > Maior_Temperatura_Registrada) {
+                Maior_Temperatura_Registrada = parseFloat(valor);
+
+                document.getElementById("p_KPI_Temp_Max").innerHTML = `${Maior_Umidade_Registrada}%`;
+            }
 
             if (Maior_Umidade_Registrada == null || parseFloat(valor) > Maior_Umidade_Registrada) {
                 Maior_Umidade_Registrada = parseFloat(valor);
 
-                document.getElementById("p_KPI_Maxima").innerHTML = `${Maior_Umidade_Registrada}%`;
+                document.getElementById("p_KPI_Umid_Atual").innerHTML = `${Maior_Umidade_Registrada}%`;
             }
+
+            // MÍNIMA ------------------------------------------------------------------------------------------------------------
+            if (Menor_Temperatura_Registrada == null || parseFloat(valor) < Menor_Temperatura_Registrada) {
+                Menor_Umidade_Registrada = parseFloat(valor);
+
+                document.getElementById("p_KPI_Temp_Min").innerHTML = `${Maior_Umidade_Registrada}%`;
+            }
+
+            if (Menor_Umidade_Registrada == null || parseFloat(valor) < Menor_Umidade_Registrada) {
+                Menor_Umidade_Registrada = parseFloat(valor);
+
+                document.getElementById("p_KPI_Umid_Min").innerHTML = `${Maior_Umidade_Registrada}%`;
+            }
+
+
+            // LÓGICA ALERTAS ========================================================================================================================
 
             if (parseFloat(valor) > Umidade_Elevada && parseFloat(valor) <= Umidade_Maxima) {
                 document.getElementById("p_alerta").innerHTML = "Umidade Elevada!";
@@ -363,7 +433,7 @@
                 div_alerta.style.display = 'block';
 
             } else if (parseFloat(valor) > Umidade_Maxima) {
-                document.getElementById("p_alerta").innerHTML = "Umidade Acima de 75%!";
+                document.getElementById("p_alerta").innerHTML = "Umidade Acima de 60%!";
                 document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
                 document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
                 bt_fechar_alerta.style.backgroundColor = "#FF3838";
@@ -386,7 +456,7 @@
 
     setInterval(() => {
         obterDados(dht11Umidade, 'dht11/umidade');
-        // obterDados(dht11Temperatura, 'dht11/temperatura');
+        obterDados(dht11Temperatura, 'dht11/temperatura');
         // obterDados(luminosidade, 'luminosidade');
         // obterDados(lm35Temperatura, 'lm35/temperatura');
         // obterDados(chave, 'chave');
