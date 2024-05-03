@@ -113,6 +113,10 @@
     font-size: 25px;
 }
 
+h1{
+    margin-left: 12%;
+}
+
 .caixa-auxiliar-titulo-cabecalho{
     /*Tamanho*/
     width: 100%;
@@ -181,7 +185,7 @@
     justify-content: space-evenly;
     align-items: center;
     /*Borda*/
-    border: 2px solid #4CAF50;
+    border: 3px solid #4CAF50;
     border-radius: 10px;
 }
 
@@ -189,6 +193,10 @@
     /*Tamanho*/
     width: 90%;
     height: 80%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .propriedade {
@@ -203,13 +211,46 @@
     border-radius: 10px;
 }
 
+.propriedade:hover{
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
 .nome-propriedade {
     /*Tamanho*/
     width: 40%;
     /*Organização de elementos filhos*/
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
+}
+
+.nome-propriedade2{
+       /*Tamanho*/
+       width: 40%;
+       /*Organização de elementos filhos*/
+       display: flex;
+       justify-content: start;
+       align-items: center;
+       margin-left: 31%;
+}
+
+.adicionar-propriedade {
+   /*Tamanho*/
+   width: 99%;
+   height: 40px;
+   /*Organização de elementos filhos*/
+   display: flex;
+   justify-content: space-between;
+   /*Borda*/
+   border: 2px solid #b8b8b8;
+   color: #b8b8b8;
+   border-radius: 10px;
+}
+
+.adicionar-propriedade:hover{
+    background-color: #eeeeee;
+    cursor: pointer;
 }
 
 .bolinha {
@@ -220,6 +261,9 @@
     border-radius: 90px;
     /*Cor*/
     background-color: #4CAF50;
+    /*Detalhes*/
+    margin-right: 20px;
+    margin-left: 5px;
 }
 
 .opcoes-propriedade {
