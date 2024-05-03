@@ -44,11 +44,10 @@
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
                 <button class="botao-menu material-symbols-outlined"
-                    onclick="mudarSessao(home, 'Suas Propriedades')">Home</button>
+                    onclick="navegar('../propriedades/propriedade.html')">Home</button>
+                <button class="botao-menu material-symbols-outlined">Monitoring</button>
                 <button class="botao-menu material-symbols-outlined"
-                    onclick="mudarSessao(dashboard, 'Dashboard')">Monitoring</button>
-                <button class="botao-menu material-symbols-outlined"
-                    onclick="mudarSessao(ticket, 'Ticket')">Headset</button>
+                    onclick="navegar('../ticket/ticket.html')">Headset</button>
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined">Logout</button>
@@ -58,7 +57,14 @@
         <!-- KPIs -->
         <aside class="caixa-conteudo">
             <header class="cabecalho">
-                <h1 id="titulo_cabecalho">Suas Propriedades</h1>
+                <div class="caixa-auxiliar-titulo-cabecalho">
+                    <section class="sessao-titulo-cabecalho">
+                        <h1 id="titulo_cabecalho">Dashboard</h1>
+                    </section>
+                    <section class="sessao-notificacao-cabecalho">
+                        <span class="botao-cabecalho material-symbols-outlined">Notifications</span>
+                    </section>
+                </div>
             </header>
             <div class="sessao-conteudo-dashboard" id="dashboard">
                 <section class="sessao-indicadores">
@@ -129,53 +135,18 @@
                             </select>
                             <button onclick="mudarGrafico()" class="botao-hectar">Escolher</button>
                         </header>
-                         <section style="width: 100%;">
+                        <section style="width: 100%;">
                             <canvas id="dht11Temperatura"></canvas>
                         </section>
-                        
+
                         <section class="sessao-grafico-umidade">
                             <canvas id="dht11Umidade"></canvas>
                             <canvas id="grafico_umidade_2" style="display: none;"></canvas>
                         </section>
 
-                       
+
                     </div>
                 </section>
-            </div>
-
-            <!-- Página Home: Propriedades Registradas-->
-            <div class="sessao-conteudo-home" id="home">
-                <section class="caixa-propriedades">
-                    <h1>Propriedades Registradas</h1>
-                    <div class="lista-propriedades">
-                        <div class="propriedade">
-                            <div class="nome-propriedade">
-                                <div class="bolinha"></div>
-                                <p>Fazenda</p>
-                            </div>
-                            <div class="opcoes-propriedade">
-                                <span class="configuracoes material-symbols-outlined">Settings</span>
-                                <span class="deletar material-symbols-outlined">Delete</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Página Ticket -->
-            <div class="sessao-conteudo-ticket" id="ticket">
-                <h1 class="titulo-ticket">Abra um ticket</h1>
-                <div class="caixa-ticket">
-                    <h2>Enviar uma solicitação</h2>
-                    <p>Está com algum problema? Estamos aqui para te ajudar!</p>
-                    <section class="sessao-inputs">
-                        <p>Assunto</p>
-                        <input class="input-assunto" placeholder="Insira aqui o assunto da mensagem">
-                        <p>Mensagem</p>
-                        <textarea class="caixa-texto-mensagem" placeholder="Insira aqui sua mensagem"></textarea>
-                    </section>
-                    <button class="botao-enviar">ENVIAR</button>
-                </div>
             </div>
         </aside>
     </div>
@@ -183,16 +154,9 @@
 
 </html>
 <script>
-    function mudarSessao(sessaoAparecer, tituloPagina) {
-        home.style.display = 'none';
-        dashboard.style.display = 'none';
-        ticket.style.display = 'none';
-
-        sessaoAparecer.style.display = 'flex';
-
-        titulo_cabecalho.innerHTML = tituloPagina;
+     function navegar(pagina){
+        window.location.href = pagina;
     }
-
 
     // Gráfico Média Semanal
     const Media_semanal = document.getElementById('grafico-media-semanal');
@@ -383,11 +347,11 @@
                 tempo[endpoint] = 0;
             }
 
-            if(contador % 2 == 0){
+            if (contador % 2 == 0) {
 
                 dados[0] = valor;
-                
-            } else{
+
+            } else {
 
                 dados[1] = valor;
             }
@@ -463,7 +427,7 @@
             //     div_alerta.style.display = 'block';
             // }
 
-            
+
         })
     }
 
