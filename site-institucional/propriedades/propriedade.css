@@ -19,6 +19,7 @@
 }
 
 .material-symbols-outlined:hover {
+    color: #8C52FF;
     font-variation-settings:
         'FILL' 1
 }
@@ -78,6 +79,13 @@
     cursor: pointer;
 }
 
+.home{ /*Cor*/
+    color: #8C52FF;
+    /*Fonte*/
+    font-variation-settings:
+    'FILL' 1
+   
+}
 
 .caixa-conteudo {
     /*Tamanho*/
@@ -142,7 +150,14 @@
 .botao-cabecalho{
     /*Fonte*/
     font-size: 30px;
-    
+}
+
+.botao-cabecalho:hover{
+    /*Cor*/
+    color: #FFF;
+     /*Fonte*/
+     font-variation-settings:
+     'FILL' 1
 }
 
 .sessao-conteudo-home {
