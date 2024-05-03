@@ -11,7 +11,7 @@ body{
     height: 100vh;
     /*organização de elementos filhos*/
     display: flex;
-    font-family: "Fira Code", monospace;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
 }
 .conteudo{
@@ -130,6 +130,8 @@ b{
     justify-content: space-evenly;
     gap: 10px;
     /* coloca espaço em tudo*/
+    /*detalhes*/
+    overflow: visible;
 
 
 }
@@ -141,6 +143,9 @@ b{
     /*borda*/
     border: 0px;
     border-bottom: 2px solid black;
+    /*espaçamento*/
+    margin-bottom: 10px;
+    
 }
 
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const labels = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'];
+        const data = {
+            labels: labels,
+            datasets: [{
+                axis: 'y',
+                label: 'Temperatura',
+                data: [25, 18, 20, 28, 30, 28, 21],
+                fill: false,
+                backgroundColor: [
+                    '#FF8E8E',
+
+                ],
+                borderColor: [
+                    '#FF0202',
+ 
+                ],
+                borderWidth: 1,
+                xAxisID: 'y-axis-1'
+            },
+            {
+                axis: 'y',
+                label: 'Umidade',
+                data: [60, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                backgroundColor: [
+                    '#58C3FF'
+
+                ],
+                borderColor: [
+                    '#00A3FF'
+
+                ],
+                borderWidth: 1,
+                xAxisID: 'y-axis-2'
+            }]
+        };
+
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                indexAxis: 'y',
+                scales: {
+          yAxes: [{
+            id: 'x-axis-1',
+            type: 'linear',
+            position: 'left',
+            ticks: {
+              beginAtZero: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Temperatura (°C)'
+            }
+          },
+          {
+            id: 'x-axis-2',
+            type: 'linear',
+            position: 'right',
+            ticks: {
+              beginAtZero: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Umidade (%)'
+            },
+            
+          }]
+        }
+                
+            }
+        });
+    </script>
+</body>
+
+</html>

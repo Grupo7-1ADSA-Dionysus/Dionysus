@@ -14,7 +14,7 @@ body {
     /* Borda */
     border: 2px solid #000;
     /* Fonte */
-    font-family: "Fira Code", monospace;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     /* Estilo */
     font-style: normal;
     /* Organização de elementos filhas */
@@ -230,6 +230,13 @@ body {
 }
 
 .botao-menu:hover{
+    /*Cor*/
+    color: #8C52FF;
+}
+
+.contato{
+    /*Borda*/
+    border-bottom: 3px solid #8C52FF;
     /*Cor*/
     color: #8C52FF;
 }
