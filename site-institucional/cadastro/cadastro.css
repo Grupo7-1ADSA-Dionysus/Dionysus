@@ -104,11 +104,14 @@ b{
     border: 2px solid #000000;
     border-radius: 8px;
     /*deetalhes*/
-    overflow: visible;
+    /* overflow: visible; */
     position: absolute;
     background-color: #ffffff;
+}
 
-
+.titulo-input-cadastro{
+    /*Detalhes*/
+    overflow: visible;
 }
 
 .div-inputs {
@@ -121,7 +124,7 @@ b{
     justify-content: space-between;
   
 }
-.sessao-inputs{
+.sessao{
     /*tamanho*/
     width: 45%; 
     /*organização de elementos filho*/
@@ -132,8 +135,6 @@ b{
     /* coloca espaço em tudo*/
     /*detalhes*/
     overflow: visible;
-
-
 }
 
 .input {
