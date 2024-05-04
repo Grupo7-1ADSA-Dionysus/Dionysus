@@ -1,0 +1,233 @@
+* {
+    /*Espaçamento*/
+    padding: 0px;
+    margin: 0px;
+    /*Detalhes*/
+    overflow: hidden;
+    /*Fonte*/
+    font-family: "Oswald", sans-serif;
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+*/
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.material-symbols-outlined:hover {
+    color: #8C52FF;
+    font-variation-settings:
+        'FILL' 1
+}
+
+.propriedade-container {
+    /*Tamanho*/
+    width: 100%;
+    height: 100vh;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: row;
+    /*Borda*/
+    border: 2px solid #000;
+}
+
+.menu-lateral {
+    /*Tamanho*/
+    width: 5%;
+    height: 99%;
+    /*Espaçamento*/
+    padding-bottom: 5px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*Borda*/
+    border: 2px solid #8C52FF;
+    border-radius: 10px;
+}
+
+.sessao {
+    /*Tamanho*/
+    width: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.botoes-principais {
+    /*Tamanho*/
+    height: 40%;
+    /*Espaçamento*/
+    padding-top: 20px;
+    /*Fonte*/
+    font-size: 35px;
+}
+
+.botao-menu {
+    /*Borda*/
+    border: 0px;
+    /*Cor*/
+    background-color: transparent;
+    /*Fonte*/
+    font-size: 35px;
+    /*Detalhes*/
+    cursor: pointer;
+}
+
+.home{ /*Cor*/
+    color: #8C52FF;
+    /*Fonte*/
+    font-variation-settings:
+    'FILL' 1
+   
+}
+
+.caixa-conteudo {
+    /*Tamanho*/
+    width: 95%;
+    height: 100%;
+    /*Espaçamento*/
+    padding: 5px;
+    /*Organzação de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cabecalho {
+    /*Tamanho*/
+    width: 99%;
+    height: 12%;
+    /*Organização de elementos filhos*/
+    /*Borda*/
+    border-radius: 10px;
+    /*Cor*/
+    background-color: #7000FF;
+    color: #FFF;
+    /*Fonte*/
+    font-size: 25px;
+}
+
+h1{
+    margin-left: 12%;
+}
+
+.caixa-auxiliar-titulo-cabecalho{
+    /*Tamanho*/
+    width: 100%;
+    height: 80%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-between;
+    /*Cor*/
+    color: #FFF;
+    background-color: #8C52FF;
+    /*Fonte*/
+    font-size: 20px;
+    /*Texto*/
+    text-align: center;
+}
+
+.sessao-titulo-cabecalho{
+    /*Tamanho*/
+    width: 90%;
+    height: 100%;
+    /*Fonte*/
+    font-size: 30px;
+}
+
+.sessao-notificacao-cabecalho{
+    /*Tamanho*/
+    width: 10%;
+    height: 100%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao-cabecalho{
+    /*Fonte*/
+    font-size: 30px;
+}
+
+.botao-cabecalho:hover{
+    /*Cor*/
+    color: #FFF;
+     /*Fonte*/
+     font-variation-settings:
+     'FILL' 1
+}
+
+.sessao-conteudo-home {
+    /*Tamanho*/
+    width: 100%;
+    height: 90%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa-propriedades {
+    /*Tamanho*/
+    width: 40%;
+    height: 75%;
+    /*Espaçamento*/
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Borda*/
+    border: 3px solid #4CAF50;
+    border-radius: 10px;
+}
+
+.div-texto{
+    /*Tamanho*/
+    width: 80%;
+    height: 50%;
+    /*Espaçamento*/
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.texto-propriedades{
+    /*Tamanho*/
+    width: 85%;
+    height: 80%;
+}
+
+.botao-add-propriedade{
+        /*Tamanho*/
+        width: 65%;
+        /*Borda*/
+        border: 2px solid #000;
+        border-radius: 6px;
+        /*Fonte*/
+        font-size: 16px;
+        /*Cor*/
+        background-color: #8C52FF;
+        color: #FFF;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: center;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+}
+
+.botao-add-propriedade:hover{
+    /*Cor*/
+    cursor: pointer;
+    background-color: #7000FF;
+}
