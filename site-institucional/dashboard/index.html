@@ -31,7 +31,7 @@
         <div class="alerta umidade-baixa" id="div_alerta">
             <section class="sessao-imagem-alerta" id="sessao_alerta">
                 <img src="./assets/imagens/icone-alert.png" alt="icone de alerta" class="icone-alerta">
-                <h2>ALERTA!</h2>
+                <h2 id="h2_titulo_alerta">ALERTA!</h2>
             </section>
             <section class="sessao-frase-alerta">
                 <p class="frase-alerta" id="p_alerta"></p>
@@ -306,10 +306,10 @@
 
 
     // Variáveis para os alertas 
-    let Umidade_Baixa = 35;
-    let Umidade_Elevada = 55;
+    let Temp_Min = 18;
+    let Temp_Max = 25;
     let Umidade_Maxima = 60;
-    let umidade_Minima = 30;
+    let Umidade_Elevada = 55;
 
 
     var data = moment().format('DD/MM/YYYY');
@@ -401,33 +401,20 @@
 
             // LÓGICA ALERTAS ========================================================================================================================
 
-            // if (parseFloat(valor) > Umidade_Elevada && parseFloat(valor) <= Umidade_Maxima) {
-            //     document.getElementById("p_alerta").innerHTML = "Umidade Elevada!";
-            //     div_alerta.style.display = 'block';
+            if(dados[1] >= Temp_Min && dados[1] <= Temp_Max && dados[0] >= Umidade_Maxima){
+                document.getElementById("p_alerta").innerHTML = "Hectare com condições ideais para o Míldo!";
+                document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
+                document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
+                bt_fechar_alerta.style.backgroundColor = "#FF3838";
 
-            // } else if (parseFloat(valor) < Umidade_Baixa && parseFloat(valor) > umidade_Minima) {
-            //     document.getElementById("p_alerta").innerHTML = "Umidade Baixa!";
-            //     div_alerta.style.display = 'block';
+                div_alerta.style.display = 'block';
 
-            // } else if (parseFloat(valor) > Umidade_Maxima) {
-            //     document.getElementById("p_alerta").innerHTML = "Umidade Acima de 60%!";
-            //     document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
-            //     document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
-            //     bt_fechar_alerta.style.backgroundColor = "#FF3838";
+            } else if(dados[1] >= 13 && dados[1] < 18 && dados[0] >= 55 && dados[0] < 60 || dados[1] > 25 && dados[1] <= 30 && dados[0] >= 55 && dados[0] < 60){
+                document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"  
+                document.getElementById("p_alerta").innerHTML = "Hectare perto de atingir as condições ideais";
 
-            //     div_alerta.style.display = 'block';
-
-            // } else if (parseFloat(valor) < umidade_Minima) {
-            //     document.getElementById("p_alerta").innerHTML = "Umidade Abaixo de 40%!";
-
-            //     document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
-            //     document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
-            //     bt_fechar_alerta.style.backgroundColor = "#FF3838";
-
-            //     div_alerta.style.display = 'block';
-            // }
-
-
+                div_alerta.style.display = 'block';
+            }
         })
     }
 
