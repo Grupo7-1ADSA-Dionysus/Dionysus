@@ -387,7 +387,7 @@ body {
 .div-sessao-equipe {
     /*Tamanho*/
     width: 100%;
-    height: 120vh;
+    height: 135vh;
     /*Borda*/
     border: 2px solid #000;
 }
@@ -395,7 +395,7 @@ body {
 .cabecalho-equipe {
     /*Tamanho*/
     width: 100%;
-    height: 10%;
+    height: 15%;
     /*espaçamento*/
     padding-top: 20px;
     /*Cor*/
@@ -408,11 +408,12 @@ body {
 .sessao-fotos-equipe {
     /*Tamanho*/
     width: 90%;
+    /* height: 100%; */
     /*Posição*/
     position: absolute;
     /*Espaçamento*/
-    margin-top: 5%;
-    margin-left: 5%;
+    margin-top: 6%;
+    margin-left: 3%;
     margin-right: 5%;
     padding: 20px;
     /*Organização de elementos filhos*/
@@ -428,7 +429,7 @@ body {
 .caixa-auxiliar-equipe {
     /*Tamanho*/
     width: 100%;
-    height: 90%;
+    height: 85%;
     /*Cor*/
     background-color: #000;
 }
@@ -440,7 +441,11 @@ body {
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-evenly;
+
+    margin-top: 2%;
 }
+
+
 
 .caixa-membro {
     /*Tamanho*/
@@ -453,6 +458,11 @@ body {
     font-size: 13px;
 }
 
+.caixa-membro h2{
+    text-align: center;
+    margin-top: 2%;
+}
+
 .foto-membro {
     /*Tamanho*/
     width: 100%;
@@ -461,11 +471,26 @@ body {
 
 .sessao-redes-sociais {
     /*Tamanho*/
-    width: 50%;
+    width: 60%;
     height: 30px;
     /*Borda*/
-    border: 2px solid #000;
+    /* border: 2px solid #000; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    margin-top: 2%;
+  
 }
+.link-rede-sociais{
+    width: 20%;
+}
+
+.icon-rede-social{
+    width: 100%;
+}
+
 
 .div-sessao-valores {
     /*Tamanho*/
