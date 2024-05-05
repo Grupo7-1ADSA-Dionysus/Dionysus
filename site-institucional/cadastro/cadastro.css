@@ -30,7 +30,7 @@ body{
     width: 40%;
     height: 100%;
     /*fundo*/
-    background-image: url(./assets/imagens/ImagemUva.png);
+    background-image: url(./assets/imagens/ImagemUva2.png);
     background-size: 100%;
     background-repeat: no-repeat;
     
@@ -88,8 +88,8 @@ b{
 
 .sessao-input-cadastro {
     /*tamanho*/
-    width: 50%;
-    height: 63%;
+    width: 55%;
+    height: 72%;
     padding: 40px;
     /*organização dos elementos filhos*/
     display: flex;
@@ -99,7 +99,7 @@ b{
     gap: 20px;
     margin: 10%;
     margin-left: 20%;
-    margin-top: 2%;
+    margin-top: 0%;
     /*borda*/
     border: 2px solid #000000;
     border-radius: 8px;
@@ -109,6 +109,8 @@ b{
     background-color: #ffffff;
 }
 
+
+
 .titulo-input-cadastro{
     /*Detalhes*/
     overflow: visible;
@@ -117,7 +119,7 @@ b{
 .div-inputs {
     /*tamanho*/
     width: 80%;
-    height: 70%;
+
     padding: 5px;
     /*organização de elementos filho*/
     display: flex;
@@ -127,6 +129,7 @@ b{
 .sessao{
     /*tamanho*/
     width: 45%; 
+    
     /*organização de elementos filho*/
     display: flex;
     flex-direction: column;
@@ -139,25 +142,34 @@ b{
 
 .input {
     /*tamanho*/
-    height: 45px;
+    height: 200px;
     /*Espaçamento*/
     /*borda*/
     border: 0px;
     border-bottom: 2px solid black;
     /*espaçamento*/
     margin-bottom: 10px;
+    overflow: visible;
+ 
     
+}
+
+.span-input-baixo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .cadastrar{
     /*tamanho*/
     width: 80%;
-    height: 60px;
+    height: 30%;
     /*borda*/
     border: 2px solid black;
     border-radius: 10px;
 
+    font-size: 1em;
 
 }
 .BotaoVoltar{
@@ -176,24 +188,43 @@ b{
 .span-avisos{
     /*Tamanho*/
     width: 100%;
-    height: 55px;
+    height: 150px;
     /*Espaçamento*/
     /*Cor*/
-    color: red;
+    color: transparent;
     background-color: transparent;
+    overflow: visible;
+    font-size: 10px;
+
+}
+
+.span-input-baixo{
+    width: 80%;
+    height: 90px;
+}
+
+.token{
+    border: none;
+    border-bottom: 2px solid #000000;
+    margin-left: 2%;
+
 }
 
 .geral{
     /*Tamanho*/
     width: 80%;
-    height: 30px;
+    height: 80px;
     /*Espaçamento*/
     margin-top: 5px;
     margin-bottom: 5px;
     /*Texto*/
     text-align: center;
+    font-size: 0.8em;
+    color: red;
 }
 
 b{
-    height: 42px;
+    height: 100%;
+    overflow: visible;
 }
+
