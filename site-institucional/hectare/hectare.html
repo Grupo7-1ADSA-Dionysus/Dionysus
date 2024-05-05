@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./hectare.css">
+    <title>Hectares</title>
+</head>
+<body>
+    <div class="hectare-container">
+        <aside class="menu-lateral">
+            <section class="sessao botoes-principais">
+                <button class="botao-menu material-symbols-outlined">Account_Circle</button>
+                <button class="botao-menu material-symbols-outlined"
+                    onclick="navegar('../propriedades/propriedade.html')">Home</button>
+                <button class="botao-menu dashboard material-symbols-outlined">Monitoring</button>
+                <button class="botao-menu material-symbols-outlined"
+                    onclick="navegar('../ticket/ticket.html')">Headset</button>
+            </section>
+            <section class="sessao sair">
+                <button class="botao-menu material-symbols-outlined">Logout</button>
+            </section>
+        </aside>
+        <aside class="caixa-conteudo">
+            <header class="cabecalho">
+                <div class="caixa-auxiliar-titulo-cabecalho">
+                    <section class="sessao-titulo-cabecalho">
+                        <h1 class="titulo-cabecalho">Hectares</h1>
+                    </section>
+                    <section class="sessao-notificacao-cabecalho">
+                        <span class="botao-cabecalho material-symbols-outlined" onclick="mostrarNotificacoes()">Notifications</span>
+                    </section>
+                </div>
+            </header>
+            <div class="caixa-notificacoes" id="notificacoes">
+                <div class="notificacoes">
+                    <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                    <p>Hectare 1 está em estado de alerta!</p>
+                </div>
+                <div class="notificacoes">
+                    <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                    <p>Hectare 2 está em estado de alerta!</p>
+                </div>
+                <div class="notificacoes">
+                    <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                    <p>Hectare 4 está em estado de atenção!!</p>
+                </div>
+            </div>
+            <div class="sessao-conteudo-hectare">
+                <section class="sessao-kpi">
+                    <p>Porcentagem de hectares em situação crítica</p>
+                    <div class="porcentagem-kpi vermelho">20%</div>
+                    <p>Porcentagem de hectares em atenção</p>
+                    <div class="porcentagem-kpi amarelo">30%</div>
+                    <p>Porcentagem de hectares condições ideais</p>
+                    <div class="porcentagem-kpi verde">50%</div>
+                </section>
+                <section class="sessao-lista-hectares">
+                    <div class="lista-hectares">
+                        <div class="linha-lista-hectare">
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare ruim" onclick="navegar('../dashboard/index.html')">
+                                    <span class="icone-situacao material-symbols-outlined">Warning</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 1</p>
+                            </div>
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare ruim">
+                                    <span class="icone-situacao material-symbols-outlined">Warning</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 2</p>
+                            </div>
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare media">
+                                    <span class="icone-situacao material-symbols-outlined">Error</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 3</p>
+                            </div>
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare media">
+                                    <span class="icone-situacao material-symbols-outlined">Error</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 4</p>
+                            </div>
+                        </div>
+                        <div class="linha-lista-hectare">
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare media">
+                                    <span class="icone-situacao material-symbols-outlined">Error</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 5</p>
+                            </div>
+                            <div class="caixa-hectare" onclick="navegar('../dashboard/index.html')">
+                                <section class="situacao-hectare boa">
+                                    <span class="icone-situacao material-symbols-outlined">Check</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 6</p>
+                            </div>
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare boa">
+                                    <span class="icone-situacao material-symbols-outlined">Check</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 7</p>
+                            </div>
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare boa">
+                                    <span class="icone-situacao material-symbols-outlined">Check</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 8</p>
+                            </div>
+                        </div>
+                        <div class="linha-lista-hectare-tres">
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare boa">
+                                    <span class="icone-situacao material-symbols-outlined">Check</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 9</p>
+                            </div>
+                            <div class="caixa-hectare">
+                                <section class="situacao-hectare boa">
+                                    <span class="icone-situacao material-symbols-outlined">Check</span>
+                                    <p>22ºC</p>
+                                    <p>79%</p>
+                                </section>
+                                <p>Hectare 10</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="sessao-legenda">
+                    <div class="caixa-legenda">
+                        <h2>Legenda</h2>
+                        <section class="legenda">
+                            <span class="icone-legenda-ruim material-symbols-outlined">Warning</span>
+                            <p>Alerta! <br> Hectare entre 18 e 25 graus e umidade acima de 60%.</p>
+                        </section>
+                        <section class="legenda">
+                            <span class="icone-legenda-medio material-symbols-outlined">Error</span>
+                            <p>Atenção! <br>Umidade perto de atigir condições ideais do mildio.</p>
+                        </section>
+                        <section class="legenda">
+                            <span class="icone-legenda-bom material-symbols-outlined">Check</span>
+                            <p>Tudo certo! <br>Hectare em condição ideal!</p>
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
+<script>
+    function mostrarNotificacoes(){
+        if(notificacoes.style.display == 'none'){
+            notificacoes.style.display = 'block'
+        } else {
+            notificacoes.style.display = 'none'
+        }
+    }
+
+    function navegar(pagina){
+        window.location.href = pagina;
+    }
+</script>
