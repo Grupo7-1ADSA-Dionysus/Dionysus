@@ -4,6 +4,13 @@
     margin: 0px;
     /*Detalhes*/
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      
+}
+
+
+html{
+         /* Deixar a rolagem com animação */
+         scroll-behavior: smooth
 }
 
 body {
@@ -54,6 +61,7 @@ body {
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-between;
+    
 }
 
 .sessao-botao-entrar {
@@ -76,6 +84,15 @@ body {
     font-size: 18px;
     /*Detalhes*/
     cursor: pointer;
+}
+
+/* Organização separada do menu com animação */
+#bt_pagina_inicial,
+#bt_sobre{
+    width: 100%;
+    height: 50px;
+
+ 
 }
 
 .botao-menu:hover{
@@ -602,3 +619,9 @@ body {
     /*Texto*/
     text-align: center;
 }
+
+#bt_rodape_sobre,
+#bt_rodape_PI{
+    width: 100%;
+}
+

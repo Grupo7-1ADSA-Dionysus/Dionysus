@@ -19,8 +19,12 @@
             <p>DIONYSUS</p>
         </section>
         <section class="sessao-botoes-menu">
-            <button class="botao-menu pagina-inicial">Página inicial</button>
-            <button class="botao-menu sobre">Sobre</button>
+            <a href="#div_inicio">
+                <button class="botao-menu pagina-inicial" onclick="mudarEstiloPaginaInicial()" id="bt_pagina_inicial">Página inicial</button>
+            </a>
+            <a href="#div_sessao_equipe">
+                <button class="botao-menu sobre" onclick="mudarEstiloSobre()" id="bt_sobre">Sobre</button>
+            </a>
             <button class="botao-menu contato" onclick="navegar('../contato/contato.html')">Contato</button>
             <button class="botao-menu simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
         </section>
@@ -31,7 +35,7 @@
             </button>
         </section>
     </header>
-    <div class="div-sessao-inicial">
+    <div class="div-sessao-inicial" id="div_inicio">
         <section class="caixa-mensagem-saudacao">
             <h1 class=saudacao-titulo>BEM-VINDO</h1>
             <h3 class="saudacao-subtitulo">QUER GARANTIR A PRESERVAÇÃO DE SUAS <span class="palavras-roxa">VIDEIRAS?</span></h3>
@@ -94,7 +98,7 @@
             </section>
         </div>
     </div>
-    <div class="div-sessao-equipe">
+    <div class="div-sessao-equipe" id="div_sessao_equipe">
         <section class="sessao-fotos-equipe">
             <div class="fotos-equipe-cima">
                 <div class="caixa-membro">
@@ -186,10 +190,10 @@
                 </div>
             </div>
         </section>
-        <header class="cabecalho-equipe">
+        <header class="cabecalho-equipe"  >
             <h1 class="titulo-equipe">CONHEÇA NOSSA EQUIPE</h1>
         </header>
-        <div class="caixa-auxiliar-equipe"></div>
+        <div class="caixa-auxiliar-equipe" ></div>
     </div>
     <div class="div-sessao-valores">
         <header class="cabecalho-valores">
@@ -204,9 +208,10 @@
         <section class="conteudo-rodape">
             <h1 class="nome-rodape">DIONYSUS</h1>
         <section class="sessao-botoes-rodape">
-            <button class="botao-rodape pagina-inicial">Página inicial</button>
-            <button class="botao-rodape sobre">Sobre</button>
-            <button class="botao-rodape contato">Contato</button>
+            <a href="#div_inicio">
+                <button class="botao-rodape pagina-inicial" id="bt_rodape_PI">Página inicial</button></a>
+            <a href="#div_sessao_equipe"><button class="botao-rodape sobre" id="bt_rodape_sobre">Sobre</button></a>
+            <button class="botao-rodape contato" onclick="navegar('../contato/contato.html')">Contato</button>
             <button class="botao-rodape simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
         </section>
         <img src="./assets/imagens/Logo_Oficial.webp" alt="logo" class="logo-rodape">
@@ -220,5 +225,22 @@
 <script>
     function navegar(pagina){
         window.location.href = pagina;
+    }
+
+
+    function mudarEstiloSobre(){
+        document.getElementById('bt_sobre').style.color = '#8C52FF';
+        document.getElementById('bt_sobre').style.borderBottom = '3px solid #8C52FF';
+        document.getElementById('bt_pagina_inicial').style.color = 'black';
+        document.getElementById('bt_pagina_inicial').style.borderBottom = 'none';
+
+        
+    }
+
+    function mudarEstiloPaginaInicial(){
+        document.getElementById('bt_pagina_inicial').style.color = '#8C52FF';
+        document.getElementById('bt_pagina_inicial').style.borderBottom = '3px solid #8C52FF';
+        document.getElementById('bt_sobre').style.color = 'black';
+        document.getElementById('bt_sobre').style.borderBottom = 'none';
     }
 </script>
