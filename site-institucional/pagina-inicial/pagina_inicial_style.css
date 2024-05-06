@@ -269,7 +269,7 @@ body {
     /*Tamanho*/
     width: 100%;
     height: 100vh;
-    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
     justify-content: space-evenly;
 }
 .cabecalho-Mildio{
@@ -282,12 +282,19 @@ body {
 }
 
 .Contexto-Mildio{
+    /*Tamanho*/
+    width: 100%;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
 }
 
+.Texto-Mildio{
+    /*Tamanho*/
+    width: 50%;
+    padding: 0px;
+}
 
 .Titulo_Mildio_Completo{
     display: flex;
@@ -307,7 +314,7 @@ body {
 
 .Primeiro_Paragrafo_Mildio{
     font-size: 37px;
-    width: 1000px;
+    width: 30%px;
     margin-top: 20px;
 }
 
@@ -317,11 +324,12 @@ body {
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 20px;
 }
 
 .foto-Mildio{
     /*Tamanho*/
-    width: 35%;
+    width: 40%;
     height: 100%;
     /*Espaçamento*/
     padding: 20px;
