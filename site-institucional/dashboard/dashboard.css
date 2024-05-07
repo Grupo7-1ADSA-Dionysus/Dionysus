@@ -255,20 +255,89 @@
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+}
+.dado-atual{
+    /*tamanho*/
+    width: 20%;
+    /*detalhes*/
+   text-align: center;
+    /*Fonte*/
+    font-size: 18px;
+}
+
+
+.dado-maxima-registrada{
+   /*tamanho*/
+   width: 20%;
+     /*detalhes*/
+     text-align: center;
+      /*Fonte*/
+      font-size: 18px;
+}
+.dado-minima-registrada{
+    /*tamanho*/
+    width: 20%;
+      /*detalhes*/
+   text-align: center;
+       /*Fonte*/
+       font-size: 18px;
+ }
+ .dado-media{
+    /*tamanho*/
+    width: 20%;
+      /*detalhes*/
+   text-align: center;
+     /*Fonte*/
+     font-size: 18px;
+ }
+.caixa-indicadores{
+    /*tamanho*/
+    width: 100%;
+    height: 75%;
+    /*borda*/
+    /*border: 2px solid black;
+    /*organização de elementos filhos*/
+    display: flex;
     justify-content: space-between;
+    overflow: visible;
+  
 }
 
 .indicador {
     /*Tamanho*/
-    width: 24%;
+    width: 40%;
     height: 97%;
     /*Borda*/
-    border: 2px solid #4CAF50;
     border-radius: 10px;
+    border-radius: 10px;
+    /*Cor*/
+    color: #000;
+    border-radius: 10px; 
     /*Cor*/
     color: #000;
     /*Texto*/
     text-align: center;
+    /*fonte*/
+    font-size: 13px;
+}
+.titulo{
+    /*cor*/
+    color: #000;
+}
+.temp{
+   
+    /*borda*/
+    border:2px solid #ff8e83;
+    /*cor*/
+    color: #ff8e83;
+}
+
+.umidade{
+    /*borda*/
+    border: 2px solid #58c3ff;
+     /*cor*/
+     color: #58c3ff;
 }
 
 .conteudo-indicador {
@@ -279,8 +348,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*Cor*/
-    color: #8C52FF;
     /*Fonte*/
     font-size: 50px;
 }
@@ -293,22 +360,8 @@
     padding-bottom: 5px;
     /*Organização de elementos filhos*/
     display: flex;
-    justify-content: space-between;
-}
-
-.grafico-1,
-.grafico-2 {
-    /*Tamanho*/
-    height: 100%;
-    /*Organização de elementos filhos*/
-    display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
-    /*Borda*/
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
 }
-
 .grafico-1 {
     /*Tamanho*/
     width: 24%;
@@ -318,21 +371,49 @@
     /*Texto*/
     text-align: center;
 }
-
-.grafico-2 {
+.sessao-grafico-media {
     /*Tamanho*/
     width: 100%;
+    height: 80%;
+    /*borda*/
+    border: 2px solid black;
 }
 
-.cabecalho-grafico2 {
+
+.grafico-1{
+    /*tamanho*/
+    width: 30%;
+     /*Borda*/
+     border: 2px solid #4CAF50;
+     border-radius: 10px;
+}
+.graficos-temperatura-umidade {
+    /*Tamanho*/
+    width: 65%;
+    height: 100%;
+    /*Organização de elementos filhos*/
+   /* display: flex;
+  /*  flex-direction: row;*/
+   justify-content: space-evenly;
+    /*Borda*/
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+}
+
+.cabecalho-grafico-temperatura-umidade {
     /*Tamanho*/
     width: 95%;
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-evenly;
+    flex-direction: row;
+    
 }
-
-.titulo-grafico2 {
+.coordenadas{
+    /*tamanho*/
+    width: 30%;
+}
+.titulo-temperatura-umidade {
     /*Tamanho*/
     width: 60%;
     /*Texto*/
@@ -340,15 +421,21 @@
 }
 
 .select_hectar {
+    /*tamanho*/
+    width: 40%;
+    height: 20%;
     /*Borda*/
     border-bottom: 2px solid #000;
     /*Cor*/
     background-color: transparent;
     /*Detalhes*/
     cursor: pointer;
-}
 
+}
 .botao-hectar {
+    /*tamanho*/
+    width: 20%;
+    height: 20%;
     /*Espacamento*/
     padding: 2px;
     /*Borda*/
@@ -361,27 +448,50 @@
     cursor: pointer;
 }
 
-.sessao-grafico-media {
-    /*Tamanho*/
-    width: 100%;
-    height: 80%;
+.organizando-graficos{
+    /*tamanho*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+
+}
+.titulo-grafico-temperatura{
+    text-align: center;
+}
+.conteudo-grafico-temperatura{
+    /*tamanho*/
+    width: 40%;
+    /*borda*/
+    border: 2px solid #FF8E8E;
+}
+.NomeDaUva {
+    /*Borda*/
+    border: none; 
+    border-bottom: 2px solid #000000;
+
+    /*Espacamento*/
+    padding: 5px; 
 }
 
 .sessao-grafico-umidade,
 .sessao-grafico-umidade2 {
     /*Tamanho*/
-    width: 75%;
-    height: 80%;
+    width: 40%;
+    height: 50%;
+    /*borda*/
+    border: 2px solid #58C3FF;
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: center;
+   
 }
 
 .sessao-grafico-umidade2 {
     /*Disposição na tela*/
-    display: none;
+   display: none;
 }
-
 .Informações_Hectare {
     /*Organização de elementos filhos*/
     display: none;     /*Mudar para flex quando clickar na Engrenagem*/
@@ -428,6 +538,7 @@
     /*Tamanho*/
     height: 100px;
 }
+
 .NomeDaUva {
     /*Borda*/
     border: none; 
