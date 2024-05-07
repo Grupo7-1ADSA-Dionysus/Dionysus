@@ -209,11 +209,33 @@
 }
 
 .resultado{
-    /*Tamanho*/
-    width: 90%;
-    height: 70%;
-    /*Borda*/
-    border: 2px solid white;
+  /* Tamanho */
+  width: 90%;
+  height: 70%;
+  /* Borda */
+  border: 2px solid white;
+  /* Estilos de texto */
+  color: rgb(0, 0, 0); 
+  padding: 10px; 
+  font-family: 'Arial', sans-serif; 
+  font-size: 16px; 
+  line-height: 1.6; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultado .titulo {
+    color: white; 
+    font-weight: bold; 
+}
+
+.resultado .valorPositivo {
+    color: rgb(0, 255, 0); 
+}
+
+.resultado .valorNegativo {
+    color: red; 
 }
 
 .resultado-rodape{

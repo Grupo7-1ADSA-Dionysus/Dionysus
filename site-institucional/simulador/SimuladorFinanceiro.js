@@ -10,10 +10,16 @@ function Calculo_Financeiro(){
     let PERDA_KG_ANO = PERDA_KG * 2.5;
 
     Resultado.innerHTML = `
+<br>RESULTADO<br>
 Sua expectativa em KG: ${PESO_PRODUCAO}
+<br>
 <br>Valor da expectativa em Reais: ${VALOR_SAFRA_REAIS}
+<br>
 <br>Possível perda: ${PERDA_KG}Kg
+<br>
 <br>Valor perdido em Reais: ${PERDA_REAIS}
+<br>
 <br>Em um ano você poderá um prejuízo de: ${PERDA_KG_ANO}Kg
+<br>    
 <br>que equivalem R$${PERDA_REAIS_ANO}`
 }
