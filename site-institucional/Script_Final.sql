@@ -147,12 +147,13 @@ CONSTRAINT fkUvaHectare FOREIGN KEY(fkUva) REFERENCES Uva(IdUva)
 -- ---------------------------------------------------------- Criando Tabela Dado -------------------------------------------------------------------
 
 CREATE TABLE Dado(
-IdDado INT PRIMARY KEY AUTO_INCREMENT,
+IdDado INT AUTO_INCREMENT,
 Umidade DOUBLE,
 Temperatura DECIMAL(3, 1),
 DataLeitura DATETIME,
 fkHectare INT NOT NULL,
 
+CONSTRAINT pkCompostaDadoHectare PRIMARY KEY (IdDado, fkHectare),
 CONSTRAINT fkDadoHectare FOREIGN KEY(fkHectare) REFERENCES Hectare(IdHectare)
 );
 
@@ -198,7 +199,7 @@ INSERT INTO Uva (Nome, Tipo) VALUES
 -- ------------------------------------------------ Inserindo dados na tabela Mildio  -------------------------------------------------------------
 
 INSERT INTO Mildio (Umidade_Max, Temp_Max, Temp_Min) VALUES
-(80.5, 30.0, 10.0);
+(60, 25.0, 18.0);
 
 -- ------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -373,7 +374,6 @@ WHERE
     
 -- ----------------------------------------------------------- JOINS --------------------------------------------------------------------------------
 
-
 -- Join para ver Dados da empresa, suas respectivas propriedades e endereços delas
 SELECT 
 	Empresa.nome AS Nome_da_Empresa, CNPJ, Telefone AS Telefone_Empresa, Email AS Email_Empresa,
@@ -416,7 +416,6 @@ ON
 WHERE
 	fkToken = "FGHIJ678";
     
-
 -- Join para ver dados  da propriedade, Hectare (Localização), Uva plantada, tipo da uva e leitura mais recente dos dados de um propriedade especifica    
 SELECT 
 	Propriedade.Nome AS Nome_da_Propriedade, Qnt_Hectare AS Quantidade_de_Hectares,
