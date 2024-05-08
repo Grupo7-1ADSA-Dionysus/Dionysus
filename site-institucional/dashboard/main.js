@@ -29,11 +29,11 @@ const serial = async (
         {
             // altere!
             // Credenciais do banco de dados
-            host: 'localhost',
-            user: 'proprietario',
-            password: 'proprietario',
+            host: '192.168.56.1',
+            user: 'aluno',
+            password: 'Sptech#2024',
             database: 'Dionysus',
-            port: 3306
+            port: 3307
         }
     ).promise();
 
@@ -80,7 +80,7 @@ const serial = async (
             // altere!
             // Este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
-                'INSERT INTO Historico_Dados_Sensor (Umidade, Temperatura, Data_Leitura, fksensor) VALUES (?, ?, now(), 1)',
+                'INSERT INTO Dado (Umidade, Temperatura, DataLeitura, fkHectare) VALUES (?, ?, now(), 1)',
                 [dht11Umidade, dht11Temperatura]
             );
             console.log("valores inseridos no banco: ", dht11Umidade, dht11Temperatura)
