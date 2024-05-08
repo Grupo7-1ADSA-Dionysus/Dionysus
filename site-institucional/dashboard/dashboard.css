@@ -150,10 +150,9 @@
     cursor: pointer;
 }
 
-.dashboard {
+.home{
     /*Cor*/
     color: #8C52FF;
-    /*Fonte*/
     font-variation-settings:
         'FILL' 1
 }
@@ -212,12 +211,15 @@
 
 .sessao-titulo-cabecalho {
     /*Tamanho*/
-    width: 90%;
+    width: 80%;
     height: 100%;
     /*Fonte*/
     font-size: 30px;
+    /*Texto*/
+    text-align: center;
 }
 
+.sessao-voltar,
 .sessao-notificacao-cabecalho {
     /*Tamanho*/
     width: 10%;
@@ -231,16 +233,77 @@
 .botao-cabecalho {
     /*Fonte*/
     font-size: 30px;
-
+    /*Detalhes*/
+    cursor: pointer;
 }
 
-.botao-cabecalho:hover{
+.botao-cabecalho:hover {
     /*Cor*/
     color: #FFF;
-     /*Fonte*/
-     font-variation-settings:
-     'FILL' 1
+    /*Fonte*/
+    font-variation-settings:
+        'FILL' 1
 }
+
+.caixa-notificacoes{
+    /*Tamanho*/
+    width: 20%;
+    height: 60%;
+    /*Posição*/
+    position: absolute;
+    /*Espaçamento*/
+    margin-left: 78%;
+    margin-top: 4%;
+    padding-left: 5px;
+    /*Aparição em tela*/
+    display: none;
+    flex-direction: column;
+    /*Borda*/
+    border: 2px solid #000;
+    border-radius: 20px;
+    /*Cor*/
+    background-color: #FFF;
+}
+
+.notificacoes{
+    /*Tamanho*/
+    width: 95%;
+    height: 50px;
+    /*Espaçamento*/
+    margin-top: 5px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /*Borda*/
+    border: 1px solid #000;
+    border-radius: 10px;
+    /*Fonte*/
+    font-size: 13px;
+}
+
+.nivel-notificacao-ruim,
+.nivel-notificacao-medio{
+    /*Espaçamento*/
+    padding: 2px;
+    /*Borda*/
+    border-radius: 10px;
+    /*Cor*/
+    color: #FFF;
+    /*Tamanho*/
+    font-size: 30px;
+}
+
+.nivel-notificacao-ruim{
+    /*Cor*/
+    background-color: #FF3D30;
+}
+
+.nivel-notificacao-medio{
+    /*Cor*/
+    background-color: #FFCD1C;
+}
+
 
 .sessao-indicadores {
     /*Tamanho*/
@@ -251,41 +314,45 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
-.dado-atual{
+
+.dado-atual {
     /*tamanho*/
     width: 20%;
     /*detalhes*/
-   text-align: center;
+    text-align: center;
     /*Fonte*/
     font-size: 18px;
 }
 
 
-.dado-maxima-registrada{
-   /*tamanho*/
-   width: 20%;
-     /*detalhes*/
-     text-align: center;
-      /*Fonte*/
-      font-size: 18px;
+.dado-maxima-registrada {
+    /*tamanho*/
+    width: 20%;
+    /*detalhes*/
+    text-align: center;
+    /*Fonte*/
+    font-size: 18px;
 }
-.dado-minima-registrada{
+
+.dado-minima-registrada {
     /*tamanho*/
     width: 20%;
-      /*detalhes*/
-   text-align: center;
-       /*Fonte*/
-       font-size: 18px;
- }
- .dado-media{
+    /*detalhes*/
+    text-align: center;
+    /*Fonte*/
+    font-size: 18px;
+}
+
+.dado-media {
     /*tamanho*/
     width: 20%;
-      /*detalhes*/
-   text-align: center;
-     /*Fonte*/
-     font-size: 18px;
- }
-.caixa-indicadores{
+    /*detalhes*/
+    text-align: center;
+    /*Fonte*/
+    font-size: 18px;
+}
+
+.caixa-indicadores {
     /*tamanho*/
     width: 100%;
     height: 75%;
@@ -295,7 +362,7 @@
     display: flex;
     justify-content: space-between;
     overflow: visible;
-  
+
 }
 
 .indicador {
@@ -307,7 +374,7 @@
     border-radius: 10px;
     /*Cor*/
     color: #000;
-    border-radius: 10px; 
+    border-radius: 10px;
     /*Cor*/
     color: #000;
     /*Texto*/
@@ -315,23 +382,25 @@
     /*fonte*/
     font-size: 13px;
 }
-.titulo{
+
+.titulo {
     /*cor*/
     color: #000;
 }
-.temp{
-   
+
+.temp {
+
     /*borda*/
-    border:2px solid #ff8e83;
+    border: 2px solid #ff8e83;
     /*cor*/
     color: #ff8e83;
 }
 
-.umidade{
+.umidade {
     /*borda*/
     border: 2px solid #58c3ff;
-     /*cor*/
-     color: #58c3ff;
+    /*cor*/
+    color: #58c3ff;
 }
 
 .conteudo-indicador {
@@ -356,6 +425,7 @@
     display: flex;
     justify-content: space-evenly;
 }
+
 .grafico-1 {
     /*Tamanho*/
     width: 24%;
@@ -365,6 +435,7 @@
     /*Texto*/
     text-align: center;
 }
+
 .sessao-grafico-media {
     /*Tamanho*/
     width: 100%;
@@ -374,21 +445,22 @@
 }
 
 
-.grafico-1{
+.grafico-1 {
     /*tamanho*/
-    width: 30%;
-     /*Borda*/
-     border: 2px solid #4CAF50;
-     border-radius: 10px;
+    width: 25%;
+    /*Borda*/
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
 }
+
 .graficos-temperatura-umidade {
     /*Tamanho*/
-    width: 65%;
+    width: 70%;
     height: 100%;
     /*Organização de elementos filhos*/
-   /* display: flex;
+    /* display: flex;
   /*  flex-direction: row;*/
-   justify-content: space-evenly;
+    justify-content: space-evenly;
     /*Borda*/
     border: 2px solid #4CAF50;
     border-radius: 10px;
@@ -401,94 +473,74 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    
-}
-.coordenadas{
-    /*tamanho*/
-    width: 30%;
-}
-.titulo-temperatura-umidade {
-    /*Tamanho*/
-    width: 60%;
-    /*Texto*/
-    text-align: center;
 }
 
-.select_hectar {
-    /*tamanho*/
-    width: 40%;
-    height: 20%;
+.botao-configurar{
     /*Borda*/
-    border-bottom: 2px solid #000;
+    border: 0px;
     /*Cor*/
     background-color: transparent;
     /*Detalhes*/
     cursor: pointer;
-
 }
-.botao-hectar {
+
+.coordenadas {
     /*tamanho*/
-    width: 20%;
-    height: 20%;
-    /*Espacamento*/
-    padding: 2px;
-    /*Borda*/
-    border: 2px solid green;
-    border-radius: 5px;
-    /*Cor*/
-    background-color: #4CAF50;
-    color: #FFF;
-    /*Detalhes*/
-    cursor: pointer;
+    width: 30%;
 }
 
-.organizando-graficos{
-    /*tamanho*/
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
-
-}
-.titulo-grafico-temperatura{
-    text-align: center;
-}
-.conteudo-grafico-temperatura{
-    /*tamanho*/
-    width: 40%;
-    /*borda*/
-    border: 2px solid #FF8E8E;
-}
-.NomeDaUva {
-    /*Borda*/
-    border: none; 
-    border-bottom: 2px solid #000000;
-
-    /*Espacamento*/
-    padding: 5px; 
-}
-
-.sessao-grafico-umidade,
-.sessao-grafico-umidade2 {
+.titulo-temperatura-umidade {
     /*Tamanho*/
     width: 40%;
-    height: 50%;
-    /*borda*/
-    border: 2px solid #58C3FF;
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: center;
-   
+    align-items: center;
 }
 
-.sessao-grafico-umidade2 {
-    /*Disposição na tela*/
-   display: none;
+.organizando-graficos {
+    width: 100%;
+    height: 80%;
+    /*tamanho*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+.NomeDaUva {
+    /*Borda*/
+    border: none;
+    border-bottom: 2px solid #000000;
+    /*Espacamento*/
+    padding: 5px;
+}
+
+.sessao-grafico-temperatura{
+    /*Tamanho*/
+    width: 47%;
+    height: 80%;
+    /*Borda*/
+    border: 2px solid #ff8e83;
+    border-radius: 10px;
+}
+
+.sessao-grafico-umidade{
+    /*Tamanho*/
+    width: 47%;
+    height: 80%;
+    /*borda*/
+    border: 2px solid #58C3FF;
+    border-radius: 10px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: center;
+}
+
 .Informações_Hectare {
     /*Organização de elementos filhos*/
-    display: flex;     /*Mudar para flex quando clickar na Engrenagem*/
+    display: none;
+    /*Mudar para flex quando clickar na Engrenagem*/
     flex-direction: column;
     align-items: center;
 
@@ -499,11 +551,11 @@
     transform: translate(-50%, -50%);
 
     /*Borda*/
-    border: 2px solid #000; 
+    border: 2px solid #000;
     border-radius: 20px;
 
     /*Espacamento*/
-    padding: 20px; 
+    padding: 20px;
 
     /*Tamanho*/
     height: 300px;
@@ -516,30 +568,30 @@
 .inputs_informações_Hectare {
     /*Organização de elementos filhos*/
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
 
     /*Tamanho*/
-    height: 100%; 
+    height: 100%;
     width: 500px;
 }
 
-.Titulo_informações_Hectare{
+.Titulo_informações_Hectare {
     /*Cor*/
     color: #8C52FF;
     font-size: 30px;
-
     /*Tamanho*/
     height: 100px;
 }
 
+
 .NomeDaUva {
     /*Borda*/
-    border: none; 
+    border: 0px;
     border-bottom: 2px solid #000000;
 
     /*Espacamento*/
-    padding: 5px; 
+    padding: 5px;
 
     /*Tamanho*/
     height: 20px;
@@ -548,13 +600,13 @@
 }
 
 
-.Input_tipoDeUva{
+.Input_tipoDeUva {
     /*Organização de elementos filhos*/
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
-.P_TipoDeUva{
+.P_TipoDeUva {
     /*Alinhando*/
     text-align: center;
 
@@ -565,21 +617,21 @@
 
 .tipoDeUva {
 
-/*Cor*/
- background-color: #D9D9D9;
+    /*Cor*/
+    background-color: #D9D9D9;
 
-/*Borda*/
- border: none;
- border-radius: 10px;
- text-align: center;
- font-weight: bold;
+    /*Borda*/
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
 
-/*Tamanho*/
- height: 35px;
- width: 175px;
+    /*Tamanho*/
+    height: 35px;
+    width: 175px;
 }
 
-.Botão_Editar{
+.Botão_Editar {
     /*Borda*/
     border-radius: 5px;
 

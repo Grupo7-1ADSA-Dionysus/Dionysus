@@ -20,7 +20,7 @@ body {
     width: 43%;
     height: 100%;
     /*fundo*/
-    background-image: url(./imagens/image\ 28.png);
+    background-image: url(./assets/imagens/image\ 28.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -102,7 +102,10 @@ h1 {
 }
 
 .cadastro {
-    color: #5200FF
+    /*Cor*/
+    color: #5200FF;
+    /*Detalhes*/
+    cursor: pointer;
 }
 
 .senha {
@@ -126,6 +129,8 @@ h1 {
     box-shadow: #000;
     /* sombra */
     box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+    /*Detalhes*/
+    cursor: pointer;
 }
 
 .botao_voltar {

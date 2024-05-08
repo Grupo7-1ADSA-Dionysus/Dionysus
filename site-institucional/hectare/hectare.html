@@ -17,21 +17,26 @@
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
-                <button class="botao-menu material-symbols-outlined"
-                    onclick="navegar('../propriedades/propriedade.html')">Home</button>
-                <button class="botao-menu dashboard material-symbols-outlined">Monitoring</button>
+                <button class="botao-menu home material-symbols-outlined"
+                    onclick="navegar('../suas_propriedades/propriedade.html')">Home</button>
                 <button class="botao-menu material-symbols-outlined"
                     onclick="navegar('../ticket/ticket.html')">Headset</button>
             </section>
             <section class="sessao sair">
-                <button class="botao-menu material-symbols-outlined">Logout</button>
+                <button class="botao-menu material-symbols-outlined"
+                onclick="navegar('../login/login.html')">Logout</button>
             </section>
         </aside>
         <aside class="caixa-conteudo">
             <header class="cabecalho">
                 <div class="caixa-auxiliar-titulo-cabecalho">
+                    <section class="sessao-voltar">
+                        <span class="botao-cabecalho material-symbols-outlined" onclick="navegar('../suas_propriedades/propriedade.html')">
+                            Arrow_Back
+                        </span>
+                    </section>
                     <section class="sessao-titulo-cabecalho">
-                        <h1 class="titulo-cabecalho">Hectares</h1>
+                        <h1 class="titulo-cabecalho">Hectares - Fazenda</h1>
                     </section>
                     <section class="sessao-notificacao-cabecalho">
                         <span class="botao-cabecalho material-symbols-outlined" onclick="mostrarNotificacoes()">Notifications</span>

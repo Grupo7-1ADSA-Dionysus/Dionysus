@@ -99,10 +99,6 @@
     gap: 5px;
 }
 
-.class-titulo-cabecalho{
-    color: white;
-}
-
 .cabecalho {
     /*Tamanho*/
     width: 99%;
@@ -115,10 +111,6 @@
     color: #FFF;
     /*Fonte*/
     font-size: 25px;
-}
-
-h1{
-    margin-left: 12%;
 }
 
 .caixa-auxiliar-titulo-cabecalho{
@@ -141,8 +133,12 @@ h1{
     /*Tamanho*/
     width: 90%;
     height: 100%;
+    /*Espaçamento*/
+    padding-left: 12%;
     /*Fonte*/
     font-size: 30px;
+    /*Texto*/
+    text-align: center;
 }
 
 .sessao-notificacao-cabecalho{
@@ -168,6 +164,64 @@ h1{
      'FILL' 1
 }
 
+.caixa-notificacoes{
+    /*Tamanho*/
+    width: 20%;
+    height: 60%;
+    /*Posição*/
+    position: absolute;
+    /*Espaçamento*/
+    margin-left: 73%;
+    margin-top: 4%;
+    padding-left: 5px;
+    /*Aparição em tela*/
+    display: none;
+    /*Borda*/
+    border: 2px solid #000;
+    border-radius: 20px;
+    /*Cor*/
+    background-color: #FFF;
+}
+
+.notificacoes{
+    /*Tamanho*/
+    width: 95%;
+    height: 50px;
+    /*Espaçamento*/
+    margin-top: 5px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /*Borda*/
+    border: 1px solid #000;
+    border-radius: 10px;
+    /*Fonte*/
+    font-size: 13px;
+}
+
+.nivel-notificacao-ruim,
+.nivel-notificacao-medio{
+    /*Espaçamento*/
+    padding: 2px;
+    /*Borda*/
+    border-radius: 10px;
+    /*Cor*/
+    color: #FFF;
+    /*Tamanho*/
+    font-size: 30px;
+}
+
+.nivel-notificacao-ruim{
+    /*Cor*/
+    background-color: #FF3D30;
+}
+
+.nivel-notificacao-medio{
+    /*Cor*/
+    background-color: #FFCD1C;
+}
+
 .sessao-conteudo-home {
     /*Tamanho*/
     width: 100%;
@@ -178,201 +232,102 @@ h1{
     align-items: center;
 }
 
-h1{
-    color: #8C52FF;
-    font-size: 3vw;
-    margin-bottom: 2vw;
-}
-
-b{
-    font-size: 1vw;
-}
-
-.nome-projeto {
-    /*tamanho*/
-    width: 20%;
-    /*espaçamento*/
-    padding: 5px;
-    /*Fonte*/
-    font-size: 30px;
-}
-
-.sessao-de-botoes {
-    /*tamanho*/
-    width: 80%;
-    height: 50px;
-    /*prganização dos elementos filhos*/
-    display: flex;
-    justify-content: space-evenly;
-
-}
-
-.botao {
-    /*tamanho*/
-    width: 20%;
-    /*borda*/
-    border: none;
-    /*cor*/
-    color: white;
-    background-color: #8C52FF;
-    /*fonte*/
-    font-size: 20px;
-    font-family: "Fira Code", monospace;
-    /*detalhes*/
-    cursor: pointer; 
-}
-
-.botao:hover{
-    background-color: #9e6dff;
-}
-
-
-.sessao-input-cadastro {
-    /*tamanho*/
-    width: 55%;
-    height: 52%;
-    padding: 30px;
-    /*organização dos elementos filhos*/
+.caixa-propriedades {
+    /*Tamanho*/
+    width: 40%;
+    height: 75%;
+    /*Espaçamento*/
+    /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    gap: 0px;
-    margin: 10%;
-    margin-left: 16%;
-    margin-top: 3%;
-    /*borda*/
-    border: 2px solid #4CAF50;
-    border-radius: 8px;
-    /*deetalhes*/
-    /* overflow: visible; */
-    position: absolute;
-    background-color: #ffffff;
+    /*Borda*/
+    border: 3px solid #4CAF50;
+    border-radius: 10px;
 }
 
-.titulo-input-cadastro{
-    /*Detalhes*/
-    overflow: visible;
-    /*tamanho*/
-    font-size: 30px;
-    margin-left: 4%;
+.lista-propriedades {
+    /*Tamanho*/
+    width: 90%;
+    height: 80%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.div-inputs {
-    /*tamanho*/
-    width: 80%;
-
-    padding: 5px;
-    /*organização de elementos filho*/
+.propriedade {
+    /*Tamanho*/
+    width: 99%;
+    height: 40px;
+    /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-between;
-  
-}
-.sessao{
-    /*tamanho*/
-    width: 45%; 
-    
-    /*organização de elementos filho*/
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 10px;
-    /* coloca espaço em tudo*/
-    /*detalhes*/
-    overflow: visible;
-}
-
-.input {
-    /*tamanho*/
-    height: 100px;
-    /*Espaçamento*/
-    /*borda*/
-    border: 0px;
-    border-bottom: 2px solid black;
-    /*espaçamento*/
-    margin-bottom: 10px;
-    overflow: visible;
- 
-    
-}
-
-.span-input-baixo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.botao-cadastrar{
-       /*Cores*/
-       background-color: #8C52FF;
-       color: white;
-       /*Borda*/
-       border: 2px solid #000;
-       border-radius: 10px;
-       /*Tamanho*/
-       height: 70%;
-       width: 70%;
-       padding: 8px;
-       font-size: 16px;
-       box-shadow: #000;
-       /* sombra */
-       box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
-       /*Detalhes*/
-       display: flex;
-       justify-content: center;
-       align-items: center;
-}
-
-.botao-cadastrar:hover{
-    background-color: #9e6dff;
+    /*Borda*/
+    border: 2px solid #8C52FF;
+    border-radius: 10px;
+    /*Detalhes*/
     cursor: pointer;
 }
 
-.cadastrar{
-    /*tamanho*/
-    width: 80%;
-    height: 30%;
-    /*borda*/
-    border: 2px solid black;
-    border-radius: 10px;
 
-    font-size: 1em;
-
+.nome-propriedade {
+    /*Tamanho*/
+    width: 40%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
-.span-avisos{
+.nome-propriedade2{
+       /*Tamanho*/
+       width: 40%;
+       /*Organização de elementos filhos*/
+       display: flex;
+       justify-content: start;
+       align-items: center;
+       margin-left: 31%;
+}
+
+.adicionar-propriedade {
+   /*Tamanho*/
+   width: 100%;
+   height: 40px;
+   /*Borda*/
+   border: 2px solid #b8b8b8;
+   color: #000;
+   border-radius: 10px;
+   /*Texto*/
+   text-align: center;
+}
+
+.adicionar-propriedade:hover{
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.bolinha {
     /*Tamanho*/
-    width: 100%;
-    height: 150px;
-    /*Espaçamento*/
+    width: 20px;
+    height: 20px;
+    /*Borda*/
+    border-radius: 90px;
     /*Cor*/
-    color: transparent;
-    background-color: transparent;
-    overflow: visible;
-    font-size: 10px;
-
+    background-color: #4CAF50;
+    /*Detalhes*/
+    margin-right: 20px;
+    margin-left: 5px;
 }
 
-.span-input-baixo{
-    width: 80%;
-    height: 90px;
-}
-
-
-.geral{
+.opcoes-propriedade {
     /*Tamanho*/
-    width: 80%;
-    height: 80px;
-    /*Espaçamento*/
-    margin-top: 5px;
-    margin-bottom: 5px;
-    /*Texto*/
-    text-align: center;
-    font-size: 0.8em;
-    color: red;
-}
-
-b{
-    height: 100%;
-    overflow: visible;
+    width: 20%;
+    /*Organização de elementos filhos*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Detalhes*/
+    overflow: hidden;
 }

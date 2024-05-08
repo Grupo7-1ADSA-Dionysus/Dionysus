@@ -131,6 +131,8 @@
     /*Tamanho*/
     width: 90%;
     height: 100%;
+    /*Espaçamento*/
+    padding-left: 12%;
     /*Fonte*/
     font-size: 30px;
 }
@@ -157,6 +159,64 @@
      /*Fonte*/
      font-variation-settings:
      'FILL' 1
+}
+
+.caixa-notificacoes{
+    /*Tamanho*/
+    width: 20%;
+    height: 60%;
+    /*Posição*/
+    position: absolute;
+    /*Espaçamento*/
+    margin-left: 73%;
+    margin-top: 4%;
+    padding-left: 5px;
+    /*Aparição em tela*/
+    display: none;
+    /*Borda*/
+    border: 2px solid #000;
+    border-radius: 20px;
+    /*Cor*/
+    background-color: #FFF;
+}
+
+.notificacoes{
+    /*Tamanho*/
+    width: 95%;
+    height: 50px;
+    /*Espaçamento*/
+    margin-top: 5px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /*Borda*/
+    border: 1px solid #000;
+    border-radius: 10px;
+    /*Fonte*/
+    font-size: 13px;
+}
+
+.nivel-notificacao-ruim,
+.nivel-notificacao-medio{
+    /*Espaçamento*/
+    padding: 2px;
+    /*Borda*/
+    border-radius: 10px;
+    /*Cor*/
+    color: #FFF;
+    /*Tamanho*/
+    font-size: 30px;
+}
+
+.nivel-notificacao-ruim{
+    /*Cor*/
+    background-color: #FF3D30;
+}
+
+.nivel-notificacao-medio{
+    /*Cor*/
+    background-color: #FFCD1C;
 }
 
 .sessao-conteudo-ticket{

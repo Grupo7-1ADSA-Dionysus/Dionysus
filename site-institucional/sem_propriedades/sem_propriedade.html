@@ -21,12 +21,11 @@
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
                 <button class="botao-menu home material-symbols-outlined">Home</button>
                 <button class="botao-menu material-symbols-outlined"
-                    onclick="navegar('../dashboard/index.html')">Monitoring</button>
-                <button class="botao-menu material-symbols-outlined"
                     onclick="navegar('../ticket/ticket.html')">Headset</button>
             </section>
             <section class="sessao sair">
-                <button class="botao-menu material-symbols-outlined">Logout</button>
+                <button class="botao-menu material-symbols-outlined"
+                onclick="navegar('../login/login.html')">Logout</button>
             </section>
         </aside>
         <aside class="caixa-conteudo">
@@ -36,10 +35,25 @@
                         <h1 id="titulo-cabecalho">Suas Propriedades</h1>
                     </section>
                     <section class="sessao-notificacao-cabecalho">
-                        <span class="botao-cabecalho material-symbols-outlined">Notifications</span>
+                        <span class="botao-cabecalho material-symbols-outlined"
+                        onclick="mostrarNotificacoes()">Notifications</span>
                     </section>
                 </div>
             </header>
+            <div class="caixa-notificacoes" id="notificacoes">
+                <div class="notificacoes">
+                    <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                    <p>Hectare 1 está em estado de alerta!</p>
+                </div>
+                <div class="notificacoes">
+                    <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                    <p>Hectare 2 está em estado de alerta!</p>
+                </div>
+                <div class="notificacoes">
+                    <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                    <p>Hectare 4 está em estado de atenção!!</p>
+                </div>
+            </div>
             <div class="sessao-conteudo-home" id="home">
                 <section class="caixa-propriedades">
                     <div class="div-texto">
@@ -48,7 +62,7 @@
                                 Parece que você ainda não tem propriedades cadastradas conosco e nem é funcionário de uma! Cadastre sua propriedade ou peça para seu empregador te adicionar e aproveite nossa solução!
                             </b>
                         </p>
-                        <button class="botao-add-propriedade">Adicionar Propriedade</button>
+                        <button class="botao-add-propriedade" onclick="navegar('../cadastrar_propriedades/cadastrar_propriedades.html')">Adicionar Propriedade</button>
                     </div>
                         </div>
                     </div>
@@ -60,6 +74,14 @@
 
 </html>
 <script>
+    function mostrarNotificacoes(){
+        if(notificacoes.style.display == 'none'){
+            notificacoes.style.display = 'block'
+        } else {
+            notificacoes.style.display = 'none'
+        }
+    }
+
      function navegar(pagina){
         window.location.href = pagina;
     }

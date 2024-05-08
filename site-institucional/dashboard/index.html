@@ -43,21 +43,21 @@
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
-                <button class="botao-menu material-symbols-outlined"
-                    onclick="navegar('../propriedades/propriedade.html')">Home</button>
-                <button class="botao-menu dashboard material-symbols-outlined">Monitoring</button>
+                <button class="botao-menu home material-symbols-outlined"
+                    onclick="navegar('../suas_propriedades/propriedade.html')">Home</button>
                 <button class="botao-menu material-symbols-outlined"
                     onclick="navegar('../ticket/ticket.html')">Headset</button>
             </section>
             <section class="sessao sair">
-                <button class="botao-menu material-symbols-outlined">Logout</button>
+                <button class="botao-menu material-symbols-outlined"
+                onclick="navegar('../login/login.html')">Logout</button>
             </section>
         </aside>
 
-        <div class="Informações_Hectare">
+        <div class="Informações_Hectare" id="informacoes_hectare">
             <h2 class="Titulo_informações_Hectare">Informações sobre o Hectare 6</h2>
 
-              <div class="inputs_informações_Hectare">
+            <div class="inputs_informações_Hectare">
 
                 <div class="Input_NomeDaUva">
                     <p class="P_NomeDaUva">Nome da Uva</p>
@@ -73,22 +73,43 @@
                     </select>
                 </div>
 
-              </div>
-              <button class="Botão_Editar">
-                  EDITAR
-              </button>
+            </div>
+            <button class="Botão_Editar" onclick="AparecerCaixa(informacoes_hectare)">
+                EDITAR
+            </button>
 
-          </div>
+        </div>
+
+        <div class="caixa-notificacoes" id="notificacoes">
+            <div class="notificacoes">
+                <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                <p>Hectare 1 está em estado de alerta!</p>
+            </div>
+            <div class="notificacoes">
+                <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                <p>Hectare 2 está em estado de alerta!</p>
+            </div>
+            <div class="notificacoes">
+                <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                <p>Hectare 4 está em estado de atenção!!</p>
+            </div>
+        </div>
 
         <!-- KPIs -->
         <aside class="caixa-conteudo">
             <header class="cabecalho">
                 <div class="caixa-auxiliar-titulo-cabecalho">
+                    <section class="sessao-voltar">
+                        <span class="botao-cabecalho material-symbols-outlined" onclick="navegar('../hectare/hectare.html')">
+                            Arrow_Back
+                        </span>
+                    </section>
                     <section class="sessao-titulo-cabecalho">
                         <h1 id="titulo_cabecalho">Dashboard</h1>
                     </section>
                     <section class="sessao-notificacao-cabecalho">
-                        <span class="botao-cabecalho material-symbols-outlined">Notifications</span>
+                        <span class="botao-cabecalho material-symbols-outlined"
+                        onclick="AparecerCaixa(notificacoes)">Notifications</span>
                     </section>
                 </div>
             </header>
@@ -178,40 +199,24 @@
                     <!-- ------------------------------------------------------------------------------------------------------------------->
                     <div class="graficos-temperatura-umidade">
                         <header class="cabecalho-grafico-temperatura-umidade">
-                            <span class="config material-symbols-outlined" onclick="AparecerInformacoes()">Settings</span>
+                            <button class="botao-configurar" onclick="AparecerCaixa(informacoes_hectare)">
+                                <span class="config material-symbols-outlined">Settings</span>
+                            </button>
                             <div class="coordenadas">
                                 <p class="longitude">Longitude: 23°32'56'' Sul</p>
                                 <p class="latitude">latitude: 46°38'20'' Oeste</p>
                             </div>
-                            <h3 class="titulo-temperatura-umidade" id="titulo_umidade">Hectar A</h3>
-                           <!--
-                             <select id="select_hectar" class="select_hectar">
-                                <option>Selecione um hectar para acompanhar</option>
-                                <option value="hectarA">Hectar A</option>
-                                <option value="hectarB">Hectar B</option>
-                            </select>
-                            <button onclick="mudarGrafico()" class="botao-hectar">Escolher</button>
-                           -->
+                            <h3 class="titulo-temperatura-umidade">Hectar 6</h3>
                         </header>
 
                         <div class="organizando-graficos">
-                            <div class="grafico-temperatura">
-                                <P class="titulo-grafico-temperatura">Temperatura</P>
-                                <div class="conteudo-grafico-temperatura">
-                                    <section style="width: 100%;">
-                                        <canvas id="dht11Temperatura"></canvas>
-                                    </section>
-                                </div>
-                            </div>
-
-
+                            <section class="sessao-grafico-temperatura">
+                                <canvas id="dht11Temperatura"></canvas>
+                            </section>
                             <section class="sessao-grafico-umidade">
                                 <canvas id="dht11Umidade"></canvas>
-                                <canvas id="grafico_umidade_2" style="display: none;"></canvas>
                             </section>
                         </div>
-
-
                     </div>
                 </section>
             </div>
@@ -224,7 +229,15 @@
     function navegar(pagina) {
         window.location.href = pagina;
     }
-    function AparecerInformacoes()
+
+    function AparecerCaixa(caixa) {
+        if (caixa.style.display == 'none') {
+            caixa.style.display = 'flex';
+            console.log('Funcionando')
+        } else {
+            caixa.style.display = 'none';
+        }
+    }
 
     // Gráfico Média Semanal
     const Media_semanal = document.getElementById('grafico-media-semanal');
@@ -512,4 +525,3 @@
         div_alerta.style.display = 'none';
     }
 </script>
-

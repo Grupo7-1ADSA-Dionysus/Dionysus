@@ -118,10 +118,6 @@
     font-size: 25px;
 }
 
-h1 {
-    margin-left: 12%;
-}
-
 .caixa-auxiliar-titulo-cabecalho {
     /*Tamanho*/
     width: 100%;
@@ -140,12 +136,15 @@ h1 {
 
 .sessao-titulo-cabecalho {
     /*Tamanho*/
-    width: 90%;
+    width: 80%;
     height: 100%;
     /*Fonte*/
     font-size: 30px;
+    /*Texto*/
+    text-align: center;
 }
 
+.sessao-voltar,
 .sessao-notificacao-cabecalho {
     /*Tamanho*/
     width: 10%;
@@ -154,6 +153,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    /*Detalhes*/
+    cursor: pointer;
 }
 
 .botao-cabecalho {
@@ -186,8 +187,6 @@ h1 {
     border-radius: 20px;
     /*Cor*/
     background-color: #FFF;
-    /*Detalhes*/
-    overflow-y: scroll;
 }
 
 .notificacoes{
@@ -347,6 +346,7 @@ h1 {
     font-size: 20px;
     /*Detalhes*/
     overflow: visible;
+    cursor: pointer;
 }
 
 .situacao-hectare {
@@ -451,4 +451,11 @@ h1 {
 .icone-legenda-bom {
     /*Cor*/
     background-color: #5CDD20;
+}
+
+.icone-legenda-ruim:hover,
+.icone-legenda-medio:hover,
+.icone-legenda-bom:hover{
+    /*Cor*/
+    color: #FFF;
 }

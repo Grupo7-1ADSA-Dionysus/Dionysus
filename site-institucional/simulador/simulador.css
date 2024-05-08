@@ -212,17 +212,27 @@
   /* Tamanho */
   width: 90%;
   height: 70%;
-  /* Borda */
-  border: 2px solid white;
-  /* Estilos de texto */
-  color: rgb(0, 0, 0); 
+  /*Organização de elementos filhos*/
   padding: 10px; 
+  /* Cor */
+  color: rgb(0, 0, 0); 
+  /*Fonte*/
   font-family: 'Arial', sans-serif; 
   font-size: 16px; 
-  line-height: 1.6; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  line-height: 1.6;
+  /*Texto*/
+  text-align: center; 
+}
+
+.titulo-resultado-simulado{
+    /*Fonte*/
+    font-size: 30px;
+}
+
+.texto-resultado{
+    width: 100%;
+    /*Fonte*/
+    font-size: 22px;
 }
 
 .resultado .titulo {
@@ -230,12 +240,12 @@
     font-weight: bold; 
 }
 
-.resultado .valorPositivo {
-    color: rgb(0, 255, 0); 
+.palavra-verde{
+    color: #76CF04; 
 }
 
-.resultado .valorNegativo {
-    color: red; 
+.palavra-vermelha {
+    color: #FF0000; 
 }
 
 .resultado-rodape{
