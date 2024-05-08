@@ -369,7 +369,7 @@
 
 .indicador {
     /*Tamanho*/
-    width: 40%;
+    width: 47%;
     height: 97%;
     /*Borda*/
     border-radius: 10px;
@@ -414,7 +414,7 @@
     justify-content: center;
     align-items: center;
     /*Fonte*/
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .sessao-graficos {
@@ -454,7 +454,7 @@
 .graficos-temperatura-umidade {
     /*Tamanho*/
     width: 70%;
-    height: 100%;
+    height: 90%;
     /*Organização de elementos filhos*/
     /* display: flex;
   /*  flex-direction: row;*/
@@ -462,6 +462,7 @@
     /*Borda*/
     border: 2px solid #4CAF50;
     border-radius: 10px;
+    padding-top: 30px;
 }
 
 .cabecalho-grafico-temperatura-umidade {
@@ -492,8 +493,10 @@
     width: 40%;
     /*Organização de elementos filhos*/
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-right: 100px;
+    font-size: 30px;
 }
 
 .organizando-graficos {
@@ -641,4 +644,13 @@
     height: 60px;
     width: 175px;
     font-size: 20px;
+}
+
+.p-titulo-indicador{
+    font-size: 22px;
+    margin-bottom: 3.5px;
+}
+
+.grafico-canva{
+    padding-top: 25px;
 }
