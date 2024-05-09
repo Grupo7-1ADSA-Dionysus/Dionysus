@@ -50,6 +50,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 10%;
+    justify-content: space-evenly;
+
 }
 
 h1 {
