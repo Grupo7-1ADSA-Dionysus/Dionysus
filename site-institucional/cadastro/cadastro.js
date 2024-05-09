@@ -78,7 +78,7 @@ function cadastrar(){
                             span_avisoConfirmacaoSenha.style.color = 'red';
     
                         } else{
-                            window.location.href = "../dashboard/index.html";
+                            window.location.href = "../login/login.html";
                         }
                     }
                 } else{

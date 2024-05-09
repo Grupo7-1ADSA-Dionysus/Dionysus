@@ -28,7 +28,8 @@ const serial = async (
     poolBancoDados = mysql.createPool(
         {
             // altere!
-            // Credenciais do banco de dados
+            // Credenciais do banco de 
+            // Endereço 10.18.32.17
             host: '192.168.56.1',
             user: 'aluno',
             password: 'Sptech#2024',

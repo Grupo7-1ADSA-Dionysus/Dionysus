@@ -79,15 +79,15 @@
     cursor: pointer;
 }
 
-.home{ /*Cor*/
+.home {
+    /*Cor*/
     color: #8C52FF;
     /*Fonte*/
     font-variation-settings:
-    'FILL' 1
-   
+        'FILL' 1
 }
 
-.caixa-notificacoes{
+.caixa-notificacoes {
     /*Tamanho*/
     width: 20%;
     height: 60%;
@@ -108,7 +108,7 @@
     z-index: 100;
 }
 
-.notificacoes{
+.notificacoes {
     /*Tamanho*/
     width: 95%;
     height: 50px;
@@ -126,7 +126,7 @@
 }
 
 .nivel-notificacao-ruim,
-.nivel-notificacao-medio{
+.nivel-notificacao-medio {
     /*Espaçamento*/
     padding: 2px;
     /*Borda*/
@@ -137,12 +137,12 @@
     font-size: 30px;
 }
 
-.nivel-notificacao-ruim{
+.nivel-notificacao-ruim {
     /*Cor*/
     background-color: #FF3D30;
 }
 
-.nivel-notificacao-medio{
+.nivel-notificacao-medio {
     /*Cor*/
     background-color: #FFCD1C;
 }
@@ -159,7 +159,7 @@
     gap: 5px;
 }
 
-.class-titulo-cabecalho{
+.class-titulo-cabecalho {
     color: white;
 }
 
@@ -177,7 +177,7 @@
     font-size: 25px;
 }
 
-.caixa-auxiliar-titulo-cabecalho{
+.caixa-auxiliar-titulo-cabecalho {
     /*Tamanho*/
     width: 100%;
     height: 80%;
@@ -193,7 +193,7 @@
     text-align: center;
 }
 
-.sessao-titulo-cabecalho{
+.sessao-titulo-cabecalho {
     /*Tamanho*/
     width: 80%;
     height: 100%;
@@ -204,7 +204,7 @@
 }
 
 .sessao-voltar,
-.sessao-notificacao-cabecalho{
+.sessao-notificacao-cabecalho {
     /*Tamanho*/
     width: 10%;
     height: 100%;
@@ -216,17 +216,17 @@
     cursor: pointer;
 }
 
-.botao-cabecalho{
+.botao-cabecalho {
     /*Fonte*/
     font-size: 30px;
 }
 
-.botao-cabecalho:hover{
+.botao-cabecalho:hover {
     /*Cor*/
     color: #FFF;
-     /*Fonte*/
-     font-variation-settings:
-     'FILL' 1
+    /*Fonte*/
+    font-variation-settings:
+        'FILL' 1
 }
 
 .sessao-conteudo-home {
@@ -239,7 +239,7 @@
     align-items: center;
 }
 
-b{
+b {
     font-size: 1vw;
 }
 
@@ -274,16 +274,18 @@ b{
     font-size: 20px;
     font-family: "Fira Code", monospace;
     /*detalhes*/
-    cursor: pointer; 
+    cursor: pointer;
 
 }
-.titulo-input-cadastro{
+
+.titulo-input-cadastro {
     margin-top: -14px;
 }
+
 .sessao-input-cadastro {
     /*tamanho*/
     width: 55%;
-    height: 52%;
+    height: 60%;
     padding: 30px;
     /*organização dos elementos filhos*/
     display: flex;
@@ -303,7 +305,7 @@ b{
     background-color: #ffffff;
 }
 
-.titulo-input-cadastro{
+.titulo-input-cadastro {
     /*Detalhes*/
     overflow: visible;
     /*tamanho*/
@@ -321,14 +323,13 @@ b{
     /*organização de elementos filho*/
     display: flex;
     justify-content: space-between;
-  
+
 }
 
-.sessao-inputs-esquerdo,
-.sessao-inputs-direito{
+.sessao-inputs-esquerdo {
     /*tamanho*/
-    width: 45%; 
-    
+    width: 45%;
+    margin-top: 20px;
     /*organização de elementos filho*/
     display: flex;
     flex-direction: column;
@@ -339,50 +340,65 @@ b{
     overflow: visible;
 }
 
+.sessao-inputs-direito {
+    /*tamanho*/
+    width: 45%;
+    margin-top: 20px;
+    /*organização de elementos filho*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    /* coloca espaço em tudo*/
+    /*detalhes*/
+    overflow: visible;
+}
+
 
 .input {
     /*tamanho*/
-    height: 100px;
+    /* height: 100px; */
     /*Espaçamento*/
     /*borda*/
     border: 0px;
     border-bottom: 2px solid black;
     /*espaçamento*/
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     overflow: visible;
- 
-    
+
+
 }
 
-.span-input-baixo{
+.span-input-baixo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.botao-cadastrar{
-       /*Cores*/
-       background-color: #8C52FF;
-       color: white;
-       /*Borda*/
-       border: 2px solid #000;
-       border-radius: 10px;
-       /*Tamanho*/
-       height: 30%;
-       width: 30%;
-       padding: 8px;
-       font-size: 16px;
-       box-shadow: #000;
-       /* sombra */
-       box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
-       /*Detalhes*/
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       cursor: pointer;
-       margin-bottom: -20px;
+.botao-cadastrar {
+    /*Cores*/
+    background-color: #8C52FF;
+    color: white;
+    /*Borda*/
+    border: 2px solid #000;
+    border-radius: 10px;
+    /*Tamanho*/
+    /* height: 15%; */
+    width: 30%;
+    padding: 8px;
+    font-size: 16px;
+    box-shadow: #000;
+    /* sombra */
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+    /*Detalhes*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: -20px;
 }
-.cadastrar{
+
+.cadastrar {
     /*tamanho*/
     width: 80%;
     height: 30%;
@@ -394,7 +410,7 @@ b{
 
 }
 
-.span-avisos{
+.span-avisos {
     /*Tamanho*/
     width: 100%;
     height: 150px;
@@ -407,13 +423,13 @@ b{
 
 }
 
-.span-input-baixo{
+.span-input-baixo {
     width: 80%;
     height: 90px;
 }
 
 
-.geral{
+.geral {
     /*Tamanho*/
     width: 80%;
     height: 80px;
@@ -426,11 +442,11 @@ b{
     color: red;
 }
 
-b{
-    height: 100%;
+b {
+    /* height: 100%; */
     overflow: visible;
 }
 
-.gambiarra{
-    margin-top: 49px;
+.gambiarra {
+    /* margin-top: 49px; */
 }
