@@ -55,7 +55,7 @@
         </aside>
 
         <div class="Informações_Hectare" id="informacoes_hectare">
-            <h2 class="Titulo_informações_Hectare">Informações sobre o Hectare 6</h2>
+            <h2 class="Titulo_informações_Hectare">Informações sobre o Hectare 1</h2>
 
             <div class="inputs_informações_Hectare">
 
@@ -122,11 +122,11 @@
                             <div class="indicador temp">
 
                                 <h3 class="titulo">Temperatura</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Temp_Atual">0°C</p>
+                                <p class="conteudo-indicador" id="p_KPI_Temp_Atual">22°C</p>
                             </div>
                             <div class="indicador umidade">
                                 <h3 class="titulo">Umidade</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Umid_Atual">0%</p>
+                                <p class="conteudo-indicador" id="p_KPI_Umid_Atual">79%</p>
                             </div>
                         </div>
 
@@ -140,11 +140,11 @@
                             <div class="indicador temp">
 
                                 <h3 class="titulo">Temperatura</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Temp_Max">0°C</p>
+                                <p class="conteudo-indicador" id="p_KPI_Temp_Max">32°C</p>
                             </div>
                             <div class="indicador umidade">
                                 <h3 class="titulo">Umidade</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Umid_Max">0%</p>
+                                <p class="conteudo-indicador" id="p_KPI_Umid_Max">79%</p>
                             </div>
                         </div>
 
@@ -157,11 +157,11 @@
                             <div class="indicador temp">
 
                                 <h3 class="titulo">Temperatura</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Temp_Min">0°C</p>
+                                <p class="conteudo-indicador" id="p_KPI_Temp_Min">22°C</p>
                             </div>
                             <div class="indicador umidade">
                                 <h3 class="titulo">Umidade</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Umid_Min">0%</p>
+                                <p class="conteudo-indicador" id="p_KPI_Umid_Min">55%</p>
                             </div>
                         </div>
 
@@ -175,11 +175,11 @@
                             <div class="indicador temp">
 
                                 <h3 class="titulo">Temperatura</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Temp_Atual">16°C</p>
+                                <p class="conteudo-indicador" id="p_KPI_Temp_Atual">25°C</p>
                             </div>
                             <div class="indicador umidade">
                                 <h3 class="titulo">Umidade</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Umid_Atual">53%</p>
+                                <p class="conteudo-indicador" id="p_KPI_Umid_Atual">62%</p>
                             </div>
                         </div>
 
@@ -203,11 +203,11 @@
                                 <span class="config material-symbols-outlined">Settings</span>
                             </button>
                             <div class="coordenadas">
-                                <p class="longitude"><span style="color: #7000FF;">Longitude:</span> 23°32'56'' Sul</p>
-                                <p class="latitude"><span style="color: #7000FF;">Latitude:</span> 46°38'20'' Oeste</p>
+                                <p class="longitude"><span style="color: #7000FF;">Longitude:</span> 53°32'56'' Sul</p>
+                                <p class="latitude"><span style="color: #7000FF;">Latitude:</span> 66°38'20'' Oeste</p>
                             </div>
                             
-                            <h3 class="titulo-temperatura-umidade">Hectare 6</h3>
+                            <h3 class="titulo-temperatura-umidade">Hectare 1</h3>
                         </header>
 
                         <div class="organizando-graficos">
@@ -250,7 +250,7 @@
         datasets: [{
             axis: 'y',
             label: 'Temperatura (°C)',
-            data: [25, 18, 20, 28, 30, 28, 21],
+            data: [32, 25, 24, 28, 30, 28, 24],
             fill: false,
             backgroundColor: '#FF8E8E',
             borderWidth: 1
@@ -258,7 +258,7 @@
         {
             axis: 'y2',
             label: 'Umidade (%)',
-            data: [60, 59, 80, 81, 56, 55, 40],
+            data: [55, 52, 70, 73, 75, 81, 77],
             fill: false,
             backgroundColor: '#58C3FF',
             borderWidth: 1
@@ -310,7 +310,7 @@
     // Gráfico de UMIDADE
     const Umidade = document.getElementById('grafico_umidade');
     const Umidade2 = document.getElementById('grafico_umidade_2');
-
+    const labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
     var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
         contextoDht11Umidade.canvas.width = 1000;
@@ -320,17 +320,20 @@
             {
                 type: 'line',
                 data: {
+                    labels: labels,
                     datasets: [{
                         label: 'Umidade',
                         type: 'line',
                         borderColor: ['#45b3e7'],
-                        backgroundColor: ['#89cff0']
+                        backgroundColor: ['#89cff0'],
+                        data: [55, 60, 62, 60, 65, 66, 68, 70, 75, 79],
                     }]
                 },
                 options: {
                     scales: {
                         xAxes: [{
                             distribution: 'series',
+                
                             ticks: {
                                 beginAtZero: true
                             }
@@ -354,20 +357,25 @@
         );
 
     // Gráfico de TEMPERATURA ==================================================================================
-
+    const labels2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
     contextoDht11Temperatura.canvas.width = 1000;
     contextoDht11Temperatura.canvas.height = 300;
+
+
+    
     var dht11Temperatura = new Chart(
         contextoDht11Temperatura,
         {
             type: 'line',
             data: {
+                labels: labels2,
                 datasets: [{
                     label: "Temperatura",
                     type: 'line',
                     borderColor: ['#ff3232'],
-                    backgroundColor: ['#ff7f7f']
+                    backgroundColor: ['#ff7f7f'],
+                    data: [32, 25, 24, 28, 30, 28, 25, 26, 24, 22]
                 }]
             },
             options: {
@@ -380,12 +388,7 @@
                     }],
                     yAxes: [{
                         scaleLabel: {
-<<<<<<< HEAD
-                            display: true,
-                            labelString: 'Temperatura'
-=======
                             display: true
->>>>>>> f6b967624b79d85e6a1ba3f28c7411d8527e2ebc
                         },
                         ticks: {
                             beginAtZero: true
@@ -398,137 +401,6 @@
             }
         }
     );
-
-
-    // Variáveis para os KPIs    
-    let Maior_Umidade_Registrada = null
-    let Menor_Umidade_Registrada = null
-    let Maior_Temperatura_Registrada = null
-    let Menor_Temperatura_Registrada = null
-    let Media_Umidade = null
-    let Media_temperatura = null
-
-
-    // Variáveis para os alertas 
-    let Temp_Min = 18;
-    let Temp_Max = 25;
-    let Umidade_Maxima = 60;
-    let umidade_Minima = 30;
-    let Umidade_Elevada = 55;
-
-
-    var data = moment().format('DD/MM/YYYY');
-    var paginacao = {};
-    var tempo = {};
-    var dados = [2];
-    var contador = 0;
-
-    function obterDados(grafico, endpoint) {
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3302/sensores/' + endpoint, false);
-        http.send(null);
-        var valores = JSON.parse(http.responseText);
-        if (paginacao[endpoint] == null) {
-            paginacao[endpoint] = 0;
-        }
-        if (tempo[endpoint] == null) {
-            tempo[endpoint] = 0;
-        }
-
-
-        // Exibir à partir do último elemento exibido anteriormente
-        var ultimaPaginacao = paginacao[endpoint];
-        paginacao[endpoint] = valores.length;
-        var valores = valores.slice(ultimaPaginacao);
-        valores.forEach((valor) => {
-            //Máximo de 60 itens exibidos no gráfico
-            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-                grafico.data.labels.shift();
-                grafico.data.datasets[0].data.shift();
-            }
-
-
-            if (tempo[endpoint] > 23) {
-                tempo[endpoint] = 0;
-            }
-
-            if (contador % 2 == 0) {
-
-                dados[0] = valor;
-
-            } else {
-
-                dados[1] = valor;
-            }
-            contador += 1;
-
-            grafico.data.labels.push(tempo[endpoint]++);
-            grafico.data.datasets[0].data.push(parseFloat(valor));
-            grafico.update();
-
-            // LÓGICA KPI ========================================================================================================================
-
-            // ATUAL ------------------------------------------------------------------------------------------------------------
-            document.getElementById("p_KPI_Temp_Atual").innerHTML = `${dados[1]}ºC`;
-            document.getElementById("p_KPI_Umid_Atual").innerHTML = `${dados[0]}%`;
-            // console.log(valores);
-
-
-            // MÁXIMA ------------------------------------------------------------------------------------------------------------
-            if (Maior_Temperatura_Registrada == null || dados[1] > Maior_Temperatura_Registrada) {
-                Maior_Temperatura_Registrada = dados[1];
-
-                document.getElementById("p_KPI_Temp_Max").innerHTML = `${Maior_Temperatura_Registrada}ºC`;
-
-            }
-
-            if (Maior_Umidade_Registrada == null || dados[0] > Maior_Umidade_Registrada) {
-                Maior_Umidade_Registrada = dados[0];
-
-                document.getElementById("p_KPI_Umid_Max").innerHTML = `${Maior_Umidade_Registrada}%`;
-
-            }
-
-            // MÍNIMA ------------------------------------------------------------------------------------------------------------
-            if (Menor_Temperatura_Registrada == null || dados[1] < Menor_Temperatura_Registrada) {
-                Menor_Temperatura_Registrada = dados[1];
-
-                document.getElementById("p_KPI_Temp_Min").innerHTML = `${Menor_Temperatura_Registrada}ºC`;
-                console.log(Menor_Temperatura_Registrada)
-            }
-
-            if (Menor_Umidade_Registrada == null || dados[0] < Menor_Umidade_Registrada) {
-                Menor_Umidade_Registrada = dados[0];
-
-                document.getElementById("p_KPI_Umid_Min").innerHTML = `${Menor_Umidade_Registrada}%`;
-            }
-
-
-            // LÓGICA ALERTAS ============================================================================================
-
-            if(dados[1] >= Temp_Min && dados[1] <= Temp_Max && dados[0] >= Umidade_Maxima){
-                document.getElementById("p_alerta").innerHTML = "Hectare com condições ideais para o Míldio!";
-                document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
-                document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
-                bt_fechar_alerta.style.backgroundColor = "#FF3838"; div_alerta.style.display = 'block';
-
-            } else if(dados[1] >= 13 && dados[1] < 18 && dados[0] >= 55 && dados[0] < 60 || dados[1] > 25 && dados[1] <= 30 && dados[0] >= 55 && dados[0] < 60){
-                document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"  
-                document.getElementById("p_alerta").innerHTML = "Hectare perto de atingir as condições ideais";
-
-                div_alerta.style.display = 'block';
-            }
-
-        })
-    }
-
-    setInterval(() => {
-        obterDados(dht11Umidade, 'dht11/umidade');
-        obterDados(dht11Temperatura, 'dht11/temperatura');
-        // obterDados(luminosidade, 'luminosidade');
-        // obterDados(lm35Temperatura, 'lm35/temperatura');
-        // obterDados(chave, 'chave');
-    }, 2000);
 
 
     function fecharAlerta() {
