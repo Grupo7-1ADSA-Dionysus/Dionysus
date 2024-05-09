@@ -19,9 +19,9 @@
 
     <!--script dos graficos-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
     <title>Dashboard</title>
 </head>
 
@@ -327,6 +327,7 @@
                         borderColor: ['#45b3e7'],
                         backgroundColor: ['#89cff0'],
                         data: [55, 60, 62, 60, 65, 66, 68, 70, 75, 79],
+                        fill: true
                     }]
                 },
                 options: {
@@ -375,7 +376,8 @@
                     type: 'line',
                     borderColor: ['#ff3232'],
                     backgroundColor: ['#ff7f7f'],
-                    data: [32, 25, 24, 28, 30, 28, 25, 26, 24, 22]
+                    data: [32, 25, 24, 28, 30, 28, 25, 26, 24, 22],
+                    fill: true
                 }]
             },
             options: {

@@ -19,9 +19,9 @@
 
     <!--script dos graficos-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
     <title>Dashboard</title>
 </head>
 
@@ -248,7 +248,7 @@
     const data1 = {
         labels: labels1,
         datasets: [{
-            axis: 'y',
+            axis: 'y2',
             label: 'Temperatura (°C)',
             data: [25, 18, 20, 28, 30, 28, 21],
             fill: false,
@@ -256,7 +256,7 @@
             borderWidth: 1
         },
         {
-            axis: 'y2',
+            axis: 'y',
             label: 'Umidade (%)',
             data: [60, 59, 80, 81, 56, 55, 40],
             fill: false,
@@ -283,22 +283,9 @@
                 },
             scaleLabel: {
               display: true,
-              labelString: 'Temperatura (°C)',
+              labelString: 'Umidade (%) e Temperatura (°C)', 
             }
-          },
-          {
-            id: 'y-axis-2',
-            type: 'linear',
-            position: 'right',
-            ticks: {
-                min: 0,
-                max: 40,
-                stepSize: 5
-                },
-            scaleLabel: {
-              display: true,
-              labelString: 'Umidade (%)'
-            },
+
             
           }]
         }
