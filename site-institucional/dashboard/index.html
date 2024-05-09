@@ -19,9 +19,9 @@
 
     <!--script dos graficos-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <title>Dashboard</title>
 </head>
 
@@ -50,7 +50,7 @@
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined"
-                onclick="navegar('../login/login.html')">Logout</button>
+                    onclick="navegar('../login/login.html')">Logout</button>
             </section>
         </aside>
 
@@ -100,7 +100,8 @@
             <header class="cabecalho">
                 <div class="caixa-auxiliar-titulo-cabecalho">
                     <section class="sessao-voltar">
-                        <span class="botao-cabecalho material-symbols-outlined" onclick="navegar('../hectare/hectare.html')">
+                        <span class="botao-cabecalho material-symbols-outlined"
+                            onclick="navegar('../hectare/hectare.html')">
                             Arrow_Back
                         </span>
                     </section>
@@ -109,7 +110,7 @@
                     </section>
                     <section class="sessao-notificacao-cabecalho">
                         <span class="botao-cabecalho material-symbols-outlined"
-                        onclick="AparecerCaixa(notificacoes)">Notifications</span>
+                            onclick="AparecerCaixa(notificacoes)">Notifications</span>
                     </section>
                 </div>
             </header>
@@ -206,7 +207,7 @@
                                 <p class="longitude"><span style="color: #7000FF;">Longitude:</span> 23°32'56'' Sul</p>
                                 <p class="latitude"><span style="color: #7000FF;">Latitude:</span> 46°38'20'' Oeste</p>
                             </div>
-                            
+
                             <h3 class="titulo-temperatura-umidade">Hectare 6</h3>
                         </header>
 
@@ -243,54 +244,82 @@
     }
 
     // Gráfico Média Semanal
-    const Media_semanal = document.getElementById('grafico-media-semanal');
-    const labels1 = ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'];
-    const data1 = {
-        labels: labels1,
-        datasets: [{
-            axis: 'y2',
-            label: 'Temperatura (°C)',
-            data: [25, 18, 20, 28, 30, 28, 21],
-            fill: false,
-            backgroundColor: '#FF8E8E',
-            borderWidth: 1
+
+    var ctx = document.getElementById('grafico-media-semanal').getContext('2d');
+
+
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'horizontalBar',
+
+        // The data for our dataset
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
+            datasets: [{
+                label: 'Temperatura (°C)',
+                data: [25, 18, 20, 28, 30, 28, 21],
+                fill: false,
+                backgroundColor: '#FF8E8E',
+                borderWidth: 1
+            },
+            {
+                label: 'Umidade (%)',
+                data: [60, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                backgroundColor: '#58C3FF',
+                borderWidth: 1
+            }]
         },
-        {
-            axis: 'y',
-            label: 'Umidade (%)',
-            data: [60, 59, 80, 81, 56, 55, 40],
-            fill: false,
-            backgroundColor: '#58C3FF',
-            borderWidth: 1
-        }]
-    };
 
-    new Chart(Media_semanal, {
-        type: 'bar',
-        data: data1,
-        options: {
-            indexAxis: 'y',
-            maintainAspectRatio: false,
-            scales: {
-          yAxes: [{
-            id: 'y-axis-1',
-            type: 'linear',
-            position: 'left',
-            ticks: {
-                    min: 0,
-                    max: 100,
-                    stepSize: 10
-                },
-            scaleLabel: {
-              display: true,
-              labelString: 'Umidade (%) e Temperatura (°C)', 
-            }
-
-            
-          }]
-        }
-        }
+        // Configuration options go here
+        options: {}
     });
+    // const Media_semanal = document.getElementById('grafico-media-semanal');
+    // const labels1 = ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'];
+    // const data1 = {
+    //     labels: labels1,
+    //     datasets: [{
+    //         label: 'Temperatura (°C)',
+    //         data: [25, 18, 20, 28, 30, 28, 21],
+    //         fill: false,
+    //         backgroundColor: '#FF8E8E',
+    //         borderWidth: 1
+    //     },
+    // {
+    //     label: 'Umidade (%)',
+    //     data: [60, 59, 80, 81, 56, 55, 40],
+    //     fill: false,
+    //     backgroundColor: '#58C3FF',
+    //     borderWidth: 1
+    // }]
+    // };
+
+    // new Chart(Media_semanal, {
+    //     type: 'horizontalBar',
+    //     data: data1,
+    //     options: {
+    //         indexAxis: 'y',
+    //         maintainAspectRatio: false,
+    //         scales: {
+    //       yAxes: [{
+    //         id: 'y-axis-1',
+    //         type: 'linear',
+    //         position: 'left',
+    //         ticks: {
+    //                 min: 0,
+    //                 max: 100,
+    //                 stepSize: 10
+    //             },
+    //         scaleLabel: {
+    //           display: true,
+    //           labelString: 'Umidade (%) e Temperatura (°C)', 
+    //         }
+
+
+    //       }]
+    //     }
+    //     }
+    // });
 
     // ----------------------------------------------------------------------------------------------------------------------
 
@@ -300,45 +329,46 @@
 
 
     var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-        contextoDht11Umidade.canvas.width = 1000;
-        contextoDht11Umidade.canvas.height = 300;
-        var dht11Umidade = new Chart(
-            contextoDht11Umidade,
-            {
-                type: 'line',
-                data: {
-                    datasets: [{
-                        label: 'Umidade',
-                        type: 'line',
-                        borderColor: ['#45b3e7'],
-                        backgroundColor: ['#89cff0']
+    contextoDht11Umidade.canvas.width = 1000;
+    contextoDht11Umidade.canvas.height = 300;
+    var dht11Umidade = new Chart(
+        contextoDht11Umidade,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Umidade',
+                    type: 'line',
+                    borderColor: ['#45b3e7'],
+                    backgroundColor: ['#89cff0']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 100,
+                        }
                     }]
                 },
-                options: {
-                    scales: {
-                        xAxes: [{
-                            distribution: 'series',
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }],
-                        yAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                min: 0,
-                        max: 100,
-                            },
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    },
-                    animation: {
-                        duration: 0
-                    }
+                animation: {
+                    duration: 0
                 }
             }
-        );
+        }
+    );
 
     // Gráfico de TEMPERATURA ==================================================================================
 
@@ -368,11 +398,13 @@
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            labelString: 'Temperatura'
-                    
+
+
                         },
                         ticks: {
                             beginAtZero: true,
+                            // min: 0,
+                            max: 60,
                         }
                     }]
                 },
@@ -426,7 +458,7 @@
         var valores = valores.slice(ultimaPaginacao);
         valores.forEach((valor) => {
             //Máximo de 60 itens exibidos no gráfico
-            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+            if (grafico.data.labels.length == 24 && grafico.data.datasets[0].data.length == 24) {
                 grafico.data.labels.shift();
                 grafico.data.datasets[0].data.shift();
             }
@@ -446,7 +478,7 @@
             }
             contador += 1;
 
-            grafico.data.labels.push(tempo[endpoint]++);
+            grafico.data.labels.push(`${tempo[endpoint]++}h`);
             grafico.data.datasets[0].data.push(parseFloat(valor));
             grafico.update();
 
@@ -490,19 +522,24 @@
 
             // LÓGICA ALERTAS ============================================================================================
 
-            if(dados[1] >= Temp_Min && dados[1] <= Temp_Max && dados[0] >= Umidade_Maxima){
+            if (dados[1] >= Temp_Min && dados[1] <= Temp_Max && dados[0] >= Umidade_Maxima) {
                 document.getElementById("p_alerta").innerHTML = "Hectare com condições ideais para o Míldio!";
                 document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
                 document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
                 bt_fechar_alerta.style.backgroundColor = "#FF3838"; div_alerta.style.display = 'block';
 
-            } else if(dados[1] >= 13 && dados[1] < 18 && dados[0] >= 55 && dados[0] < 60 || dados[1] > 25 && dados[1] <= 30 && dados[0] >= 55 && dados[0] < 60){
-                document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"  
+            } else if (dados[1] >= 13 && dados[1] < 18 && dados[0] >= 55 && dados[0] < 60 || dados[1] > 25 && dados[1] <= 30 && dados[0] >= 55 && dados[0] < 60) {
+                document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"
+                document.getElementById("p_alerta").innerHTML = "Hectare perto de atingir as condições ideais";
+
+                div_alerta.style.display = 'block';
+
+            } else if (dados[0] >= 55) {
+                document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"
                 document.getElementById("p_alerta").innerHTML = "Hectare perto de atingir as condições ideais";
 
                 div_alerta.style.display = 'block';
             }
-
         })
     }
 
