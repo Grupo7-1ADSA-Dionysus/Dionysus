@@ -107,12 +107,14 @@
 .caixa-conteudo-simulador{
     /*Tamanho*/
     width: 90%;
-    height: 100%;
+    height: 102%;
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-between;
     /*Cor*/
     background-color: #fff;
+    /*Detalhes*/
+    overflow: visible;
 }
 
 .sessao-inputs-simulador{
@@ -194,6 +196,7 @@
     border: 2px solid #000;
     /*Cor*/
     background-color: #8C52FF;
+
 }
 
 .resultado-titulo {
@@ -206,6 +209,7 @@
     align-items: center;
     /*Fonte*/
     font-size: 40px;
+    color: white;
 }
 
 .resultado{
@@ -214,6 +218,10 @@
   height: 70%;
   /*Organização de elementos filhos*/
   padding: 10px; 
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
   /* Cor */
   color: rgb(255, 255, 255); 
   /*Fonte*/
@@ -227,12 +235,14 @@
 .titulo-resultado-simulado{
     /*Fonte*/
     font-size: 30px;
+ 
 }
 
 .texto-resultado{
     width: 100%;
     /*Fonte*/
     font-size: 22px;
+    line-height: 45px;
 }
 
 .resultado .titulo {
@@ -241,11 +251,11 @@
 }
 
 .palavra-verde{
-    color: #76CF04; 
+ background-color: #76CF04;
 }
 
 .palavra-vermelha {
-    color: #FF0000; 
+    background-color: rgb(255, 58, 58);
 }
 
 .resultado-rodape{
@@ -253,4 +263,6 @@
     width: 100%;
     /*Texto*/
     text-align: center;
+
+    color: white;
 }
