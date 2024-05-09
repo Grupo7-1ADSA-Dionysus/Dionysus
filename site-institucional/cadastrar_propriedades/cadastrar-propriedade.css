@@ -275,8 +275,11 @@ b{
     font-family: "Fira Code", monospace;
     /*detalhes*/
     cursor: pointer; 
-}
 
+}
+.titulo-input-cadastro{
+    margin-top: -14px;
+}
 .sessao-input-cadastro {
     /*tamanho*/
     width: 55%;
@@ -336,6 +339,7 @@ b{
     overflow: visible;
 }
 
+
 .input {
     /*tamanho*/
     height: 100px;
@@ -364,8 +368,8 @@ b{
        border: 2px solid #000;
        border-radius: 10px;
        /*Tamanho*/
-       height: 70%;
-       width: 70%;
+       height: 30%;
+       width: 30%;
        padding: 8px;
        font-size: 16px;
        box-shadow: #000;
@@ -376,8 +380,8 @@ b{
        justify-content: center;
        align-items: center;
        cursor: pointer;
+       margin-bottom: -20px;
 }
-
 .cadastrar{
     /*tamanho*/
     width: 80%;
@@ -425,4 +429,8 @@ b{
 b{
     height: 100%;
     overflow: visible;
+}
+
+.gambiarra{
+    margin-top: 49px;
 }
