@@ -10,7 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <!--link do css-->
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./dashboard1.css">
 
     <!--link da fonte-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,6 +73,14 @@
                     </select>
                 </div>
 
+                
+
+            </div>
+
+            <div class="div-localizacao">
+                <p>Localização</p>
+                <p class="longitude"><span style="color: #7000FF;">Longitude:</span> 53°32'56'' Sul</p>
+                 <p class="latitude"><span style="color: #7000FF;">Latitude:</span> 66°38'20'' Oeste</p>
             </div>
             <button class="Botão_Editar" onclick="AparecerCaixa(informacoes_hectare)">
                 EDITAR
@@ -202,10 +210,6 @@
                             <button class="botao-configurar" onclick="AparecerCaixa(informacoes_hectare)">
                                 <span class="config material-symbols-outlined">Settings</span>
                             </button>
-                            <div class="coordenadas">
-                                <p class="longitude"><span style="color: #7000FF;">Longitude:</span> 53°32'56'' Sul</p>
-                                <p class="latitude"><span style="color: #7000FF;">Latitude:</span> 66°38'20'' Oeste</p>
-                            </div>
                             
                             <h3 class="titulo-temperatura-umidade">Hectare 1</h3>
                         </header>
@@ -310,7 +314,7 @@
     // Gráfico de UMIDADE
     const Umidade = document.getElementById('grafico_umidade');
     const Umidade2 = document.getElementById('grafico_umidade_2');
-    const labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+    const labels = ['1h', '2h', '3h', '4h', '5h', '6h', '7h', '8h', '9h', '10h']
 
     var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
         contextoDht11Umidade.canvas.width = 1000;
@@ -358,7 +362,7 @@
         );
 
     // Gráfico de TEMPERATURA ==================================================================================
-    const labels2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+    const labels2 = ['1h', '2h', '3h', '4h', '5h', '6h', '7h', '8h', '9h', '10h'];
     var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
     contextoDht11Temperatura.canvas.width = 1000;
     contextoDht11Temperatura.canvas.height = 300;

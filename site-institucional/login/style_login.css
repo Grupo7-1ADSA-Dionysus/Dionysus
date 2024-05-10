@@ -17,7 +17,7 @@ body {
 
 .foto_lateral {
     /*Tamanho*/
-    width: 44%;
+    width: 54%;
     height: 100%;
     /*fundo*/
     background-image: url(./assets/imagens/image\ 28.png);
@@ -37,7 +37,7 @@ body {
 .caixa_login {
     /*Tamanho*/
     margin-left: 19%;
-    width: 57%;
+    width: 64%;
     height: 80%;
     /*Borda*/
     border: 2px solid #000;

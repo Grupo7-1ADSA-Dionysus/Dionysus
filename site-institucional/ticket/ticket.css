@@ -227,7 +227,7 @@
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 50px;
     align-items: center;
 }
 
@@ -238,8 +238,8 @@
 
 .caixa-ticket{
     /*Tamanho*/
-    width: 60%;
-    height: 75%;
+    width: 50%;
+    height: 70%;
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
@@ -262,6 +262,7 @@
 .input-assunto{
     /*Espaçamento*/
     margin-bottom: 30px;
+    border-radius: 5px;
 }
 
 .caixa-texto-mensagem{
@@ -269,6 +270,7 @@
     height: 60%;
     /*Borda*/
     border: 2px solid #000;
+    border-radius: 5px;
 }
 
 .botao-enviar{

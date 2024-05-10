@@ -453,7 +453,7 @@
 .graficos-temperatura-umidade {
     /*Tamanho*/
     width: 70%;
-    height: 90%;
+    height: 92%;
     /*Organização de elementos filhos*/
     /* display: flex;
   /*  flex-direction: row;*/
@@ -469,7 +469,7 @@
     width: 95%;
     /*Organização de elementos filhos*/
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: row;
 }
 
@@ -494,7 +494,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-right: 100px;
+
     font-size: 30px;
 }
 
@@ -558,8 +558,8 @@
     padding: 20px;
 
     /*Tamanho*/
-    height: 300px;
-    width: 600px;
+    height: 50%;
+    width: 40%;
 
     /*Cor*/
     background-color: #FFF;
@@ -568,12 +568,12 @@
 .inputs_informações_Hectare {
     /*Organização de elementos filhos*/
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
     /*Tamanho*/
-    height: 100%;
-    width: 500px;
+    height: 50%;
+    width: 100%;
 }
 
 .Titulo_informações_Hectare {
@@ -581,7 +581,7 @@
     color: #8C52FF;
     font-size: 30px;
     /*Tamanho*/
-    height: 100px;
+    height: 20%;
 }
 
 
@@ -640,8 +640,8 @@
     background-color: #8C52FF;
 
     /*Tamanho*/
-    height: 60px;
-    width: 175px;
+    height: 12%;
+    width: 30%;
     font-size: 20px;
 }
 
@@ -652,4 +652,11 @@
 
 .grafico-canva{
     padding-top: 25px;
+}
+
+.div-localizacao{
+    display: flex;
+    flex-direction: column;
+ height: 30%;
+ width: 76%;
 }

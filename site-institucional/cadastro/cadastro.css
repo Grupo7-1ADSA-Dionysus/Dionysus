@@ -27,7 +27,7 @@ body{
 }
 .UvaImagem{
     /*tamanho*/
-    width: 40%;
+    width: 50%;
     height: 100%;
     /*fundo*/
     background-image: url(./assets/imagens/ImagemUva2.png);
