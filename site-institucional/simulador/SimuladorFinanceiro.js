@@ -20,7 +20,7 @@ Sua expectativa em KG: <span class="palavra-verde">${PESO_PRODUCAO} KG</span>
 <br>
 <br>Valor perdido em Reais:  <span class="palavra-vermelha">R$ ${PERDA_REAIS}</span>
 <br>
-<br>Em um ano você poderá um prejuízo de: <span class="palavra-vermelha">${PERDA_KG_ANO} Kg</span>
+<br>Em um ano você poderá ter um prejuízo de: <span class="palavra-vermelha">${PERDA_KG_ANO} Kg</span>
 <br>    
 <br>que equivalem <span class="palavra-vermelha">R$ ${PERDA_REAIS_ANO}</span>`;
 

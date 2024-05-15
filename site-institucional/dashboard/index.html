@@ -527,6 +527,7 @@
             // LÓGICA ALERTAS ============================================================================================
 
             if (dados[1] >= Temp_Min && dados[1] <= Temp_Max && dados[0] >= Umidade_Maxima) {
+                document.getElementById("h2_titulo_alerta").innerHTML = "ALERTA!"
                 document.getElementById("p_alerta").innerHTML = "Hectare com condições ideais para o Míldio!";
                 document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
                 document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
