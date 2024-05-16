@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/imagens/favicon.png" type="image/x-icon">
+    <!--link do css-->
+    <link rel="stylesheet" href="css/style_login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="foto_lateral">
+        <button class="botao_voltar" onclick="navegar('../pagina-inicial/pagina_inicial.html')">
+            <img src="assets/imagens-login/imagemVoltar.png" alt="imagem voltar">
+    </button>
+</div>
+    <div class="conteudo_login">
+        <div class="caixa_login">
+            <h1>LOGIN</h1>
+            <h4 class="email">E-mail</h4>
+            <input class="input_email" type="text" id="input_email">
+            <span class="mensagem-erro-email"></span>
+            <h4 class="senha">Senha</h4>
+            <input class="input_senha" type="password" id="input_senha">
+            <span class="mensagem-erro-senha"></span>
+            <button class="botao_Login" onclick="entrar()">ENTRAR</button>
+            <br>
+            <p>Ainda não possui uma conta?</p>
+            <p class="cadastro" onclick="navegar('cadastro.html')"><b>Cadastre-se</b></p>
+        </div>
+        <div class="caixa_xxx">
+            <img src="./assets/imagens-login/xxx.png" alt="xxx" height="40px">
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function navegar(pagina){
+        window.location.href = pagina;
+    }
+    
+    function entrar() {
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        
+        // if (emailVar == "" || senhaVar == "") {
+            
+        //     // Colocar uma mensagem de erro aqui !!!!!!!!!!!!!!!!!!!!!!!
+        //     // cardErro.style.display = "block"
+        //     // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        //     // finalizarAguardar();
+        //     return false;
+        // }
+        
+        
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+        
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+            
+            if (resposta.ok) {
+                console.log(resposta);
+                
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    // sessionStorage.ID_USUARIO = json.id;
+                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    console.log("OPA");
+                    
+                    window.location = "./dashboard/cards.html";
+                    // setTimeout(function () {
+                    // }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/assets/imagens-cadastro/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <title>Cadastro</title>
+    <!-- <script src="./js/cadastro.js"></script> -->
+</head>
+
+<body>
+    <div class="conteudo">
+
+        <button class="BotaoVoltar" onclick="navegar('../login/login.html')">
+            <img class="ImagemBotao" src="./assets/imagens-cadastro/Group 99.png">
+        </button>
+        <section class="sessao-input-cadastro">
+            <h1 class="titulo-input-cadastro">CADASTRO</h1>
+            <div class="div-inputs">
+                <section class="sessao inputs-esquerdo">
+                    <b > Nome:</b>
+                    <input class="input nome" id="input_nome" tabindex="1">
+                    <span class="span-avisos">a</span>
+
+                    <b >Email:</b>
+                    <input class="input email" id="input_email" tabindex="3">
+                    <span class="span-avisos" id="span_avisoEmail">a</span>
+
+                    <b >Senha:</b>
+                    <input type="password" class="input senha" id="input_senha" tabindex="5">
+                    <span class="span-avisos" id="span_avisoSenha">a</span>
+                </section>
+                <section class="sessao inputs-direito">
+                    <b >Sobrenome:</b>
+                    <input class="input sobrenome" id="input_sobrenome" tabindex="2">
+                    <span class="span-avisos">a</span>
+
+                    <b >Telefone:</b>
+                    <input class="input telefone" id="input_telefone" tabindex="4">
+                    <span class="span-avisos">a</span>
+        
+                    <b >Confirmação de senha:</b>
+                    <input type="password" class="input senha" id="input_confirmacaoSenha" tabindex="6">
+                    <span class="span-avisos" id="span_avisoConfirmacaoSenha">a</span>
+                </section>
+            </div>
+
+            <span class="span-input-baixo">
+                <b>Token de Acesso:</b>
+                <input class="token" id="input_token" tabindex="7">
+            </span>
+            <span class=" geral" id="span_avisoCampos"></span>
+
+
+            <button class="botao cadastrar" onclick="cadastrar()" tabindex="7">CADASTRE-SE</button>
+        </section>
+
+    </div>
+    <div class="UvaImagem"></div>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+  
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+      var nomeVar = input_nome.value + ' ' + input_sobrenome.value;
+      var emailVar = input_email.value;
+      var senhaVar = input_senha.value;
+      var confirmacaoSenhaVar = input_confirmacaoSenha.value;
+      var telefoneVar = input_telefone.value;
+      var tokenVar = input_token.value;
+    //   var empresaVar = listaEmpresas.value
+
+
+    const NOME = input_nome.value;
+    const SOBRENOME = input_sobrenome.value;
+    const EMAIL = input_email.value;
+    const TELEFONE = input_telefone.value;
+    const SENHA = input_senha.value;
+    const CONFIRMACAO_SENHA = input_confirmacaoSenha.value;
+    const TOKEN = input_token.value;
+
+    span_avisoCampos.innerHTML = "";
+
+    if(NOME != "" && SOBRENOME != "" && EMAIL != "" && TELEFONE != "" && SENHA != "" && CONFIRMACAO_SENHA != "" && TOKEN != ""){
+
+        // Email terá que ter um @ e um .
+        const INDICE_ARROBA = EMAIL.indexOf("@");
+        const INDICE_PONTO = EMAIL.indexOf(".");
+
+        
+        span_avisoEmail.style.color = 'transparent';
+        span_avisoSenha.style.color = 'transparent';
+        span_avisoConfirmacaoSenha.style.color = 'transparent';
+
+        // Senha terá que ter pelo menos: 8 caracteres, 1 número, uma letra maiúscula 
+        if(INDICE_ARROBA == -1 || INDICE_PONTO == -1){
+            span_avisoEmail.innerHTML = "Email inválido";
+            span_avisoEmail.style.color = 'red';
+   
+        } else{
+            if(SENHA.length < 8){
+                span_avisoSenha.innerHTML = "A senha deve ter pelo menos 8 caracteres";
+                span_avisoSenha.style.color = 'red';
+       
+            } else{
+                let existeNumero = false;
+    
+                for(let numero = 0; numero <= 9; numero++){
+                    const INDICE_NUMERO = SENHA.indexOf(`${numero}`);
+        
+                    if(INDICE_NUMERO != -1){
+                        existeNumero = true;
+    
+                        numero = 10;
+                    } 
+                }
+    
+                if(existeNumero == true){
+                    
+                    let existeLetraMaiuscula = false;
+                    let senha_replace = SENHA;
+    
+                    senha_replace = senha_replace.replace(/\d+/ig, "")
+        
+                    for(let posicao = 0; posicao < senha_replace.length; posicao++){
+                        const LETRA_MAIUSCULA = senha_replace[posicao];
+        
+                        if(LETRA_MAIUSCULA == LETRA_MAIUSCULA.toUpperCase()){
+                            posicao = senha_replace.length;
+                            existeLetraMaiuscula = true;
+                        } 
+                    }
+        
+                    if(existeLetraMaiuscula == false){
+                        span_avisoSenha.innerHTML = "A senha deve conter uma letra maiúscula";
+                        span_avisoSenha.style.color = 'red';
+               
+
+                    } else{
+                        span_avisoConfirmacaoSenha.innerHTML = "";
+    
+                        if(SENHA != CONFIRMACAO_SENHA){
+                            
+                            span_avisoConfirmacaoSenha.innerHTML = "As senhas não conferem";
+                            span_avisoConfirmacaoSenha.style.color = 'red';
+                       
+                        } 
+                    }
+                } else{
+                    span_avisoSenha.innerHTML = "A senha deve conter pelo menos um número";
+                    span_avisoSenha.style.color = 'red';
+                 
+                }   
+                
+            }
+        }
+        
+        
+
+    } else{
+        span_avisoCampos.innerHTML = "Preencha todos os campos"
+   
+    }
+
+
+
+    //   if (
+    //     nomeVar == "" ||
+    //     emailVar == "" ||
+    //     senhaVar == "" ||
+    //     confirmacaoSenhaVar == "" ||
+    //     empresaVar == ""
+    //   ) {
+    //     cardErro.style.display = "block";
+    //     mensagem_erro.innerHTML =
+    //       "(Mensagem de erro para todos os campos em branco)";
+  
+    //     finalizarAguardar();
+    //     return false;
+    //   } else {
+    //     setInterval(sumirMensagem, 5000);
+    //   }
+  
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+          telefoneServer: telefoneVar,
+          tokenServer: tokenVar
+        //   empresaServer: empresaVar
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            // cardErro.style.display = "block";
+  
+            // mensagem_erro.innerHTML =
+            //   "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+  
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+  
+            limparFormulario();
+    
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+    
+        });
+  
+      return false;
+    }
+  
+    function listar() {
+      fetch("/empresas/listar", {
+        method: "GET",
+      })
+        .then(function (resposta) {
+          resposta.json().then((empresas) => {
+            empresas.forEach((empresa) => {
+              listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+            });
+          });
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+    }
+  
+    // function sumirMensagem() {
+    //   cardErro.style.display = "none";
+    // }
+  </script>
+
