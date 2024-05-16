@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="public/assets/imagens-cadastro/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/cadastro.css">
+    <script src="./js/sessao.js"></script>
     <title>Cadastro</title>
     <!-- <script src="./js/cadastro.js"></script> -->
 </head>
@@ -16,6 +17,9 @@
         <button class="BotaoVoltar" onclick="navegar('../login/login.html')">
             <img class="ImagemBotao" src="./assets/imagens-cadastro/Group 99.png">
         </button>
+
+     
+
         <section class="sessao-input-cadastro">
             <h1 class="titulo-input-cadastro">CADASTRO</h1>
             <div class="div-inputs">
@@ -55,6 +59,10 @@
 
 
             <button class="botao cadastrar" onclick="cadastrar()" tabindex="7">CADASTRE-SE</button>
+
+            <div id="div_aguardar" class="loading-div">
+              <img src="assets/imagens-cadastro/loading1.gif" id="loading-gif" class="img-loading">
+          </div>
         </section>
 
     </div>
@@ -65,7 +73,7 @@
 
 <script>
     function cadastrar() {
-  
+      aguardar();
       //Recupere o valor da nova input pelo nome do id
       // Agora vá para o método fetch logo abaixo
       var nomeVar = input_nome.value + ' ' + input_sobrenome.value;
@@ -107,7 +115,7 @@
             if(SENHA.length < 8){
                 span_avisoSenha.innerHTML = "A senha deve ter pelo menos 8 caracteres";
                 span_avisoSenha.style.color = 'red';
-       
+                finalizarAguardar();
             } else{
                 let existeNumero = false;
     
@@ -140,7 +148,7 @@
                     if(existeLetraMaiuscula == false){
                         span_avisoSenha.innerHTML = "A senha deve conter uma letra maiúscula";
                         span_avisoSenha.style.color = 'red';
-               
+                        finalizarAguardar();
 
                     } else{
                         span_avisoConfirmacaoSenha.innerHTML = "";
@@ -149,13 +157,13 @@
                             
                             span_avisoConfirmacaoSenha.innerHTML = "As senhas não conferem";
                             span_avisoConfirmacaoSenha.style.color = 'red';
-                       
+                            finalizarAguardar();
                         } 
                     }
                 } else{
                     span_avisoSenha.innerHTML = "A senha deve conter pelo menos um número";
                     span_avisoSenha.style.color = 'red';
-                 
+                    finalizarAguardar();
                 }   
                 
             }
@@ -165,7 +173,7 @@
 
     } else{
         span_avisoCampos.innerHTML = "Preencha todos os campos"
-   
+        finalizarAguardar();
     }
 
 

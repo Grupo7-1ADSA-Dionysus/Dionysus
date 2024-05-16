@@ -228,3 +228,14 @@ b{
     overflow: visible;
 }
 
+
+.loading-div{
+    position: absolute;
+    top: 87%;
+    left: 80%;
+    display: none;
+}
+
+.img-loading{
+    width: 3vw
+}
