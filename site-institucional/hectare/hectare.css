@@ -378,6 +378,10 @@
     background-color: #5CDD20;
 }
 
+.manutencao{
+    background-color: #7a7a7a;
+}
+
 .icone-situacao {
     /*Fonte*/
     font-size: 50px;
@@ -425,7 +429,8 @@
 
 .icone-legenda-ruim,
 .icone-legenda-medio,
-.icone-legenda-bom {
+.icone-legenda-bom,
+.icone-legenda-manutencao {
     /*Espaçamento*/
     padding: 2px;
     /*Borda*/
@@ -454,9 +459,15 @@
     background-color: #5CDD20;
 }
 
+.icone-legenda-manutencao{
+     /*Cor*/
+    background-color: #7a7a7a;
+}
+
 .icone-legenda-ruim:hover,
 .icone-legenda-medio:hover,
-.icone-legenda-bom:hover{
+.icone-legenda-bom:hover,
+.icone-legenda-manutencao:hover{
     /*Cor*/
     color: #FFF;
 }
