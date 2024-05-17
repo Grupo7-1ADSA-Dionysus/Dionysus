@@ -14,7 +14,7 @@
 <body>
   <div class="conteudo">
 
-    <button class="BotaoVoltar" onclick="navegar('../login/login.html')">
+    <button class="BotaoVoltar" onclick="navegar('login.html')">
       <img class="ImagemBotao" src="./assets/imagens-cadastro/Group 99.png">
     </button>
 
@@ -264,4 +264,8 @@
   // function sumirMensagem() {
   //   cardErro.style.display = "none";
   // }
+
+  function navegar(pagina){
+        window.location.href = pagina;
+    }
 </script>
