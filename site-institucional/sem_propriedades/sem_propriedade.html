@@ -41,18 +41,68 @@
                 </div>
             </header>
             <div class="caixa-notificacoes" id="notificacoes">
-                <div class="notificacoes">
-                    <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
-                    <p>Hectare 1 está em estado de alerta!</p>
-                </div>
-                <div class="notificacoes">
-                    <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
-                    <p>Hectare 2 está em estado de alerta!</p>
-                </div>
-                <div class="notificacoes">
-                    <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
-                    <p>Hectare 4 está em estado de atenção!!</p>
-                </div>
+                <header class="cabecalho-notificacoes">
+                    <h4>Notificações</h4>
+                    <h4 class="fechar-notificacoes" onclick="mostrarNotificacoes()">X</h4>
+                </header>
+                <section class="lista-notificacao">
+                    <div class="notificacoes" id="notificacao1">
+                        <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao1)" class="excluir-notificacao">X</p>
+                            <p>Hectare 1 está em estado de alerta!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao2">
+                        <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao2)" class="excluir-notificacao">X</p>
+                            <p>Hectare 2 está em estado de alerta!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                </section>
             </div>
             <div class="sessao-conteudo-home" id="home">
                 <section class="caixa-propriedades">
@@ -80,6 +130,10 @@
         } else {
             notificacoes.style.display = 'none'
         }
+    }
+
+     function excluirNotificacao(idNotificacao){
+        idNotificacao.remove();
     }
 
      function navegar(pagina){
