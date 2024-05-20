@@ -482,7 +482,7 @@
     /*tamanho*/
     width: 25%;
     /*Borda*/
-    border: 2px solid #4CAF50;
+    border: 2px solid #7000FF;
     border-radius: 10px;
 }
 
@@ -493,16 +493,16 @@
     /*Organização de elementos filhos*/
     /* display: flex;
   /*  flex-direction: row;*/
-    justify-content: space-evenly;
+    gap: 10px;
     /*Borda*/
-    border: 2px solid #4CAF50;
+    border: 2px solid #7000FF;
     border-radius: 10px;
     padding-top: 30px;
 }
 
 .cabecalho-grafico-temperatura-umidade {
     /*Tamanho*/
-    width: 95%;
+    width: 100%;
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: space-around;
@@ -516,6 +516,65 @@
     background-color: transparent;
     /*Detalhes*/
     cursor: pointer;
+}
+.legenda {
+    /*Tamanho*/
+    width: 25%;
+   height: 20%;
+    /*Espaçamento*/
+    margin-left: 5px;
+    /*Organização de elementos filhos*/
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /*Fonte*/
+    font-size: 12px;
+}
+
+.icone-legenda-ruim,
+.icone-legenda-medio,
+.icone-legenda-bom,
+.icone-legenda-manutencao {
+    /*tamanho*/
+   /* height: 50% ;*/
+    /*Espaçamento*/
+    padding: 2px;
+    /*Borda*/
+    border-radius: 10px;
+    /*Cor*/
+    color: #FFF;
+    /*Fonte*/
+    font-size: 50px;
+    /*Detalhes*/
+    overflow: visible;
+}
+
+
+.icone-legenda-ruim {
+    /*Cor*/
+    background-color: #FF3D30;
+}
+
+.icone-legenda-medio {
+    /*Cor*/
+    background-color: #FFCD1C;
+}
+
+.icone-legenda-bom {
+    /*Cor*/
+    background-color: #5CDD20;
+}
+.icone-legenda-manutencao{
+    /*cor*/
+    background-color: grey;
+}
+
+.icone-legenda-manutencao:hover,
+.icone-legenda-ruim:hover,
+.icone-legenda-medio:hover,
+.icone-legenda-bom:hover{
+    /*Cor*/
+    color: #FFF;
 }
 
 .coordenadas {
