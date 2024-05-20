@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA</title>
+    <link rel="icon" href="./assets/imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ia.css">
+</head>
+<body>
+    <div class="IA-Container">
+        <aside class="menu-lateral">
+            <section class="sessao botoes-principais">
+                <button class="botao-menu material-symbols-outlined">Account_Circle</button>
+                <button class="botao-menu material-symbols-outlined">Engineering</button>
+            </section>
+            <section class="sessao sair">
+                <button class="botao-menu material-symbols-outlined"
+                onclick="navegar('../login/login.html')">Logout</button>
+            </section>
+        </aside>
+        <aside class="caixa-conteudo">
+            <header class="cabecalho">
+                <div class="caixa-auxiliar-titulo-cabecalho">
+                    <section class="sessao-titulo-cabecalho">
+                        <h1 id="titulo_cabecalho">Gemini</h1>
+                    </section>
+                </div>
+            </header>
+            <div class="IA">
+                <section class="Sessão-Logo">
+                    <img class="Logo-IA" src="assets/imagens/IA-Logo.png" alt="">
+                    <span>Olá sou o Gemini, uma inteligência artificial que veio para te ajudar com a manutenção dos sensores!</span>
+                </section>
+                <section class="Sugestões-de-propt">
+                    <button class="Sugestão" onclick="sugerir('Como fazer a manutenção do sensor de forma mais adequada?')">
+                        <span class="Texto-Sugestão">
+                            Como fazer a manutenção do sensor de forma mais adequada?
+                        </span>
+                    </button>
+                    <button class="Sugestão" onclick="sugerir('Me informe mais detalhes sobre o sensor DHT11')">
+                        <span class="Texto-Sugestão">
+                            Me informe mais detalhes sobre o sensor DHT11
+                        </span>
+                    </button>
+                    <button class="Sugestão" onclick="sugerir('Meu sensor não está capturando dados de Umidade, o que posso fazer?')">
+                        <span class="Texto-Sugestão">
+                            Meu sensor não está capturando dados de Umidade, o que posso fazer?
+                        </span>
+                    </button>
+                    <button class="Sugestão" onclick="sugerir('Como verificar se as conexões do meu sensor com o arduino estão corretas? ')">
+                        <span class="Texto-Sugestão">
+                            Como verificar se as conexões do meu sensor com o arduino estão corretas? 
+                        </span>
+                    </button>
+                </section>
+                <section class="Caixa-Resposta-IA">
+                    <div class="Pergunta-Usuario" id="pergunta_usuario">
+                    </div>
+                    <div class="Resposta-IA">
+                        <img class="Logo-IA-Resposta" src="assets/imagens/IA-Logo.png" alt="">
+                        <p class="Conteudo-Resposta-IA">
+                            Me faça uma pergunta
+                        </p>
+                    </div>
+                </section>
+                <section class="Input-pergunta">
+                    <input class="Pergunta" id="input_pergunta" type="text" placeholder="Escreva uma mensagem">
+                    <button class="Envio-Pergunta material-symbols-outlined" onclick="perguntar()">Send</button>
+                </section>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
+<script>
+    function perguntar(){
+        pergunta = input_pergunta.value;
+
+        pergunta_usuario.innerHTML = `
+        <p class="Conteudo-Pergunta-Usuario">
+           ${pergunta}
+        </p>
+        `;
+    }
+
+    function sugerir(sugestao){
+        pergunta_usuario.innerHTML = `
+        <p class="Conteudo-Pergunta-Usuario">
+           ${sugestao}
+        </p>
+        `;
+    }
+</script>
