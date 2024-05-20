@@ -1,11 +1,276 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="./assets/imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/pagina_inicial_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="assets/imagens-pagina-inicial/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <title>Dionysus</title>
 </head>
+
 <body>
-    <a href="cadastro.html">aaaaaaaa</a>
+    <header class="menu">
+        <section class="sessao-logo-menu">
+            <img src="assets/imagens-pagina-inicial/Logo_Oficial.webp" alt="Logo" class="logo-menu">
+            <p>DIONYSUS</p>
+        </section>
+        <section class="sessao-botoes-menu">
+            <a href="#div_inicio">
+                <button class="botao-menu pagina-inicial" onclick="mudarEstiloPaginaInicial()" id="bt_pagina_inicial">Página inicial</button>
+            </a>
+            <a href="#div-sessao-Mildio">
+                <button class="botao-menu sobre" onclick="mudarEstiloSobre()" id="bt_sobre">Sobre</button>
+            </a>
+            <button class="botao-menu contato" onclick="navegar('../contato/contato.html')">Contato</button>
+            <button class="botao-menu simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
+        </section>
+        <section class="sessao-botao-entrar">
+            <button class="botao-menu entrar" onclick="navegar('login.html')">
+                Entrar
+                <span class="icone-entrar material-symbols-outlined">Login</span>
+            </button>
+        </section>
+    </header>
+    <div class="div-sessao-inicial" id="div_inicio">
+        <section class="caixa-mensagem-saudacao">
+            <h1 class=saudacao-titulo>BEM-VINDO</h1>
+            <h3 class="saudacao-subtitulo">QUER GARANTIR A PRESERVAÇÃO DE SUAS <span class="palavras-roxa">VIDEIRAS?</span></h3>
+            <p class="saudacao-texto">
+                Com o nosso sensor, sua colheita atingirá níveis <span class="palavras-roxa">extraordinários</span> de qualidade e produtividade. Melhore seus 
+                resultados agora!
+            </p>
+            <a href="#div-sessao-solucao">
+                <button class="botao saiba-mais">SAIBA MAIS</button>
+            </a>
+        </section>
+    </div>
+    <div class="div-sessao-Mildio" id="div-sessao-Mildio">
+        <header class="cabecalho-Mildio">SAIBA MAIS</header>
+            <div class="Contexto-Mildio">
+                <div class="Texto-Mildio">
+                    <div class="Titulo_Mildio_Completo">
+                        <h2 class="Titulo_Mildio">MÍLDIO</h2>
+                        <h3 class="subtitulo_Mildio">(Plasmopara viticola)</h3>
+                    </div>
+                    <p class="Primeiro_Paragrafo_Mildio">
+                        O Míldio é um fungo ataca todos os órgãos verdes e tenros da planta, tais como ramos, brotos, flores, bagas e principalmente as folhas, reduzindo a produtividade e a qualidade da uva, e dificultam, especialmente, o cultivo de cultivares tradicionais europeias.
+                    </p>
+                </div>
+                <section class="foto-Mildio">
+                    <div class="caixa-auxiliar-imagem-Mildio">
+                        <img src="assets/imagens-pagina-inicial/Mildio.png" alt="Imagem de Míldio" class="imagem-Mildio">
+                    </div>
+                </section>
+            </div>
+            <p class="Segundo_Paragrafo_Mildio">
+                <br>
+                As condições favoráveis para seu desenvolvimento são temperaturas entre 18 °C e 25 °C e umidade relativa do ar acima de 60. <br> 
+                O Míldio é considerado a doença de maior importância na cultura da uva no Brasil por causa das condições ambientais do território favorecerem seu desenvolvimento. 
+            </p>
+            <h2 class="PREVINA-SE-Mildio">PREVINA-SE</h2>
+    </div>
+    <div class="div-sessao-solucao" id="div-sessao-solucao">
+        <header class="cabecalho-solucao">
+            <h4>CONHEÇA NOSSA <span class="palavras-roxa">SOLUÇÃO</span> PARA VOCÊ</h4>
+        </header>
+        <div class="caixa-conteudo-solucao">
+            <section class="textos-solucao">
+                <p>Desenvolvemos sensores inteligentes capazes de capturar e monitorar dados da umidade relativa ao
+                    longo da extensão da plantação de videiras, qualificados para auxiliar no controle do Míldio.</p>
+                <h3 class="palavras-roxa subtitulo">DHT11</h3>
+                <p>O sensor DHT11 oferece precisão e eficiência ao monitorar a umidade para combater o Míldio, sendo
+                    essencial para soluções personalizadas e prevenção de perdas na produção. DIONYSUS é a escolha ideal
+                    para supervisionar plantações.
+                </p>
+                <h3 class="subtitulo">O FUTURO É <span class="palavras-roxa">AQUI.</span></h3>
+            </section>
+            <section class="foto-solucao">
+                <div class="caixa-auxiliar-foto-solucao">
+                    <img src="assets/imagens-pagina-inicial/imagemSolucao.png" alt="Fotos de uva" class="imagem-solucao">
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="div-sessao-objetivos">
+        <header class="cabecalho-objetivo">
+            <h3>OBJETIVOS</h3>
+        </header>
+        <section class="sessao-fotos-objetivos">
+            <img src="assets/imagens-pagina-inicial/imagemObjetivos.png" alt="Imagem de objetivos" class="imagem-objetivos">
+            <img src="assets/imagens-pagina-inicial/imagemFlechas.png" alt="Imagem de flechas" class="imagem-flechas-objetivos">
+        </section>
+    </div>
+    <div class="div-sessao-negocio">
+        <h1 class="titulo-negocio">VISÃO DE NEGÓCIO</h1>
+        <img src="assets/imagens-pagina-inicial/diagramaVisaoNegocio.jpeg" alt="Diagrama de visão de negócio" class="diagrama-negocio">
+    </div>
+    <div class="div-sessao-nome">
+        <header class="cabecalho-nome">
+            <h1 class="titulo-nome">DIONYSUS</h1>
+            <img src="assets/imagens-pagina-inicial/barraNome.png" alt="Imagem de barra" class="imagem-barra">
+        </header>
+        <div class="caixa-conteudo-nome">
+            <section class="sessao-textos-nome">
+                <p>Dionísio, o deus grego do vinho, era celebrado como o protetor das vinhas, ressaltando a importância
+                    do cuidado meticuloso dos vinhedos. Inspirados por essa tradição milenar, na Dionysus, nos dedicamos
+                    incansavelmente ao aprimoramento e à excelência na produção de uvas.</p>
+                <h3 class="frase-nome">Faça <span class="palavras-roxa">história</span> conosco!</h3>
+            </section>
+            <section class="sessao-logo-nome">
+                <img src="assets/imagens-pagina-inicial/Logo_Oficial.webp" alt="Imagem da logo" class="logo-nome">
+            </section>
+        </div>
+    </div>
+    <div class="div-sessao-equipe" id="div_sessao_equipe">
+        <section class="sessao-fotos-equipe">
+            <div class="fotos-equipe-cima">
+                <div class="caixa-membro">
+                    <img src="assets/imagens-pagina-inicial/pimenta.jpg" alt="" class="foto-membro">
+                    <h2>HENRIQUE PIMENTA</h2>
+                    <section class="sessao-redes-sociais" >
+                        <a href="https://github.com/ucantstopmenow" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/github.png" alt="Github Icon" class="icon-rede-social">
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/henrique-pimenta-souza-643b25202/" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/linkedin.png" alt="Linkedin Icon" class="icon-rede-social">
+                        </a>
+
+                        <a href="https://www.instagram.com/pmentta_/" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/instagram.png" alt="Instagram Icon" class="icon-rede-social">
+                        </a>
+                    </section>
+                </div>
+                <div class="caixa-membro">
+                    <img src="assets/imagens-pagina-inicial/sericov.jpg" alt="" class="foto-membro">
+                    <h2>HENRIQUE SERICOV</h2>
+                    <section class="sessao-redes-sociais">
+                        <a href="https://github.com/HenriqueSericov" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/github.png" alt="Github Icon" class="icon-rede-social">
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/henrique-sericov/" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/linkedin.png" alt="Linkedin Icon" class="icon-rede-social">
+                        </a>
+
+                        <a href="https://www.instagram.com/henrique_sm0/" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/instagram.png" alt="Instagram Icon" class="icon-rede-social">
+                        </a>
+                    </section>
+                </div>
+                <div class="caixa-membro">
+                    <img src="assets/imagens-pagina-inicial/murakami.png" alt="" class="foto-membro">
+                    <h2>JULIANA MURAKAMI</h2>
+                    <section class="sessao-redes-sociais">
+                        <a href="https://github.com/Murakami-J" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/github.png" alt="Github Icon" class="icon-rede-social">
+                        </a>
+                        <!-- ADICIONAR O LINKEDIN -->
+                        <a href="https://www.linkedin.com/in/juliana-murakami-oshikawa-aa8492308" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/linkedin.png" alt="Linkedin Icon" class="icon-rede-social">
+                        </a>
+
+                        <a href="https://www.instagram.com/juuhkamih/" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/instagram.png" alt="Instagram Icon" class="icon-rede-social">
+                        </a>
+                    </section>
+                </div>
+            </div>
+            <div class="fotos-equipe-baixo">
+                <div class="caixa-membro">
+                    <img src="assets/imagens-pagina-inicial/LucasBarbosa.png" alt="" class="foto-membro">
+                    <h2>LUCAS BARBOSA</h2>
+                    <section class="sessao-redes-sociais">
+                        <a href="https://github.com/lucas95ol" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/github.png" alt="Github Icon" class="icon-rede-social">
+                        </a>
+                        
+                        <a href="http://www.linkedin.com/in/lucas-oliveira95" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/linkedin.png" alt="Linkedin Icon" class="icon-rede-social">
+                        </a>
+
+                        <a href="https://www.instagram.com/lucas95ol/" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/instagram.png" alt="Instagram Icon" class="icon-rede-social">
+                        </a>
+                    </section>
+                </div>
+                <div class="caixa-membro">
+                    <img src="assets/imagens-pagina-inicial/mayara.png" alt="" class="foto-membro">
+                    <h2>MAYARA DAMAS</h2>
+                    <section class="sessao-redes-sociais">
+                        <a href="https://github.com/MayaraDamas" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/github.png" alt="Github Icon" class="icon-rede-social">
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/mayara-damas-a2ab28211/" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/linkedin.png" alt="Linkedin Icon" class="icon-rede-social">
+                        </a>
+
+                        <a href="https://www.instagram.com/may_dmss/" class="link-rede-sociais" target="_blank">
+                            <img src="assets/imagens-pagina-inicial/instagram.png" alt="Instagram Icon" class="icon-rede-social">
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <header class="cabecalho-equipe"  >
+            <h1 class="titulo-equipe">CONHEÇA NOSSA EQUIPE</h1>
+        </header>
+        <div class="caixa-auxiliar-equipe" ></div>
+    </div>
+    <div class="div-sessao-valores">
+        <header class="cabecalho-valores">
+            <img src="assets/imagens-pagina-inicial/xxx.png" alt="xxx" class="xxx">
+        </header>
+        <section class="sessao-conteudo-valores">
+            <h3 class="titulo-valores">NOSSOS VALORES</h3>
+            <img src="assets/imagens-pagina-inicial/imagemValores.png" alt="valores" class="imagem-valores">
+        </section>
+    </div>
+    <footer class="rodape">
+        <section class="conteudo-rodape">
+            <h1 class="nome-rodape">DIONYSUS</h1>
+        <section class="sessao-botoes-rodape">
+            <a href="#div_inicio">
+                <button class="botao-rodape pagina-inicial" id="bt_rodape_PI">Página inicial</button></a>
+            <a href="#div-sessao-Mildio"><button class="botao-rodape sobre" id="bt_rodape_sobre">Sobre</button></a>
+            <button class="botao-rodape contato" onclick="navegar('../contato/contato.html')">Contato</button>
+            <button class="botao-rodape simulador" onclick="navegar('../simulador/simulador.html')">Simulador</button>
+        </section>
+        <img src="assets/imagens-pagina-inicial/Logo_Oficial.webp" alt="logo" class="logo-rodape">
+        </section>
+        <section class="sessao-copyright">
+            <span>© 2024 Dionysus. Todos os direitos reservados.</span>
+        </section>
+    </footer>
 </body>
 </html>
+<script>
+    function navegar(pagina){
+        window.location.href = pagina;
+    }
+
+
+    function mudarEstiloSobre(){
+        document.getElementById('bt_sobre').style.color = '#8C52FF';
+        document.getElementById('bt_sobre').style.borderBottom = '3px solid #8C52FF';
+        document.getElementById('bt_pagina_inicial').style.color = 'black';
+        document.getElementById('bt_pagina_inicial').style.borderBottom = 'none';
+
+        
+    }
+
+    function mudarEstiloPaginaInicial(){
+        document.getElementById('bt_pagina_inicial').style.color = '#8C52FF';
+        document.getElementById('bt_pagina_inicial').style.borderBottom = '3px solid #8C52FF';
+        document.getElementById('bt_sobre').style.color = 'black';
+        document.getElementById('bt_sobre').style.borderBottom = 'none';
+    }
+</script>

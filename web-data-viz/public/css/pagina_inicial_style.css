@@ -134,7 +134,7 @@ body {
     flex-direction: row;
     align-items: center;
     /*Fundo*/
-    background-image: url(./assets/imagens/background1.png);
+    background-image: url(../assets/imagens-pagina-inicial/background1.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
