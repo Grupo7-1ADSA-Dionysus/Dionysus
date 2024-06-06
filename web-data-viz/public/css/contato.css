@@ -61,7 +61,7 @@ body {
     border: 3px solid #000;
     border-radius: 10px;
     /* Imagem de Fundo */
-    background-image: url(./imagens/Logo\ Oficial\ \(1\).png);
+    background-image: url(../assets/imagens-contato/Logo\ Oficial\ \(1\).png);
     background-repeat: no-repeat;
     background-size: 53%;
     background-position: right center;
