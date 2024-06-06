@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/imagens-hectare/favicon.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cadastrar-propriedade.css">
+    <title>Cadastrar Propriedade</title>
+</head>
+
+<body>
+    <div class="propriedade-container">
+        <aside class="menu-lateral">
+            <section class="sessao botoes-principais">
+                <button class="botao-menu material-symbols-outlined">Account_Circle</button>
+                <button class="botao-menu home material-symbols-outlined">Home</button>
+                <button class="botao-menu material-symbols-outlined"
+                    onclick="navegar('ticket.html')">Headset</button>
+            </section>
+            <section class="sessao sair">
+                <button class="botao-menu material-symbols-outlined"
+                onclick="navegar('../login/login.html')">Logout</button>
+            </section>
+        </aside>
+        <aside class="caixa-conteudo">
+            <header class="cabecalho">
+                <div class="caixa-auxiliar-titulo-cabecalho">
+                    <section class="sessao-voltar">
+                        <span class="botao-cabecalho material-symbols-outlined" onclick="navegar('propriedade.html')">
+                            Arrow_Back
+                        </span>
+                    </section>
+                    <section class="sessao-titulo-cabecalho">
+                        <h1>Cadastrar Propriedades</h1>
+                    </section>
+                    <section class="sessao-notificacao-cabecalho">
+                        <span class="botao-cabecalho material-symbols-outlined"
+                        onclick="mostrarNotificacoes()">Notifications</span>
+                    </section>
+                </div>
+            </header>
+            <div class="caixa-notificacoes" id="notificacoes">
+                <header class="cabecalho-notificacoes">
+                    <h4>Notificações</h4>
+                    <h4 class="fechar-notificacoes" onclick="mostrarNotificacoes()">X</h4>
+                </header>
+                <section class="lista-notificacao">
+                    <div class="notificacoes" id="notificacao1">
+                        <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao1)" class="excluir-notificacao">X</p>
+                            <p>Hectare 1 está em estado de alerta!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao2">
+                        <span class="nivel-notificacao-ruim material-symbols-outlined">Warning</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao2)" class="excluir-notificacao">X</p>
+                            <p>Hectare 2 está em estado de alerta!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                    <div class="notificacoes" id="notificacao3">
+                        <span class="nivel-notificacao-medio material-symbols-outlined">Error</span>
+                        <section class="descricao-notificacao">
+                            <p onclick="excluirNotificacao(notificacao3)" class="excluir-notificacao">X</p>
+                            <p>Hectare 4 está em estado de atenção!!</p>
+                            <p>16/05/2024</p>
+                        </section>
+                    </div>
+                </section>
+            </div>
+            <div class="conteudo">
+                <section class="sessao-input-cadastro">
+                    <h1 class="titulo-input-cadastro">Cadastre sua Propriedade</h1>
+                    <div class="div-inputs">
+                        <section class="sessao-inputs-esquerdo">
+                            <b> Nome da Propriedade:</b>
+                            <input class="input nome" id="input_nome" tabindex="1">
+
+                            <b>Quantidade de Hectares:</b>
+                            <input class="input email" id="input_hectare" tabindex="3">
+
+                            <b>CEP Rural:</b>
+                            <input type="text" class="input senha" id="input_senha" tabindex="5">
+
+                        </section>
+                        <section class="sessao-inputs-direito">
+                            <b class="gambiarra">Cidade:</b>
+                            <input class="input sobrenome" id="input_sobrenome" tabindex="2">
+
+
+                            <b class="gambiarra">Estado:</b>
+                            <input class="input telefone" id="input_telefone" tabindex="4">
+
+                          
+                        </section>
+                   
+                    </div>
+                    <button class="botao-cadastrar" onclick="navegar('propriedade.html')"
+                    tabindex="7">CADASTRAR</button>
+</body>
+
+</html>
+
+<script>
+    /*Função de navegar entre telas - Lucas*/
+    function navegar(pagina) {
+        window.location.href = pagina;
+    }
+
+    function mostrarNotificacoes(){
+        if(notificacoes.style.display == 'none'){
+            notificacoes.style.display = 'block'
+        } else {
+            notificacoes.style.display = 'none'
+        }
+    }
+
+    function excluirNotificacao(idNotificacao){
+        idNotificacao.remove();
+    }
+
+    /*Função de cadastro - Juliana*/
+    function cadastrar() {
+        const NOME = input_nome.value;
+        const SOBRENOME = input_sobrenome.value;
+        const EMAIL = input_email.value;
+        const TELEFONE = input_telefone.value;
+        const SENHA = input_senha.value;
+        const CONFIRMACAO_SENHA = input_confirmacaoSenha.value;
+        const TOKEN = input_token.value;
+
+        span_avisoCampos.innerHTML = "";
+
+        if (NOME != "" && SOBRENOME != "" && EMAIL != "" && TELEFONE != "" && SENHA != "" && CONFIRMACAO_SENHA != "" && TOKEN != "") {
+
+            // Email terá que ter um @ e um .
+            const INDICE_ARROBA = EMAIL.indexOf("@");
+            const INDICE_PONTO = EMAIL.indexOf(".");
+
+
+            span_avisoEmail.style.color = 'transparent';
+            span_avisoSenha.style.color = 'transparent';
+            span_avisoConfirmacaoSenha.style.color = 'transparent';
+
+            // Senha terá que ter pelo menos: 8 caracteres, 1 número, uma letra maiúscula 
+            if (INDICE_ARROBA == -1 || INDICE_PONTO == -1) {
+                span_avisoEmail.innerHTML = "Email inválido";
+                span_avisoEmail.style.color = 'red';
+
+            } else {
+                if (SENHA.length < 8) {
+                    span_avisoSenha.innerHTML = "A senha deve ter pelo menos 8 caracteres";
+                    span_avisoSenha.style.color = 'red';
+
+                } else {
+                    let existeNumero = false;
+
+                    for (let numero = 0; numero <= 9; numero++) {
+                        const INDICE_NUMERO = SENHA.indexOf(`${numero}`);
+
+                        if (INDICE_NUMERO != -1) {
+                            existeNumero = true;
+
+                            numero = 10;
+                        }
+                    }
+
+                    if (existeNumero == true) {
+
+                        let existeLetraMaiuscula = false;
+                        let senha_replace = SENHA;
+
+                        senha_replace = senha_replace.replace(/\d+/ig, "")
+
+                        for (let posicao = 0; posicao < senha_replace.length; posicao++) {
+                            const LETRA_MAIUSCULA = senha_replace[posicao];
+
+                            if (LETRA_MAIUSCULA == LETRA_MAIUSCULA.toUpperCase()) {
+                                posicao = senha_replace.length;
+                                existeLetraMaiuscula = true;
+                            }
+                        }
+
+                        if (existeLetraMaiuscula == false) {
+                            span_avisoSenha.innerHTML = "A senha deve conter uma letra maiúscula";
+                            span_avisoSenha.style.color = 'red';
+
+                        } else {
+                            span_avisoConfirmacaoSenha.innerHTML = "";
+
+                            if (SENHA != CONFIRMACAO_SENHA) {
+
+                                span_avisoConfirmacaoSenha.innerHTML = "As senhas não conferem";
+                                span_avisoConfirmacaoSenha.style.color = 'red';
+
+                            } else {
+                                window.location.href = "../dashboard/index.html";
+                            }
+                        }
+                    } else {
+                        span_avisoSenha.innerHTML = "A senha deve conter pelo menos um número";
+                        span_avisoSenha.style.color = 'red';
+                    }
+
+                }
+            }
+
+
+
+        } else {
+            span_avisoCampos.innerHTML = "Preencha todos os campos"
+        }
+
+    }
+
+    // window.location.href = "./login"
+</script>

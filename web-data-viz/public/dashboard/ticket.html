@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/imagens/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../assets/imagens-hectare/favicon.png" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./sem-propriedade.css">
-    <title>Propriedades</title>
+    <link rel="stylesheet" href="../css/ticket.css">
+    <title>Ticket</title>
 </head>
 
 <body>
-    <div class="propriedade-container">
+    <div class="ticket-container">
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
-                <button class="botao-menu home material-symbols-outlined">Home</button>
                 <button class="botao-menu material-symbols-outlined"
-                    onclick="navegar('../ticket/ticket.html')">Headset</button>
+                    onclick="navegar('propriedade.html')">Home</button>
+                <button class="botao-menu ticket material-symbols-outlined">Headset</button>
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined"
-                onclick="navegar('../login/login.html')">Logout</button>
+                onclick="navegar('../login.html')">Logout</button>
             </section>
         </aside>
         <aside class="caixa-conteudo">
             <header class="cabecalho">
                 <div class="caixa-auxiliar-titulo-cabecalho">
                     <section class="sessao-titulo-cabecalho">
-                        <h1 id="titulo-cabecalho">Suas Propriedades</h1>
+                        <h1 id="titulo_cabecalho">Ticket</h1>
                     </section>
                     <section class="sessao-notificacao-cabecalho">
                         <span class="botao-cabecalho material-symbols-outlined"
@@ -104,19 +104,19 @@
                     </div>
                 </section>
             </div>
-            <div class="sessao-conteudo-home" id="home">
-                <section class="caixa-propriedades">
-                    <div class="div-texto">
-                        <p class="texto-propriedades">
-                            <b>
-                                Parece que você ainda não tem propriedades cadastradas conosco e nem é funcionário de uma! Cadastre sua propriedade ou peça para seu empregador te adicionar e aproveite nossa solução!
-                            </b>
-                        </p>
-                        <button class="botao-add-propriedade" onclick="navegar('../cadastrar_propriedades/cadastrar_propriedades.html')">Adicionar Propriedade</button>
-                    </div>
-                        </div>
-                    </div>
-                </section>
+            <div class="sessao-conteudo-ticket" id="ticket">
+                <h1 class="titulo-ticket">Abra um ticket</h1>
+                <div class="caixa-ticket">
+                    <h2>Enviar uma solicitação</h2>
+                    <p>Está com algum problema? Estamos aqui para te ajudar!</p>
+                    <section class="sessao-inputs">
+                        <p>Assunto</p>
+                        <input class="input-assunto" placeholder="Insira aqui o assunto da mensagem">
+                        <p>Mensagem</p>
+                        <textarea class="caixa-texto-mensagem" placeholder="Insira aqui sua mensagem"></textarea>
+                    </section>
+                    <button class="botao-enviar">ENVIAR</button>
+                </div>
             </div>
         </aside>
     </div>
@@ -124,19 +124,19 @@
 
 </html>
 <script>
-    function mostrarNotificacoes(){
+     function mostrarNotificacoes(){
         if(notificacoes.style.display == 'none'){
-            notificacoes.style.display = 'block'
+            notificacoes.style.display = 'block';
         } else {
-            notificacoes.style.display = 'none'
+            notificacoes.style.display = 'none';
         }
     }
 
-     function excluirNotificacao(idNotificacao){
+    function excluirNotificacao(idNotificacao){
         idNotificacao.remove();
     }
 
-     function navegar(pagina){
+    function navegar(pagina) {
         window.location.href = pagina;
     }
 </script>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/imagens/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../assets/imagens-hectare/favicon.png" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./hectare.css">
+    <link rel="stylesheet" href="../css/hectare.css">
     <title>Hectares</title>
 </head>
 <body>
@@ -18,20 +18,20 @@
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
                 <button class="botao-menu home material-symbols-outlined"
-                    onclick="navegar('../suas_propriedades/propriedade.html')">Home</button>
+                    onclick="navegar('propriedade.html')">Home</button>
                 <button class="botao-menu material-symbols-outlined"
-                    onclick="navegar('../ticket/ticket.html')">Headset</button>
+                    onclick="navegar('ticket.html')">Headset</button>
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined"
-                onclick="navegar('../login/login.html')">Logout</button>
+                onclick="navegar('../login.html')">Logout</button>
             </section>
         </aside>
         <aside class="caixa-conteudo">
             <header class="cabecalho">
                 <div class="caixa-auxiliar-titulo-cabecalho">
                     <section class="sessao-voltar">
-                        <span class="botao-cabecalho material-symbols-outlined" onclick="navegar('../suas_propriedades/propriedade.html')">
+                        <span class="botao-cabecalho material-symbols-outlined" onclick="navegar('propriedade.html')">
                             Arrow_Back
                         </span>
                     </section>
@@ -120,7 +120,7 @@
                     <div class="lista-hectares">
                         <div class="linha-lista-hectare">
                             <div class="caixa-hectare">
-                                <section class="situacao-hectare ruim" onclick="navegar('../dashboard1/index.html')">
+                                <section class="situacao-hectare ruim" onclick="navegar('grafico/index.html')">
                                     <span class="icone-situacao material-symbols-outlined">Warning</span>
                                     <p>22ºC</p>
                                     <p>79%</p>
@@ -161,7 +161,7 @@
                                 </section>
                                 <p>Hectare 5</p>
                             </div>
-                            <div class="caixa-hectare" onclick="navegar('../dashboard/index.html')">
+                            <div class="caixa-hectare" onclick="navegar('')">
                                 <section class="situacao-hectare boa">
                                     <span class="icone-situacao material-symbols-outlined">Check</span>
                                     <p>25ºC</p>
