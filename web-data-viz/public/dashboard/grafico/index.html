@@ -367,7 +367,7 @@
                     resposta.reverse();
 
                     plotarGrafico(resposta, fkHectare);
-
+                    plotarGraficoTemperatura(resposta, fkHectare)
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -449,6 +449,78 @@
         setTimeout(() => atualizarGrafico(fkHectare, dados, myChart), 2000);
     }
 
+    function plotarGraficoTemperatura(resposta, idAquario) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels1 = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados1 = {
+            labels: labels1,
+            datasets: [{
+                label: 'Temperatura',
+                data: [],
+                fill: true, // Preencher área abaixo da linha
+                borderColor: 'red', // Cor da linha
+                backgroundColor: 'red', // Cor do preenchimento
+                tension: 0.1,
+            }]
+        };
+
+        let opcoes1 = {
+            xAxes: [{
+                type: 'time',
+                ticks: {
+                    maxTicksLimit: 100
+                }
+            }],
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro1 = resposta[i];
+            labels1.push(registro1.DataLetura);
+            dados1.datasets[0].data.push(registro1.Temperatura);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels1)
+        console.log('Dados:')
+        console.log(dados1.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados1,
+            options: opcoes1
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`dht11Temperatura`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(fkHectare, dados1, myChart), 2000);
+    }
+
+
     function atualizarGrafico(fkHectare, dados, myChart) {
 
         fetch(`/dashboard/tempo-real/${fkHectare}`, { cache: 'no-store' }).then(function (response) {
@@ -479,6 +551,8 @@
                         dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
 
 
+                        dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                        dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
                         myChart.update();
                     }
