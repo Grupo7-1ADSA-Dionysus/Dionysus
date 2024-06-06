@@ -386,7 +386,7 @@ b {
     /*organização de elementos filho*/
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 10px;
     /* coloca espaço em tudo*/
     /*detalhes*/
@@ -484,8 +484,4 @@ b {
 b {
     /* height: 100%; */
     overflow: visible;
-}
-
-.gambiarra {
-    /* margin-top: 49px; */
 }
