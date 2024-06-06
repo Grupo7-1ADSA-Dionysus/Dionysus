@@ -61,12 +61,12 @@
 
                 <div class="Input_NomeDaUva">
                     <p class="P_NomeDaUva">Nome da Uva</p>
-                    <input type="text" class="NomeDaUva">
+                    <input type="text" class="NomeDaUva" id="Input_NomeDaUva">
                 </div>
 
                 <div class="Input_tipoDeUva">
                     <p class="P_TipoDeUva">Tipo de Uva</p>
-                    <select class="tipoDeUva">
+                    <select class="tipoDeUva" id="Input_tipoDeUva">
                         <option value="#">Selecione uma opção </option>
                         <option value="vinifera">Vínifera</option>
                         <option value="nao_vinifera">Não Vínifera</option>
@@ -81,7 +81,7 @@
                 </div>
 
             </div>
-            <button class="Botão_Editar" onclick="AparecerCaixa(informacoes_hectare)">
+            <button class="Botão_Editar" onclick="Cadastrar_Informações()">
                 EDITAR
             </button>
 
@@ -636,4 +636,10 @@
     function fecharAlerta() {
         div_alerta.style.display = 'none';
     }
+
+    // function Cadastrar_Informações() {
+    //     let Nome_Uva = Input_NomeUva
+    //     let 
+    // }
+
 </script>

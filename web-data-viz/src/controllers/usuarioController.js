@@ -90,7 +90,37 @@ function cadastrar(req, res) {
     }
 }
 
+function Cadastrar_Configuracao_Hectare(req, res){
+    var Nome_Uva = req.body.NomeUva
+    var Tipo_Uva = req.body.Tipo_Uva
+
+    if (Nome_Uva == undefined) {
+        res.status(400).send("Seu Nome_Uva está undefined!");
+    } else if (Tipo_Uva == undefined) {
+        res.status(400).send("Seu Tipo_Uva está undefined!");
+    }
+    else{
+
+        usuarioModel.Cadastrar_Configuracao_Hectare(Nome_Uva, Tipo_Uva)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    Cadastrar_Configuracao_Hectare
 }

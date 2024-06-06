@@ -12,4 +12,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/Cadastrar_Configuracao_Hectare", function(req, res) {
+    usuarioController.Cadastrar_Configuracao_Hectare(req, res);
+})
+
 module.exports = router;
