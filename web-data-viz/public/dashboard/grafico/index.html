@@ -342,7 +342,6 @@
 
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-
                     });
                 } else {
                     console.error(`Nenhum dado encontrado para o id ${fkHectare} ou erro na API`);
@@ -392,8 +391,8 @@
                 label: 'Umidade',
                 data: [],
                 fill: true, // Preencher área abaixo da linha
-                borderColor: 'blue', // Cor da linha
-                backgroundColor: 'blue', // Cor do preenchimento
+                borderColor: '#58c3ff', // Cor da linha
+                backgroundColor: '#58c3ff', // Cor do preenchimento
                 tension: 0.1,
             }]
         };
@@ -463,8 +462,8 @@
                 label: 'Temperatura',
                 data: [],
                 fill: true, // Preencher área abaixo da linha
-                borderColor: 'red', // Cor da linha
-                backgroundColor: 'red', // Cor do preenchimento
+                borderColor: '#ff8e83', // Cor da linha
+                backgroundColor: '#ff8e83', // Cor do preenchimento
                 tension: 0.1,
             }]
         };
@@ -532,6 +531,7 @@
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                     console.log(`Dados atuais do gráfico:`);
                     console.log(dados);
+                   
 
                     if (novoRegistro[0].DataLetura == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")

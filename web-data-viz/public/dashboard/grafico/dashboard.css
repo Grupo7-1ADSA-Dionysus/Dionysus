@@ -593,7 +593,7 @@
 }
 
 .organizando-graficos {
-    width: 100%;
+    width: 50%;
     height: 80%;
     /*tamanho*/
     display: flex;
@@ -757,6 +757,7 @@
 
 .grafico-canva{
     padding-top: 25px;
+
 }
 
 .div-localizacao{
