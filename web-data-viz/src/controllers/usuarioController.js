@@ -149,9 +149,47 @@ function Informacoes_do_Contato(req, res) {
     }
 }
 
+function InformacoesPropriedade(req, res) {
+    var NomePropriedade = req.body.NomePropriedadeServer;
+    var QTDhectare = req.body.QTDhectareServer;
+    var CEP = req.body.CEPServer;
+    var cidade = req.body.cidadeServer;
+    var estado = req.body.estadoServer;
+
+    if (NomePropriedade == undefined) {
+        res.status(400).send("O nome da propriedade está undefined!");
+    } else if (QTDhectare == undefined) {
+        res.status(400).send("A quantidade de hectare está undefined!");
+    } else if (CEP == undefined) {
+        res.status(400).send("O CEP está undefined!");
+    } else if (cidade == undefined) {
+        res.status(400).send("A cidade está undefined!");
+    } else if (estado == undefined) {
+        res.status(400).send("O estado está undefined!");
+    }else{
+        usuarioModel.InformacoesPropriedade(NomePropriedade, QTDhectare, CEP, cidade, estado)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
 module.exports = {
     autenticar,
     cadastrar,
     Cadastrar_Configuracao_Hectare,
-    Informacoes_do_Contato
+    Informacoes_do_Contato,
+    InformacoesPropriedade
 }

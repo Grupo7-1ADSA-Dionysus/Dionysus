@@ -18,6 +18,12 @@ router.post("/Cadastrar_Configuracao_Hectare", function(req, res) {
 
 router.post("/Cadastrar_Informacoes_do_Contato", function(req, res){
     usuarioController.Informacoes_do_Contato(req, res);
-})
+});
+
+router.post("/InformacoesPropriedade", function(req, res){
+    usuarioController.InformacoesPropriedade(req, res);
+});
+
+
 
 module.exports = router;

@@ -20,12 +20,11 @@
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
                 <button class="botao-menu home material-symbols-outlined">Home</button>
-                <button class="botao-menu material-symbols-outlined"
-                    onclick="navegar('ticket.html')">Headset</button>
+                <button class="botao-menu material-symbols-outlined" onclick="navegar('ticket.html')">Headset</button>
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined"
-                onclick="navegar('../login/login.html')">Logout</button>
+                    onclick="navegar('../login/login.html')">Logout</button>
             </section>
         </aside>
         <aside class="caixa-conteudo">
@@ -41,7 +40,7 @@
                     </section>
                     <section class="sessao-notificacao-cabecalho">
                         <span class="botao-cabecalho material-symbols-outlined"
-                        onclick="mostrarNotificacoes()">Notifications</span>
+                            onclick="mostrarNotificacoes()">Notifications</span>
                     </section>
                 </div>
             </header>
@@ -115,144 +114,120 @@
                     <div class="div-inputs">
                         <section class="sessao-inputs-esquerdo">
                             <b> Nome da Propriedade:</b>
-                            <input class="input nome" id="input_nome" tabindex="1">
+                            <input class="input nome" id="input_idNomePropriedade" tabindex="1">
 
                             <b>Quantidade de Hectares:</b>
-                            <input class="input email" id="input_hectare" tabindex="3">
+                            <input class="input email" id="input_idQTDhectare" tabindex="3">
 
                             <b>CEP Rural:</b>
-                            <input type="text" class="input senha" id="input_senha" tabindex="5">
+                            <input type="text" class="input senha" id="input_idCEP" tabindex="5">
 
                         </section>
                         <section class="sessao-inputs-direito">
                             <b class="gambiarra">Cidade:</b>
-                            <input class="input sobrenome" id="input_sobrenome" tabindex="2">
+                            <input class="input sobrenome" id="input_idCidade" tabindex="2">
 
 
                             <b class="gambiarra">Estado:</b>
-                            <input class="input telefone" id="input_telefone" tabindex="4">
+                            <input class="input telefone" id="input_idEstado" tabindex="4">
 
-                          
+
                         </section>
-                   
+
                     </div>
-                    <button class="botao-cadastrar" onclick="navegar('propriedade.html')"
-                    tabindex="7">CADASTRAR</button>
+                    <button class="botao-cadastrar" onclick="Cadastrar_Propriedade()" tabindex="7">CADASTRAR</button>
+                    <p class="Campo_Aviso" id="Campo_Aviso"></p>
 </body>
 
 </html>
 
 <script>
-    /*Função de navegar entre telas - Lucas*/
-    function navegar(pagina) {
-        window.location.href = pagina;
-    }
+    function Cadastrar_Propriedade() {
+        let NomePropriedade = input_idNomePropriedade.value;
+        let QTDhectare = input_idQTDhectare.value;
+        let CEP = input_idCEP.value;
+        let cidade = input_idCidade.value;
+        let estado = input_idEstado.value;
 
-    function mostrarNotificacoes(){
-        if(notificacoes.style.display == 'none'){
-            notificacoes.style.display = 'block'
-        } else {
-            notificacoes.style.display = 'none'
+        let QTD_Campos_Errados = 0;
+
+        if (!NomePropriedade) {
+            Campo_Aviso.innerHTML = `Preencha todos os campo `
+            input_idNomePropriedade.style.border = "2px solid Red"
+            QTD_Campos_Errados++
         }
-    }
 
-    function excluirNotificacao(idNotificacao){
-        idNotificacao.remove();
-    }
+        if (!QTDhectare) {
+            Campo_Aviso.innerHTML = `Preencha todos os campo`
+            input_idQTDhectare.style.border = "2px solid Red"
+            QTD_Campos_Errados++
+        }
 
-    /*Função de cadastro - Juliana*/
-    function cadastrar() {
-        const NOME = input_nome.value;
-        const SOBRENOME = input_sobrenome.value;
-        const EMAIL = input_email.value;
-        const TELEFONE = input_telefone.value;
-        const SENHA = input_senha.value;
-        const CONFIRMACAO_SENHA = input_confirmacaoSenha.value;
-        const TOKEN = input_token.value;
+        if (!CEP) {
+            Campo_Aviso.innerHTML = `Preencha todos os campo `
+            input_idCEP.style.border = "2px solid Red"
+            QTD_Campos_Errados++
 
-        span_avisoCampos.innerHTML = "";
+        }
 
-        if (NOME != "" && SOBRENOME != "" && EMAIL != "" && TELEFONE != "" && SENHA != "" && CONFIRMACAO_SENHA != "" && TOKEN != "") {
+        if (!cidade) {
+            Campo_Aviso.innerHTML = `Preencha todos os campo `
+            input_idCidade.style.border = "2px solid Red"
+            QTD_Campos_Errados++
 
-            // Email terá que ter um @ e um .
-            const INDICE_ARROBA = EMAIL.indexOf("@");
-            const INDICE_PONTO = EMAIL.indexOf(".");
+        }
 
+        if (!estado) {
+            Campo_Aviso.innerHTML = `Preencha todos os campo `
+            input_idEstado.style.border = "2px solid Red"
+            QTD_Campos_Errados++
 
-            span_avisoEmail.style.color = 'transparent';
-            span_avisoSenha.style.color = 'transparent';
-            span_avisoConfirmacaoSenha.style.color = 'transparent';
+        }
 
-            // Senha terá que ter pelo menos: 8 caracteres, 1 número, uma letra maiúscula 
-            if (INDICE_ARROBA == -1 || INDICE_PONTO == -1) {
-                span_avisoEmail.innerHTML = "Email inválido";
-                span_avisoEmail.style.color = 'red';
+        if (QTD_Campos_Errados == 0) {
+            fetch("/usuarios/InformacoesPropriedade", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    NomePropriedadeServer: NomePropriedade,
+                    QTDhectareServer:  QTDhectare,
+                    CEPServer: CEP,
+                    cidadeServer: cidade,
+                    estadoServer: estado
+                }),
+            })
 
-            } else {
-                if (SENHA.length < 8) {
-                    span_avisoSenha.innerHTML = "A senha deve ter pelo menos 8 caracteres";
-                    span_avisoSenha.style.color = 'red';
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
 
-                } else {
-                    let existeNumero = false;
+                    if (resposta.ok) {
 
-                    for (let numero = 0; numero <= 9; numero++) {
-                        const INDICE_NUMERO = SENHA.indexOf(`${numero}`);
+                        Campo_Aviso.innerHTML = `O cadastro foi realizado com sucesso!`
+                        Campo_Aviso.style.color = "Green"
+                       
+                        setTimeout(() => {
+                            window.location.href = 'propriedade.html';
+                        }, "2000");
 
-                        if (INDICE_NUMERO != -1) {
-                            existeNumero = true;
+                        limparFormulario();
 
-                            numero = 10;
-                        }
-                    }
-
-                    if (existeNumero == true) {
-
-                        let existeLetraMaiuscula = false;
-                        let senha_replace = SENHA;
-
-                        senha_replace = senha_replace.replace(/\d+/ig, "")
-
-                        for (let posicao = 0; posicao < senha_replace.length; posicao++) {
-                            const LETRA_MAIUSCULA = senha_replace[posicao];
-
-                            if (LETRA_MAIUSCULA == LETRA_MAIUSCULA.toUpperCase()) {
-                                posicao = senha_replace.length;
-                                existeLetraMaiuscula = true;
-                            }
-                        }
-
-                        if (existeLetraMaiuscula == false) {
-                            span_avisoSenha.innerHTML = "A senha deve conter uma letra maiúscula";
-                            span_avisoSenha.style.color = 'red';
-
-                        } else {
-                            span_avisoConfirmacaoSenha.innerHTML = "";
-
-                            if (SENHA != CONFIRMACAO_SENHA) {
-
-                                span_avisoConfirmacaoSenha.innerHTML = "As senhas não conferem";
-                                span_avisoConfirmacaoSenha.style.color = 'red';
-
-                            } else {
-                                window.location.href = "../dashboard/index.html";
-                            }
-                        }
                     } else {
-                        span_avisoSenha.innerHTML = "A senha deve conter pelo menos um número";
-                        span_avisoSenha.style.color = 'red';
+                        throw "Houve um erro ao tentar realizar o cadastro!";
                     }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
 
-                }
-            }
+                });
+
+            return false;
 
 
-
-        } else {
-            span_avisoCampos.innerHTML = "Preencha todos os campos"
         }
-
     }
 
     // window.location.href = "./login"
 </script>
+
