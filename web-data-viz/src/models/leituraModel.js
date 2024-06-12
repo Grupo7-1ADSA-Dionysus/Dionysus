@@ -2,7 +2,8 @@ var database = require("../database/config");
 
 function retornarMaxTempUmid(){
     var instrucaoSql = `
-        SELECT max(Umidade) AS maxUmidade, max(Temperatura) AS maxTemperatura FROM Leitura;
+        SELECT max(Umidade) AS maxUmidade, 
+            max(Temperatura) AS maxTemperatura FROM Leitura;
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

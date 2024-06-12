@@ -399,6 +399,7 @@
         };
 
         let opcoes = {
+
             xAxes: [{
                 type: 'time',
                 ticks: {
@@ -408,7 +409,7 @@
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        // beginAtZero: true
                     }
                 }]
             }
@@ -447,6 +448,7 @@
         );
 
         setTimeout(() => atualizarGrafico(fkHectare, dados, myChart), 2000);
+        retornarMaxTempUmid();
     }
 
     function plotarGraficoTemperatura(resposta, idAquario) {
@@ -470,6 +472,7 @@
         };
 
         let opcoes1 = {
+            responsive: true,
             xAxes: [{
                 type: 'time',
                 ticks: {
@@ -479,7 +482,7 @@
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        // beginAtZero: true
                     }
                 }]
             }
@@ -548,12 +551,12 @@
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].DataLetura); // incluir um novo momento
 
-                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        // dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
 
 
-                        dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-                        dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+                        // dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                        // dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
                         myChart.update();
                     }
@@ -574,7 +577,7 @@
     }
 
     function retornarMaxTempUmid(){
-        fetch("/leitura/retornarMaxTempUmid", {
+        fetch("../../leitura/retornarMaxTempUmid", {
             method: "GET"
         }).then(function (resposta) {
             resposta.json().then((Leitura) => {
