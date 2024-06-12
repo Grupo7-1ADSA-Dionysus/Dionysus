@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -571,4 +572,16 @@
             });
 
     }
+
+    function retornarMaxTempUmid(){
+        fetch("/leitura/retornarMaxTempUmid", {
+            method: "GET"
+        }).then(function (resposta) {
+            resposta.json().then((Leitura) => {
+                p_KPI_Temp_Max.innerHTML = Leitura.maxTemperatura;
+                p_KPI_Umid_Max.innerHTML = Leitura.maxUmidade;
+
+                })
+            })
+        };
 </script>
