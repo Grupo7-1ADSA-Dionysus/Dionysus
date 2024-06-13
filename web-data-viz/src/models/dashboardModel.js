@@ -7,7 +7,7 @@ function buscarUltimasLeituras(fkHectare, limite_linhas) {
         Temperatura,
 		DATE_FORMAT(DataLeitura,'%H:%i') as DataLetura
         FROM Leitura 
-        WHERE fkHectare = 7
+        WHERE fkHectare = ${fkHectare}
         ORDER BY IdDado DESC LIMIT ${limite_linhas};`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -20,7 +20,7 @@ function buscarLeiturasEmTempoReal(fkHectare) {
         Temperatura,
 		DATE_FORMAT(DataLeitura,'%H:%i') as DataLetura
         FROM Leitura 
-        WHERE fkHectare = 7
+        WHERE fkHectare = ${fkHectare}
         ORDER BY IdDado DESC LIMIT 1;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

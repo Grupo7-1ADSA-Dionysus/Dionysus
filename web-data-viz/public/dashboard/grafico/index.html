@@ -331,7 +331,7 @@
     /*GRÁFICO ===============================================*/
 
     let proximaAtualizacao;
-    let fkHectare = 7;
+    let fkHectare = 1;
 
     window.onload = obterDadosGrafico();
 
@@ -672,7 +672,6 @@
 
     function obterDadosGraficoMedia(){
         console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa');
-        
         fetch(`/dashboard/obterDadosGraficoMedia`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
