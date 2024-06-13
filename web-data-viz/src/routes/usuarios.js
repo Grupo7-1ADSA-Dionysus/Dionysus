@@ -28,6 +28,13 @@ router.post("/BuscarPropriedades", function(req, res){
     usuarioController.BuscarPropriedades(req, res);
 });
 
+router.post("/BuscarUsuarios", function(req, res){
+    usuarioController.BuscarUsuarios(req, res);
+});
+
+router.post("/Cadastrar_Hectares", function(req, res){
+    usuarioController.Cadastrar_Hectares(req, res);
+});
 
 
 module.exports = router;

@@ -201,11 +201,58 @@ function BuscarPropriedades(req, res) {
     })
 }
 
+function BuscarUsuarios(req, res) {
+    var fkEmpresa = req.body.fkEmpresa;
+    if (fkEmpresa == undefined) {
+        res.status(400).send("Seu fkEmpresa está undefined!");
+    }
+    usuarioModel.BuscarUsuarios(fkEmpresa).then(function(resultado){
+        res.status(200).json(resultado);
+    }).catch(function(erro){
+        res.status(500).json(erro.sqlMessage);
+    })
+}
+
+function Cadastrar_Hectares(req, res) {
+    var Status = req.body.Status_Hectare;
+    var Latitude = req.body.Latitude_Hectare;
+    var Longitude = req.body.Longitude_Hectare;
+    var FKPropriedade = req.body.FK_Propriedade;
+
+    if (Status == undefined) {
+        res.status(400).send("O Status está undefined!");
+    } else if (Latitude == undefined) {
+        res.status(400).send("A Latitude do hectare está undefined!");
+    } else if (Longitude == undefined) {
+        res.status(400).send("O Longitude do hectare está undefined!");
+    } else if (FKPropriedade == undefined) {
+        res.status(400).send("A FKPropriedade está undefined!");
+    }else{
+        usuarioModel.Cadastrar_Hectares(Status, Latitude, Longitude, FKPropriedade)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     Cadastrar_Configuracao_Hectare,
     Informacoes_do_Contato,
     InformacoesPropriedade,
-    BuscarPropriedades
+    BuscarPropriedades,
+    BuscarUsuarios,
+    Cadastrar_Hectares
 }

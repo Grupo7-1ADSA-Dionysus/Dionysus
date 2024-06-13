@@ -207,8 +207,9 @@
 
                         Campo_Aviso.innerHTML = `O cadastro foi realizado com sucesso!`
                         Campo_Aviso.style.color = "Green"
-                       
-                        setTimeout(() => {
+
+                        Cadastrar_Hectares()
+                                         setTimeout(() => {
                             window.location.href = 'propriedade.html';
                         }, "2000");
 
@@ -227,6 +228,64 @@
 
 
         }
+    }
+
+    function Cordenadas_Aleatorias() {
+    const latitude = (Math.random() * 180 - 90).toFixed(6);
+    const longitude = (Math.random() * 360 - 180).toFixed(6);
+
+    return {
+        latitude: parseFloat(latitude),
+        longitude: parseFloat(longitude)
+    };
+}
+
+    function Cadastrar_Hectares(){
+        let QTDhectare = input_idQTDhectare.value;
+        const Status = "Parado";
+        const fkPropriedade = 2;
+        
+        for(let Numero_Hectare = 0; Numero_Hectare < QTDhectare; Numero_Hectare++){
+            const Cordernadas = Cordenadas_Aleatorias();
+            const latitude = Cordernadas.latitude;
+            const longitude = Cordernadas.longitude;
+
+            fetch("/usuarios/Cadastrar_Hectares", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    Status_Hectare:Status,
+                    Latitude_Hectare:latitude ,
+                    Longitude_Hectare:longitude,
+                    FK_Propriedade:fkPropriedade
+                  }),
+                })
+                  .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        
+                        });
+
+                    } else {
+                      throw "Houve um erro ao tentar realizar ao buscar os usuarios";
+                    }
+                  })
+                  .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+
+                  });
+
+                return false;
+        }
+
+
     }
 
     // window.location.href = "./login"

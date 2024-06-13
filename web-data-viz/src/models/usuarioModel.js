@@ -40,6 +40,15 @@ function Informacoes_do_Contato(nome, email, mensagem) {
     return database.executar(instrucaoSql);
 }
 
+function Cadastrar_Hectares(Status_Sensor, Longitude, Latitude) {
+
+    var instrucaoSql = `
+    INSERT INTO Hectare (Status_Sensor, Longitude, Latitude) VALUES ('${Status_Sensor}','${Longitude}','${Latitude}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 
 function InformacoesPropriedade(NomePropriedade, QTDhectare, CEP, cidade, estado, fkEmpresa) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", NomePropriedade, QTDhectare, CEP, cidade, estado, fkEmpresa);
@@ -60,6 +69,14 @@ function BuscarPropriedades(fkEmpresa) {
     return database.executar(instrucaoSql);
 }
 
+function BuscarUsuarios(fkEmpresa) {
+    var instrucaoSql = `
+        SELECT Nome, fkNivel_Permissao FROM Usuario WHERE fkToken = '${fkEmpresa}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 // INSERT INTO Endereco (CEP, Cidade, Estado) VALUES ('${CEP}','${cidade}','${estado}');
 
 module.exports = {
@@ -68,5 +85,7 @@ module.exports = {
     Cadastrar_Configuracao_Hectare,
     Informacoes_do_Contato,
     InformacoesPropriedade,
-    BuscarPropriedades
+    BuscarPropriedades,
+    BuscarUsuarios,
+    Cadastrar_Hectares
 };
