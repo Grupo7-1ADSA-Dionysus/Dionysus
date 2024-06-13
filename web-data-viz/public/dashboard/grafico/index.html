@@ -232,11 +232,11 @@
                             <div class="indicador temp">
 
                                 <h3 class="titulo">Temperatura</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Temp_Atual">16°C</p>
+                                <p class="conteudo-indicador" id="p_KPI_Temp_Media">0°C</p>
                             </div>
                             <div class="indicador umidade">
                                 <h3 class="titulo">Umidade</h3>
-                                <p class="conteudo-indicador" id="p_KPI_Umid_Atual">53%</p>
+                                <p class="conteudo-indicador" id="p_KPI_Umid_Media">0%</p>
                             </div>
                         </div>
 
@@ -577,7 +577,7 @@
                     // KPIs
                     retornarMaxTempUmid();
                     retornarMinTempUmid();
-                   
+                    retornarMediaTempUmid();
                    
 
                 });
@@ -634,6 +634,32 @@
 
                         p_KPI_Umid_Min.innerHTML = `${leitura.minUmidade}%`;
                         p_KPI_Temp_Min.innerHTML = `${leitura.minTemperatura}ºC`;
+
+                    }
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+
+    function retornarMediaTempUmid() {
+        fetch(`/leitura/retornarMediaTempUmid`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        const leitura = resposta[i];
+
+                        p_KPI_Umid_Media.innerHTML = `${leitura.mediaUmidade}%`;
+                       p_KPI_Temp_Media.innerHTML = `${leitura.mediaTemperatura}ºC`;
 
                     }
                 });

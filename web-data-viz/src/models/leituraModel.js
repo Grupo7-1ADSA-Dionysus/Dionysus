@@ -22,7 +22,20 @@ function retornarMinTempUmid(){
     return database.executar(instrucaoSql);
 }
 
+function retornarMediaTempUmid(){
+    var instrucaoSql = `
+        SELECT TRUNCATE(AVG(Umidade), 1) AS mediaUmidade,
+       TRUNCATE(AVG(Temperatura), 1) AS mediaTemperatura
+FROM Leitura
+WHERE DATE(dataLeitura) = CURDATE();
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     retornarMaxTempUmid,
-    retornarMinTempUmid
+    retornarMinTempUmid,
+    retornarMediaTempUmid
 }
