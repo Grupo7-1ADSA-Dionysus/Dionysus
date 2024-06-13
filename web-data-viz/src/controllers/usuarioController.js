@@ -26,6 +26,7 @@ function autenticar(req, res) {
                                         id: resultadoAutenticar[0].id,
                                         email: resultadoAutenticar[0].email,
                                         nome: resultadoAutenticar[0].nome,
+                                        fkEmpresa: resultadoAutenticar[0].fkToken,
                                         senha: resultadoAutenticar[0].senha,
                                         
                                     });
@@ -155,6 +156,7 @@ function InformacoesPropriedade(req, res) {
     var CEP = req.body.CEPServer;
     var cidade = req.body.cidadeServer;
     var estado = req.body.estadoServer;
+    var fkEmpresa = req.body.fkEmpresa;
 
     if (NomePropriedade == undefined) {
         res.status(400).send("O nome da propriedade está undefined!");
@@ -166,8 +168,10 @@ function InformacoesPropriedade(req, res) {
         res.status(400).send("A cidade está undefined!");
     } else if (estado == undefined) {
         res.status(400).send("O estado está undefined!");
+    } else if (fkEmpresa == undefined) {
+        res.status(400).send("O fkEmpresa está undefined!");
     }else{
-        usuarioModel.InformacoesPropriedade(NomePropriedade, QTDhectare, CEP, cidade, estado)
+        usuarioModel.InformacoesPropriedade(NomePropriedade, QTDhectare, CEP, cidade, estado, fkEmpresa)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -185,11 +189,23 @@ function InformacoesPropriedade(req, res) {
     }
 }
 
+function BuscarPropriedades(req, res) {
+    var fkEmpresa = req.body.fkEmpresa;
+    if (fkEmpresa == undefined) {
+        res.status(400).send("Seu fkEmpresa está undefined!");
+    }
+    usuarioModel.BuscarPropriedades(fkEmpresa).then(function(resultado){
+        res.status(200).json(resultado);
+    }).catch(function(erro){
+        res.status(500).json(erro.sqlMessage);
+    })
+}
 
 module.exports = {
     autenticar,
     cadastrar,
     Cadastrar_Configuracao_Hectare,
     Informacoes_do_Contato,
-    InformacoesPropriedade
+    InformacoesPropriedade,
+    BuscarPropriedades
 }

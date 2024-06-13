@@ -41,12 +41,20 @@ function Informacoes_do_Contato(nome, email, mensagem) {
 }
 
 
-function InformacoesPropriedade(NomePropriedade, QTDhectare, CEP, cidade, estado) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", NomePropriedade, QTDhectare, CEP, cidade, estado);
+function InformacoesPropriedade(NomePropriedade, QTDhectare, CEP, cidade, estado, fkEmpresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", NomePropriedade, QTDhectare, CEP, cidade, estado, fkEmpresa);
 
     var instrucaoSql = `
-    INSERT INTO Propriedade (Nome, Qnt_Hectare) VALUES ('${NomePropriedade}','${QTDhectare}');
+    INSERT INTO Propriedade (Nome, Area, fkEmpresa) VALUES ('${NomePropriedade}','${QTDhectare}', '${fkEmpresa}');
     
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function BuscarPropriedades(fkEmpresa) {
+    var instrucaoSql = `
+        SELECT nome FROM Propriedade WHERE fkEmpresa = '${fkEmpresa}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -59,5 +67,6 @@ module.exports = {
     cadastrar,
     Cadastrar_Configuracao_Hectare,
     Informacoes_do_Contato,
-    InformacoesPropriedade
+    InformacoesPropriedade,
+    BuscarPropriedades
 };

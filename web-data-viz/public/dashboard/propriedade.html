@@ -11,11 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/propriedade.css">
+    <link rel="stylesheet" href="../css/sem-propriedade.css">
     <title>Propriedades</title>
 </head>
 
-<body>
-    <div class="propriedade-container">
+<body onload="BuscarPropriedades()">
+    <div class="propriedade-container" id="propriedadecontainer">
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
@@ -105,22 +106,10 @@
                 </section>
             </div>
             <div class="sessao-conteudo-home" id="home">
-                <section class="caixa-propriedades">
-                    <h2>Propriedades Registradas</h2>
-                    <div class="lista-propriedades">
-                        <div class="propriedade" onclick="navegar('hectare.html')">
-                            <div class="nome-propriedade">
-                                <div class="bolinha"></div>
-                                <p>Fazenda</p>
-                            </div>
-                            <div class="opcoes-propriedade">
-                                <span class="configuracoes material-symbols-outlined">Settings</span>
-                                <span class="deletar material-symbols-outlined">Delete</span>
-                            </div>
-                        </div>
-                        <button class="adicionar-propriedade" onclick="navegar('cadastrar_propriedades.html')">
-                            Adicionar mais propriedades
-                        </button>
+                <section class="caixa-propriedades" id="CaixaPropriedades">
+                    <h2 id="Titulo_Caixa_Propriedades">Propriedades Registradas</h2>
+                    <div class="lista-propriedades" id="listapropriedades">
+
                     </div>
                 </section>
             </div>
@@ -144,5 +133,83 @@
 
      function navegar(pagina){
         window.location.href = pagina;
+    }
+
+    function BuscarPropriedades(){
+        fetch("/usuarios/BuscarPropriedades", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fkEmpresa: sessionStorage.fkEmpresa
+                }),
+            })
+
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+
+
+                        resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        
+                        if (json.length == 0){
+                            listapropriedades.innerHTML == ""
+                            Titulo_Caixa_Propriedades.innerHTML = "OPS!"
+                            listapropriedades.innerHTML += `
+                            <div class="div-texto">
+                                <p class="texto-propriedades">
+                                    <b>
+                                        Parece que você ainda não tem propriedades cadastradas conosco e nem é funcionário de uma! Cadastre sua propriedade ou peça para seu empregador te adicionar e aproveite nossa solução!
+                                    </b>
+                                </p>
+                                <button class="botao-add-propriedade" onclick="navegar('cadastrar_propriedades.html')">Adicionar Propriedade</button>
+                            </div>
+                    `
+                        }
+
+                        else{
+                            let Numero_Propriedade = 0
+
+                            for(let Quantidade_Propriedades = 0; Quantidade_Propriedades < json.length; Quantidade_Propriedades++){
+                                let Nome_Propriedade = json[Numero_Propriedade].nome
+                                Numero_Propriedade++
+
+                                listapropriedades.innerHTML += `
+                                <div class="propriedade" onclick="navegar('hectare.html')">
+                                    <div class="nome-propriedade">
+                                        <div class="bolinha"></div>
+                                        <p>${Nome_Propriedade}</p>
+                                    </div>
+                                    <div class="opcoes-propriedade">
+                                        <span class="configuracoes material-symbols-outlined">Settings</span>
+                                        <span class="deletar material-symbols-outlined">Delete</span>
+                                    </div>
+                                </div>
+                                `
+                            }
+                            listapropriedades.innerHTML += `
+                            <button class="adicionar-propriedade" onclick="navegar('cadastrar_propriedades.html')">
+                                Adicionar mais propriedades
+                            </button>
+                            `
+                        }
+
+                        });
+
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+
+                });
+
+            return false;
+
     }
 </script>

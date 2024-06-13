@@ -24,6 +24,10 @@ router.post("/InformacoesPropriedade", function(req, res){
     usuarioController.InformacoesPropriedade(req, res);
 });
 
+router.post("/BuscarPropriedades", function(req, res){
+    usuarioController.BuscarPropriedades(req, res);
+});
+
 
 
 module.exports = router;
