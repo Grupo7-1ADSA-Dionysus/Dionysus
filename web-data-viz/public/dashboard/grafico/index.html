@@ -671,7 +671,30 @@
     }
 
     function obterDadosGraficoMedia(){
+        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa');
         
+        fetch(`/dashboard/obterDadosGraficoMedia`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        const leitura = resposta[i];
+
+                       
+
+                    }
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
     }
 
     var ctx = document.getElementById('grafico-media-semanal').getContext('2d');

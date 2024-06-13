@@ -8,7 +8,7 @@ function buscarUltimasLeituras(fkHectare, limite_linhas) {
 		DATE_FORMAT(DataLeitura,'%H:%i') as DataLetura
         FROM Leitura 
         WHERE fkHectare = 7
-        ORDER BY IdDado DESC LIMIT ${limite_linhas}`;
+        ORDER BY IdDado DESC LIMIT ${limite_linhas};`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -21,7 +21,22 @@ function buscarLeiturasEmTempoReal(fkHectare) {
 		DATE_FORMAT(DataLeitura,'%H:%i') as DataLetura
         FROM Leitura 
         WHERE fkHectare = 7
-        ORDER BY IdDado DESC LIMIT 1`;
+        ORDER BY IdDado DESC LIMIT 1;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function obterDadosGraficoMedia(fkHectare) {
+
+    var instrucaoSql = ` SELECT 
+    DAYOFWEEK(DataLeitura) AS DiaSemana,
+    TRUNCATE(AVG(Umidade), 1) AS MediaUmidade,
+    TRUNCATE(AVG(Temperatura), 1) AS MediaTemperatura
+FROM 
+    Leitura
+GROUP BY 
+    DAYOFWEEK(DataLeitura) ORDER BY DiaSemana;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -29,5 +44,6 @@ function buscarLeiturasEmTempoReal(fkHectare) {
 
 module.exports = {
     buscarUltimasLeituras,
-    buscarLeiturasEmTempoReal
+    buscarLeiturasEmTempoReal,
+    obterDadosGraficoMedia
 }

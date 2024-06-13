@@ -11,4 +11,8 @@ router.get("/tempo-real/:fkHectare", function (req, res) {
     dashboardController.buscarLeiturasEmTempoReal(req, res);
 })
 
+router.get("/obterDadosGraficoMedia", function (req, res) {
+    dashboardController.obterDadosGraficoMedia(req, res);
+})
+
 module.exports = router;
