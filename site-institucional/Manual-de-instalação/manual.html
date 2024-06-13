@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./sem-propriedade.css">
-    <title>Propriedades</title>
+    <link rel="stylesheet" href="./manual.css">
+    <title>Manual de Instalação</title>
 </head>
 
 <body>
@@ -25,30 +25,25 @@
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined"
-                onclick="navegar('../login/login.html')">Logout</button>
+                    onclick="navegar('../login/login.html')">Logout</button>
             </section>
         </aside>
         <aside class="caixa-conteudo">
             <header class="cabecalho">
                 <div class="caixa-auxiliar-titulo-cabecalho">
                     <section class="sessao-titulo-cabecalho">
-                        <h1 id="titulo-cabecalho">Suas Propriedades</h1>
+                        <h1 id="titulo-cabecalho">Manual de Instalação</h1>
                     </section>
                 </div>
             </header>
-            <div class="sessao-conteudo-home" id="home">
-                <section class="caixa-propriedades">
-                    <div class="div-texto">
-                        <p class="texto-propriedades">
-                            <b>
-                                Parece que você ainda não tem propriedades cadastradas conosco e nem é funcionário de uma! Cadastre sua propriedade ou peça para seu empregador te adicionar e aproveite nossa solução!
-                            </b>
-                        </p>
-                        <button class="botao-add-propriedade" onclick="navegar('../cadastrar_propriedades/cadastrar_propriedades.html')">Adicionar Propriedade</button>
-                    </div>
-                        </div>
-                    </div>
-                </section>
+            <div class="conteudo">
+                <!-- Container para visualizar o PDF -->
+                <div class="pdf-container">
+                    <embed src="./MANUAL DE INSTALAÇÃO.pdf" width="100%" height="100%" type="application/pdf">
+                </div>
+
+                <!-- Botão para baixar o PDF -->
+                <a href="./MANUAL DE INSTALAÇÃO.pdf" class="download-button" download>Baixar PDF</a>
             </div>
         </aside>
     </div>
@@ -56,7 +51,7 @@
 
 </html>
 <script>
-     function navegar(pagina){
+    function navegar(pagina) {
         window.location.href = pagina;
     }
 </script>
