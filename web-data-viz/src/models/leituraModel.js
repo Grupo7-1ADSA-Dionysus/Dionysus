@@ -10,6 +10,17 @@ function retornarMaxTempUmid(){
     return database.executar(instrucaoSql);
 }
 
+function retornarMinTempUmid(){
+    var instrucaoSql = `
+        SELECT min(Umidade) as minUmidade,
+                min(Temperatura) as minTemperatura FROM Leitura;
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
-    retornarMaxTempUmid
+    retornarMaxTempUmid,
+    retornarMinTempUmid
 }

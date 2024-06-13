@@ -7,4 +7,8 @@ router.get("/retornarMaxTempUmid", function (req, res) {
     leituraController.retornarMaxTempUmid(req, res);
 });
 
+router.get("/retornarMinTempUmid", function (req, res) {
+    leituraController.retornarMinTempUmid(req, res);
+});
+
 module.exports = router;

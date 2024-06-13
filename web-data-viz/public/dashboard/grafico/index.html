@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -535,7 +534,7 @@
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                     console.log(`Dados atuais do gráfico:`);
                     console.log(dados);
-                   
+
 
                     if (novoRegistro[0].DataLetura == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
@@ -546,6 +545,14 @@
                         console.log("Horário do último dado capturado:")
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
+                        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaa ' + novoRegistro[0].Umidade)
+
+                        // KPIs
+                        KPI_Umidade = document.getElementById('p_KPI_Umid_Atual');
+                        KPI_Umidade.innerHTML = `${novoRegistro[0].Umidade}%`;
+
+                        KPI_Temperatura = document.getElementById('p_KPI_Temp_Atual');
+                        KPI_Temperatura.innerHTML = `${novoRegistro[0].Temperatura}%`;
                     } else {
                         // tirando e colocando valores no gráfico
                         dados.labels.shift(); // apagar o primeiro
@@ -554,15 +561,23 @@
                         // dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
 
-
+                        
                         // dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
                         // dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
-
+                       
+                        
                         myChart.update();
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(fkHectare, dados, myChart), 5000);
+
+                    // KPIs
+                    retornarMaxTempUmid();
+                    retornarMinTempUmid();
+                   
+                   
+
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -576,15 +591,55 @@
 
     }
 
-    function retornarMaxTempUmid(){
-        fetch("../../leitura/retornarMaxTempUmid", {
-            method: "GET"
-        }).then(function (resposta) {
-            resposta.json().then((Leitura) => {
-                p_KPI_Temp_Max.innerHTML = Leitura.maxTemperatura;
-                p_KPI_Umid_Max.innerHTML = Leitura.maxUmidade;
+    function retornarMaxTempUmid() {
+        fetch(`/leitura/retornarMaxTempUmid`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
 
-                })
-            })
-        };
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        const leitura = resposta[i];
+
+                        p_KPI_Umid_Max.innerHTML = `${leitura.maxUmidade}%`;
+                        p_KPI_Temp_Max.innerHTML = `${leitura.maxTemperatura}ºC`;
+
+                    }
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+
+    function retornarMinTempUmid() {
+        fetch(`/leitura/retornarMinTempUmid`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        const leitura = resposta[i];
+
+                        p_KPI_Umid_Min.innerHTML = `${leitura.minUmidade}%`;
+                        p_KPI_Temp_Min.innerHTML = `${leitura.minTemperatura}ºC`;
+
+                    }
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
 </script>
