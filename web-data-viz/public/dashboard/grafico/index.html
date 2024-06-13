@@ -297,7 +297,9 @@
     </div>
 </body>
 
-<script data-jsd-embedded data-key="5b0e0c87-af73-45fd-adc6-46268b98e4c6" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+<script data-jsd-embedded data-key="5b0e0c87-af73-45fd-adc6-46268b98e4c6"
+    data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+
 </html>
 <script>
     function navegar(pagina) {
@@ -343,6 +345,31 @@
                     resposta.json().then(resposta => {
 
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        for (let i = 0; i < resposta.length; i++) {
+                            var dado = resposta[i];
+
+                            if (dado.Temperatura >= Temp_Min && dado.Temperatura <= Temp_Max && dado.Umidade >= Umidade_Maxima) {
+                                document.getElementById("p_alerta").innerHTML = "Hectare com condições ideais para o Míldio!";
+                                document.getElementById("p_alerta").style.backgroundColor = "#FFA8A8";
+                                document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
+                                bt_fechar_alerta.style.backgroundColor = "#FF3838"; div_alerta.style.display = 'block';
+
+                            } else if (dado.Temperatura >= 13 && dado.Temperatura < 18 && dado.Umidade >= 55 && dado.Umidade < 60 || dado.Temperatura > 25 && dado.Temperatura <= 30 && dado.Umidade >= 55 && dado.Umidade < 60) {
+                                document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"
+                                document.getElementById("p_alerta").innerHTML = "Hectare perto de atingir as condições ideais";
+
+                                div_alerta.style.display = 'block';
+
+                            } else if (dado.Umidade >= 55) {
+                                document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"
+                                document.getElementById("p_alerta").innerHTML = "Hectare perto de atingir as condições ideais";
+
+                                div_alerta.style.display = 'block';
+                            }
+
+                        }
+
 
                     });
                 } else {
@@ -671,8 +698,8 @@
         });
     }
 
-    function obterDadosGraficoMedia(){
-        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa');
+    function obterDadosGraficoMedia() {
+
         fetch(`/dashboard/obterDadosGraficoMedia`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
@@ -685,7 +712,7 @@
                     for (let i = 0; i < resposta.length; i++) {
                         const leitura = resposta[i];
 
-                       
+
 
                     }
                 });
@@ -722,4 +749,7 @@
         // Configuration options go here
         options: {}
     });
+
+
+
 </script>
