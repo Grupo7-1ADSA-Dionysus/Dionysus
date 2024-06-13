@@ -278,7 +278,7 @@
 
                         </header>
 
-                       
+
 
                         <div class="organizando-graficos">
                             <!-- <section class="sessao-grafico-temperatura">
@@ -334,7 +334,6 @@
     let fkHectare = 7;
 
     window.onload = obterDadosGrafico();
-
 
     function obterdados(fkHectare) {
         fetch(`/dashboard/tempo-real/${fkHectare}`)
@@ -547,7 +546,7 @@
                         console.log("Horário do último dado capturado:")
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
-                     
+
 
                         // KPIs
                         KPI_Umidade = document.getElementById('p_KPI_Umid_Atual');
@@ -563,11 +562,11 @@
                         // dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
 
-                        
+
                         // dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
                         // dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
-                       
-                        
+
+
                         myChart.update();
                     }
 
@@ -578,7 +577,7 @@
                     retornarMaxTempUmid();
                     retornarMinTempUmid();
                     retornarMediaTempUmid();
-                   
+
 
                 });
             } else {
@@ -659,7 +658,7 @@
                         const leitura = resposta[i];
 
                         p_KPI_Umid_Media.innerHTML = `${leitura.mediaUmidade}%`;
-                       p_KPI_Temp_Media.innerHTML = `${leitura.mediaTemperatura}ºC`;
+                        p_KPI_Temp_Media.innerHTML = `${leitura.mediaTemperatura}ºC`;
 
                     }
                 });
@@ -670,4 +669,34 @@
             console.error(resposta);
         });
     }
+
+    function obterDadosGraficoMedia(){
+        
+    }
+
+    var ctx = document.getElementById('grafico-media-semanal').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'horizontalBar',
+        // The data for our dataset
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
+            datasets: [{
+                label: 'Temperatura (°C)',
+                data: [25, 18, 20, 28, 30, 28, 21],
+                fill: false,
+                backgroundColor: '#FF8E8E',
+                borderWidth: 1
+            },
+            {
+                label: 'Umidade (%)',
+                data: [60, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                backgroundColor: '#58C3FF',
+                borderWidth: 1
+            }]
+        },
+        // Configuration options go here
+        options: {}
+    });
 </script>
