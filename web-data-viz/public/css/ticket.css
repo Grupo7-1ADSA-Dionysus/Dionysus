@@ -287,13 +287,17 @@
     border-radius: 20px;
 }
 
-.sessao-inputs{
+.sessao-Mensagem{
     /*Tamanho*/
     width: 80%;
     height: 60%;
     /*Organização de elementos filhos*/
     display: flex;
     flex-direction: column;
+}
+
+.Texto_Suporte{
+    font-size: 25px ;
 }
 
 .input-assunto{
