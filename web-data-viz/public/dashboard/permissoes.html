@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/imagens-hectare/favicon.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/permissoes.css">
+    <title>Permissões</title>
+</head>
+
+<body>
+    <div class="permissoes-container">
+        <aside class="menu-lateral">
+            <section class="sessao botoes-principais">
+                <button class="botao-menu material-symbols-outlined">Account_Circle</button>
+                <button class="botao-menu home material-symbols-outlined"
+                    onclick="navegar('propriedade.html')">Home</button>
+                <button class="botao-menu material-symbols-outlined" onclick="navegar('ticket.html')">Headset</button>
+            </section>
+            <section class="sessao sair">
+                <button class="botao-menu material-symbols-outlined" onclick="navegar('../login.html')">Logout</button>
+            </section>
+        </aside>
+        <aside class="caixa-conteudo">
+            <header class="cabecalho">
+                <div class="caixa-auxiliar-titulo-cabecalho">
+                    <section class="sessao-voltar">
+                        <span class="botao-cabecalho material-symbols-outlined" onclick="navegar('propriedade.html')">
+                            Arrow_Back
+                        </span>
+                    </section>
+                    <section class="sessao-titulo-cabecalho">
+                        <h1 class="titulo-cabecalho">Nome hectare</h1>
+                    </section>
+                    <section class="sessao-notificacao-cabecalho">
+                        <span class="botao-cabecalho material-symbols-outlined" onclick="mostrarNotificacoes()">Notifications</span>
+                    </section>
+                </div>
+            </header>
+            <div class="conteudo">
+                <section class="sessao-principal">
+                    <div class="caixa-configuracoes">
+                        <h2>Configurações de Usuários</h2>
+                        <div class="caixa-lista">
+                            <section class="barra-usuario">
+                                <img src="../assets/imagens-permissoes/iconeDono.png" alt="adm" class="icone-usuario">
+                                <span class="nome-usuario">Usúario</span>
+                                <span>Nível de permissão:</span>
+                                <select id="select_nivel">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </section>
+                            <section class="barra-usuario">
+                                <img src="../assets/imagens-permissoes/iconeAdm.png" alt="adm" class="icone-usuario">
+                                <span class="nome-usuario">Usúario</span>
+                                <span>Nível de permissão:</span>
+                                <select id="select_nivel">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </section>
+                            <section class="barra-usuario">
+                                <img src="../assets/imagens-permissoes/person.png" alt="adm" class="icone-usuario">
+                                <span class="nome-usuario">Usúario</span>
+                                <span>Nível de permissão:</span>
+                                <select id="select_nivel">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </section>
+                        </div>
+                        <button class="botao-salvar">Salvar</button>
+                    </div>
+                    <div class="caixa-legenda">
+                        <img src="../assets/imagens-permissoes/legendaPermissoes.png" alt="Imagem de legenda" class="imagem-legenda">
+                    </div>
+                </section>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>
+<script>
+     function navegar(pagina){
+        window.location.href = pagina;
+    }
+</script>
