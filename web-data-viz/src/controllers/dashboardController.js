@@ -57,10 +57,63 @@ function obterDadosGraficoMedia(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+function exibirHectares(req, res) {
+    var nomePropriedade = req.params.nomePropriedade;
+
+    console.log(`Recuperando medidas em tempo real`);
+
+    dashboardModel.exibirHectares(nomePropriedade).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function exibirAreaFazenda(req, res) {
+    var nomePropriedade = req.params.nomePropriedade;
+
+    console.log(`Recuperando medidas em tempo real`);
+
+    dashboardModel.exibirAreaFazenda(nomePropriedade).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function cadastrarHectares(req, res) {
+    var idPropriedade = req.params.idPropriedade;
+
+    dashboardModel.cadastrarHectares(idPropriedade).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 
 module.exports = {
     buscarUltimasLeituras,
     buscarLeiturasEmTempoReal,
-    obterDadosGraficoMedia
-
+    obterDadosGraficoMedia,
+    exibirHectares,
+    exibirAreaFazenda,
+    cadastrarHectares
 }
