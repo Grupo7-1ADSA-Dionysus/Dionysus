@@ -99,6 +99,12 @@
         'opsz' 24
 }
 
+.material-symbols-outlined:hover {
+    color: #8C52FF;
+    font-variation-settings:
+        'FILL' 1
+}
+
 .dashboard-container {
     /*Tamanho*/
     width: 100%;
