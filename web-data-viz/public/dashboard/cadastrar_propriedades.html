@@ -20,7 +20,7 @@
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined">Account_Circle</button>
                 <button class="botao-menu home material-symbols-outlined">Home</button>
-                <button class="botao-menu material-symbols-outlined" onclick="navegar('ticket.html')">Headset</button>
+                <button class="botao-menu material-symbols-outlined" onclick="'ticket.html'">Headset</button>
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined"
@@ -139,7 +139,9 @@
                     <p class="Campo_Aviso" id="Campo_Aviso"></p>
 </body>
 
-<script data-jsd-embedded data-key="5b0e0c87-af73-45fd-adc6-46268b98e4c6" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+<script data-jsd-embedded data-key="5b0e0c87-af73-45fd-adc6-46268b98e4c6"
+    data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+
 </html>
 
 <script>
@@ -151,6 +153,9 @@
         let estado = input_idEstado.value;
 
         let QTD_Campos_Errados = 0;
+
+        sessionStorage.setItem('Propriedade', NomePropriedade);
+        sessionStorage.setItem('Area', QTDhectare);
 
         if (!NomePropriedade) {
             Campo_Aviso.innerHTML = `Preencha todos os campo `
@@ -186,6 +191,9 @@
         }
 
         if (QTD_Campos_Errados == 0) {
+            
+            // console.log('AAAAAAAAAAAA', QTDhectare)
+
             fetch("/usuarios/InformacoesPropriedade", {
                 method: "POST",
                 headers: {
@@ -193,7 +201,7 @@
                 },
                 body: JSON.stringify({
                     NomePropriedadeServer: NomePropriedade,
-                    QTDhectareServer:  QTDhectare,
+                    QTDhectareServer: QTDhectare,
                     CEPServer: CEP,
                     cidadeServer: cidade,
                     estadoServer: estado,
@@ -209,12 +217,13 @@
                         Campo_Aviso.innerHTML = `O cadastro foi realizado com sucesso!`
                         Campo_Aviso.style.color = "Green"
 
-                        Cadastrar_Hectares()
-                                         setTimeout(() => {
-                            window.location.href = 'propriedade.html';
-                        }, "2000");
+                        
+                        // setTimeout(() => {
+                        //     window.location.href = 'propriedade.html';
+                        // }, "2000");
 
-                        limparFormulario();
+                        // limparFormulario();
+                        exibirAreaFazenda(QTDhectare, NomePropriedade);
 
                     } else {
                         throw "Houve um erro ao tentar realizar o cadastro!";
@@ -227,68 +236,159 @@
 
             return false;
 
-
         }
     }
 
     function Cordenadas_Aleatorias() {
-    const latitude = (Math.random() * 180 - 90).toFixed(6);
-    const longitude = (Math.random() * 360 - 180).toFixed(6);
+        const latitude = (Math.random() * 180 - 90).toFixed(6);
+        const longitude = (Math.random() * 360 - 180).toFixed(6);
 
-    return {
-        latitude: parseFloat(latitude),
-        longitude: parseFloat(longitude)
-    };
-}
+        return {
+            latitude: parseFloat(latitude),
+            longitude: parseFloat(longitude)
+        };
+    }
 
-    function Cadastrar_Hectares(){
+    function Cadastrar_Hectares() {
         let QTDhectare = input_idQTDhectare.value;
         const Status = "Parado";
         const fkPropriedade = 2;
-        
-        for(let Numero_Hectare = 0; Numero_Hectare < QTDhectare; Numero_Hectare++){
+
+        for (let Numero_Hectare = 0; Numero_Hectare < QTDhectare; Numero_Hectare++) {
             const Cordernadas = Cordenadas_Aleatorias();
             const latitude = Cordernadas.latitude;
             const longitude = Cordernadas.longitude;
 
             fetch("/usuarios/Cadastrar_Hectares", {
-                  method: "POST",
-                  headers: {
+                method: "POST",
+                headers: {
                     "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    Status_Hectare:Status,
-                    Latitude_Hectare:latitude ,
-                    Longitude_Hectare:longitude,
-                    FK_Propriedade:fkPropriedade
-                  }),
-                })
-                  .then(function (resposta) {
+                },
+                body: JSON.stringify({
+                    Status_Hectare: Status,
+                    Latitude_Hectare: latitude,
+                    Longitude_Hectare: longitude,
+                    FK_Propriedade: fkPropriedade
+                }),
+            })
+                .then(function (resposta) {
                     console.log("resposta: ", resposta);
 
                     if (resposta.ok) {
                         resposta.json().then(json => {
-                        console.log(json);
-                        console.log(JSON.stringify(json));
+                            console.log(json);
+                            console.log(JSON.stringify(json));
 
-                        
+
                         });
 
                     } else {
-                      throw "Houve um erro ao tentar realizar ao buscar os usuarios";
+                        throw "Houve um erro ao tentar realizar ao buscar os usuarios";
                     }
-                  })
-                  .catch(function (resposta) {
+                })
+                .catch(function (resposta) {
                     console.log(`#ERRO: ${resposta}`);
 
-                  });
+                });
 
-                return false;
+                
+
+            return false;
         }
 
 
     }
+    function navegar(pagina) {
+        window.location.href = pagina;
+    }
+
+    // function cadastrarHectares(qtdHectare) {
+    //     fetch(`dashboard/cadastrarHectare/:${qtdHectare}`, {
+    //         method: "POST",
+           
+    //     })
+    //         .then(function (resposta) {
+    //             console.log("resposta: ", resposta);
+
+    //             if (resposta.ok) {
+                    
+
+
+    //             } else {
+    //                 throw "Houve um erro ao tentar realizar o cadastro!";
+    //             }
+    //         })
+    //         .catch(function (resposta) {
+    //             console.log(`#ERRO: ${resposta}`);
+
+    //         });
+
+    //     return false;
+    // }
+
+    function exibirAreaFazenda(Area, nome) {
+        // const nomePropriedade = sessionStorage.getItem('Propriedade');
+        console.log(nome + 'BBBBBBBBBBBBBBBB')
+        fetch(`/dashboard/exibirAreaFazenda/${nome}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        const hectare = resposta[i];
+
+                        let ID_PROPRIEDADE = hectare.IdPropriedade;
+                        console.log(ID_PROPRIEDADE + ' AAAAAAAAAAAAAAAAAA');
+
+                        sessionStorage.setItem('ID_PROPRIEDADE', ID_PROPRIEDADE);
+
+                        cadastrarHectares(ID_PROPRIEDADE, Area);
+                    }
+
+                    // const idPropriedade = sessionStorage.getItem('idPropriedade');
+                
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+
+    function cadastrarHectares(idPropriedade, area) {
+        console.log('KKKKKKKKKKKKK ' + idPropriedade)
+        for (let i = 0; i < area; i++) {
+            fetch(`/dashboard/cadastrarHectares/${idPropriedade}`, {
+                method: "POST",
+
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+
+                        // alert('AAAAAAAAAAAAAAAAAAAAAAAA');
+                        console.log('Ta chegando no cadastro Hectare')
+
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+
+                });
+        }
+
+
+        return false;
+    }
+
 
     // window.location.href = "./login"
 </script>
-
