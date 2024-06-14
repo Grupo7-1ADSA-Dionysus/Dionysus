@@ -722,63 +722,62 @@
     }
 
 
-    const dadosSemanalUmidade = [];
-    function obterDadosGraficoMedia() {
-        fetch(`/dashboard/obterDadosGraficoMedia`).then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    throw "Nenhum resultado encontrado!!";
-                }
+    // let dadosSemanalUmidade = [];
+    // function obterDadosGraficoMedia() {
+    //     fetch(`/dashboard/obterDadosGraficoMedia`).then(function (resposta) {
+    //         if (resposta.ok) {
+    //             if (resposta.status == 204) {
+    //                 throw "Nenhum resultado encontrado!!";
+    //             }
 
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+    //             resposta.json().then(function (resposta) {
+    //                 console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-                    for (let i = 0; i < resposta.length; i++) {
-                        const leitura = resposta[i];
-
-                        dadosSemanalUmidade.push(leitura.MediaUmidade);
-
-                        var ctx = document.getElementById('grafico-media-semanal').getContext('2d');
-                        var chart = new Chart(ctx, {
-                            // The type of chart we want to create
-                            type: 'horizontalBar',
-                            // The data for our dataset
-                            data: {
-                                labels: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-                                datasets: [{
-                                    label: 'Temperatura (°C)',
-                                    data: [25, 18, 20, 28, 30, 28, 21],
-                                    fill: false,
-                                    backgroundColor: '#FF8E8E',
-                                    borderWidth: 1
-                                },
-                                {
-                                    label: 'Umidade (%)',
-                                    data: dadosSemanalUmidade,
-                                    fill: false,
-                                    backgroundColor: '#58C3FF',
-                                    borderWidth: 1
-                                }]
-                            },
-                            // Configuration options go here
-                            options: {}
-                        });
-
-                        
-                    }
-
-                    dadosSemanalUmidade = [];
-                });
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-        });
-    }
+    //                 for (let i = 0; i < resposta.length; i++) {
+    //                     const leitura = resposta[i];
 
 
 
+    //                 }
+
+    //                 dadosSemanalUmidade = [];
+    //             });
+    //         } else {
+    //             throw ('Houve um erro na API!');
+    //         }
+    //     }).catch(function (resposta) {
+    //         console.error(resposta);
+    //     });
+    // }
+
+
+
+
+    var ctx = document.getElementById('grafico-media-semanal').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'horizontalBar',
+        // The data for our dataset
+        data: {
+            labels: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+            datasets: [{
+                label: 'Temperatura (°C)',
+                data: [25, 18, 20, 28, 30],
+                fill: false,
+                backgroundColor: '#FF8E8E',
+                borderWidth: 1
+            },
+            {
+                label: 'Umidade (%)',
+                data: [70, 60, 67, 71, 69],
+                fill: false,
+                backgroundColor: '#58C3FF',
+                borderWidth: 1
+            }]
+        },
+        // Configuration options go here
+        options: {}
+    });
 
 
 

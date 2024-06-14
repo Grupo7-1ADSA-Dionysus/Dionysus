@@ -19,7 +19,7 @@
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
                 <button class="botao-menu material-symbols-outlined"
-                onclick="navegar('../editar_perfil/meu_perfil.html')">Account_Circle</button>
+                onclick="navegar('')">Account_Circle</button>
                 <button class="botao-menu home material-symbols-outlined"
                     onclick="navegar('propriedade.html')">Home</button>
                 <button class="botao-menu material-symbols-outlined"
@@ -113,11 +113,11 @@
             <div class="sessao-conteudo-hectare">
                 <section class="sessao-kpi">
                     <p>Porcentagem de hectares em situação crítica</p>
-                    <div class="porcentagem-kpi vermelho">20%</div>
+                    <div class="porcentagem-kpi vermelho">0%</div>
                     <p>Porcentagem de hectares em atenção</p>
-                    <div class="porcentagem-kpi amarelo">30%</div>
+                    <div class="porcentagem-kpi amarelo">0%</div>
                     <p>Porcentagem de hectares condições ideais</p>
-                    <div class="porcentagem-kpi verde">50%</div>
+                    <div class="porcentagem-kpi verde">10%</div>
                 </section>
                 <section class="sessao-lista-hectares">
                     <div class="lista-hectares" id="ListaHectares">
@@ -240,16 +240,32 @@
                         for(let Quantidade_de_Hectare = 0; Quantidade_de_Hectare < json.length; Quantidade_de_Hectare++){
                             Numero_Hectare++
                             console.log(Quantidade_de_Hectare)
-                            ListaHectares.innerHTML += `
-                            <div class="caixa-hectare" id="Hectare${Numero_Hectare}">
+
+                            if(Numero_Hectare == 1){
+                                ListaHectares.innerHTML = `
+                            <div class="caixa-hectare" id="Hectare${Numero_Hectare}" onclick = "navegar('grafico/index.html')">
                                 <section class="situacao-hectare boa">
                                     <span class="icone-situacao material-symbols-outlined">Check</span>
-                                    <p>21ºC</p>
-                                    <p>45%</p>
+                                    <p>18ºC</p>
+                                    <p>60%</p>
                                 </section>
                                 <p>Hectare ${Numero_Hectare}</p>
                             </div>
                             `
+                            } else{
+
+                                ListaHectares.innerHTML += `
+                                <div class="caixa-hectare" id="Hectare${Numero_Hectare}">
+                                    <section class="situacao-hectare manutencao">
+                                        <span class="icone-situacao material-symbols-outlined">Build</span>
+                                        <p>0ºC</p>
+                                        <p>0%</p>
+                                    </section>
+                                    <p>Hectare ${Numero_Hectare}</p>
+                                </div>
+                                `
+                            }
+
                             if(Quantidade_de_Hectare % 3 == 0){
                                 ListaHectares.innerHTML += "<br>"
                             }
@@ -268,4 +284,8 @@
 
                 return false;
     }
+
+    // const hectareDash = document.getElementById('Hectare1');
+
+    // hectareDash.
 </script>
