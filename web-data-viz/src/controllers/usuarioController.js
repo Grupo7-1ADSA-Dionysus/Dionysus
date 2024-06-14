@@ -92,8 +92,8 @@ function cadastrar(req, res) {
 }
 
 function Cadastrar_Configuracao_Hectare(req, res){
-    var Nome_Uva = req.body.NomeUva
-    var Tipo_Uva = req.body.Tipo_Uva
+    var Nome_Uva = req.body.nomeUva;
+    var Tipo_Uva = req.body.tipoUva;
 
     if (Nome_Uva == undefined) {
         res.status(400).send("Seu Nome_Uva está undefined!");

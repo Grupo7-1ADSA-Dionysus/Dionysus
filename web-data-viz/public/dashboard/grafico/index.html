@@ -55,23 +55,23 @@
         </aside>
 
         <div class="Informações_Hectare" id="informacoes_hectare">
-            <h2 class="Titulo_informações_Hectare">Informações sobre o Hectare 6</h2>
+            <h2 class="Titulo_informações_Hectare">Informações sobre o Hectare 1</h2>
 
             <div class="inputs_informações_Hectare">
 
                 <div class="Input_NomeDaUva">
                     <p class="P_NomeDaUva">Nome da Uva</p>
                     <input type="text" class="NomeDaUva" id="Input_NomeDaUva">
+                    <div class="Input_tipoDeUva">
+                        <p class="P_TipoDeUva">Tipo de Uva</p>
+                        <select class="tipoDeUva" id="Input_tipoDeUva">
+                            <option value="#">Selecione uma opção </option>
+                            <option value="1">Vínifera</option>
+                            <option value="2">Não Vínifera</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div class="Input_tipoDeUva">
-                    <p class="P_TipoDeUva">Tipo de Uva</p>
-                    <select class="tipoDeUva" id="Input_tipoDeUva">
-                        <option value="#">Selecione uma opção </option>
-                        <option value="vinifera">Vínifera</option>
-                        <option value="nao_vinifera">Não Vínifera</option>
-                    </select>
-                </div>
 
 
                 <div class="div-localizacao">
@@ -84,7 +84,7 @@
             <button class="Botão_Editar" onclick="Cadastrar_Informações()">
                 EDITAR
             </button>
-
+            <p id="p_cadastroInformacoes">Cadastro de Informações realizado com sucesso!</p>
         </div>
 
         <div class="caixa-notificacoes" id="notificacoes">
@@ -286,10 +286,21 @@
                             <section class="sessao-grafico-umidade">
                                 
                             </section> -->
-                            <canvas id="dht11Temperatura" class="grafico-canva"></canvas>
-                            <canvas id="dht11Umidade" class="grafico-canva"></canvas>
+
+                            <div class="div-graficos">
+
+                                <canvas id="dht11Temperatura" class="grafico-canva"></canvas>
+                            </div>
+
+                            <div class="div-graficos">
+
+                                <canvas id="dht11Umidade" class="grafico-canva"></canvas>
+                            </div>
                             <!-- <canvas id="myChartLine"></canvas> -->
                         </div>
+
+
+
                     </div>
                 </section>
             </div>
@@ -612,6 +623,8 @@
                     retornarMinTempUmid();
                     retornarMediaTempUmid();
 
+                    // Gráfico Semanal
+                    obterDadosGraficoMedia();
 
                 });
             } else {
@@ -704,8 +717,9 @@
         });
     }
 
-    function obterDadosGraficoMedia() {
 
+    const dadosSemanalUmidade = [];
+    function obterDadosGraficoMedia() {
         fetch(`/dashboard/obterDadosGraficoMedia`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
@@ -718,9 +732,38 @@
                     for (let i = 0; i < resposta.length; i++) {
                         const leitura = resposta[i];
 
+                        dadosSemanalUmidade.push(leitura.MediaUmidade);
 
+                        var ctx = document.getElementById('grafico-media-semanal').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'horizontalBar',
+                            // The data for our dataset
+                            data: {
+                                labels: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+                                datasets: [{
+                                    label: 'Temperatura (°C)',
+                                    data: [25, 18, 20, 28, 30, 28, 21],
+                                    fill: false,
+                                    backgroundColor: '#FF8E8E',
+                                    borderWidth: 1
+                                },
+                                {
+                                    label: 'Umidade (%)',
+                                    data: dadosSemanalUmidade,
+                                    fill: false,
+                                    backgroundColor: '#58C3FF',
+                                    borderWidth: 1
+                                }]
+                            },
+                            // Configuration options go here
+                            options: {}
+                        });
 
+                        
                     }
+
+                    dadosSemanalUmidade = [];
                 });
             } else {
                 throw ('Houve um erro na API!');
@@ -730,30 +773,54 @@
         });
     }
 
-    var ctx = document.getElementById('grafico-media-semanal').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'horizontalBar',
-        // The data for our dataset
-        data: {
-            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
-            datasets: [{
-                label: 'Temperatura (°C)',
-                data: [25, 18, 20, 28, 30, 28, 21],
-                fill: false,
-                backgroundColor: '#FF8E8E',
-                borderWidth: 1
+
+
+
+
+
+
+    function Cadastrar_Informações() {
+        const nomeUva = Input_NomeDaUva.value;
+        const tipoUva = Input_tipoDeUva.value;
+
+
+        fetch("/usuarios/Cadastrar_Configuracao_Hectare", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
             },
-            {
-                label: 'Umidade (%)',
-                data: [60, 59, 80, 81, 56, 55, 40],
-                fill: false,
-                backgroundColor: '#58C3FF',
-                borderWidth: 1
-            }]
-        },
-        // Configuration options go here
-        options: {}
-    });
+            body: JSON.stringify({
+                nomeUva: nomeUva,
+                tipoUva: tipoUva
+            }),
+        })
+
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    let p_cadastroInformacaoes = document.getElementById('p_cadastroInformacoes');
+                    p_cadastroInformacaoes.style.display = 'flex';
+
+
+                    setInterval(() => {
+                        informacoes_hectare.style.display = 'none';
+                    }, 1000);
+
+
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+
+            });
+
+        return false;
+
+
+    }
 
 </script>

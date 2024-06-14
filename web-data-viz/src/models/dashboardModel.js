@@ -27,7 +27,7 @@ function buscarLeiturasEmTempoReal(fkHectare) {
     return database.executar(instrucaoSql);
 }
 
-function obterDadosGraficoMedia(fkHectare) {
+function obterDadosGraficoMedia() {
 
     var instrucaoSql = ` SELECT 
     DAYOFWEEK(DataLeitura) AS DiaSemana,
