@@ -338,6 +338,12 @@
 
     window.onload = obterDadosGrafico();
 
+    let Temp_Min = 18;
+    let Temp_Max = 25;
+    let Umidade_Maxima = 60;
+    let Umidade_Minima = 30;
+    let Umidade_Elevada = 55;
+
     function obterdados(fkHectare) {
         fetch(`/dashboard/tempo-real/${fkHectare}`)
             .then(resposta => {
