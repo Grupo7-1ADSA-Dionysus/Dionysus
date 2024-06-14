@@ -26,6 +26,7 @@ function autenticar(req, res) {
                                         id: resultadoAutenticar[0].id,
                                         email: resultadoAutenticar[0].email,
                                         nome: resultadoAutenticar[0].nome,
+                                        fkEmpresa: resultadoAutenticar[0].fkToken,
                                         senha: resultadoAutenticar[0].senha,
                                         
                                     });
@@ -90,7 +91,168 @@ function cadastrar(req, res) {
     }
 }
 
+function Cadastrar_Configuracao_Hectare(req, res){
+    var Nome_Uva = req.body.NomeUva
+    var Tipo_Uva = req.body.Tipo_Uva
+
+    if (Nome_Uva == undefined) {
+        res.status(400).send("Seu Nome_Uva está undefined!");
+    } else if (Tipo_Uva == undefined) {
+        res.status(400).send("Seu Tipo_Uva está undefined!");
+    }
+    else{
+
+        usuarioModel.Cadastrar_Configuracao_Hectare(Nome_Uva, Tipo_Uva)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function Informacoes_do_Contato(req, res) {
+    var nome = req.body.nomeServer;
+    var email = req.body.emailServer;
+    var mensagem = req.body.mensagemServer;
+
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (mensagem == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    }else{
+        usuarioModel.Informacoes_do_Contato(nome, email, mensagem)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function InformacoesPropriedade(req, res) {
+    var NomePropriedade = req.body.NomePropriedadeServer;
+    var QTDhectare = req.body.QTDhectareServer;
+    var CEP = req.body.CEPServer;
+    var cidade = req.body.cidadeServer;
+    var estado = req.body.estadoServer;
+    var fkEmpresa = req.body.fkEmpresa;
+
+    if (NomePropriedade == undefined) {
+        res.status(400).send("O nome da propriedade está undefined!");
+    } else if (QTDhectare == undefined) {
+        res.status(400).send("A quantidade de hectare está undefined!");
+    } else if (CEP == undefined) {
+        res.status(400).send("O CEP está undefined!");
+    } else if (cidade == undefined) {
+        res.status(400).send("A cidade está undefined!");
+    } else if (estado == undefined) {
+        res.status(400).send("O estado está undefined!");
+    } else if (fkEmpresa == undefined) {
+        res.status(400).send("O fkEmpresa está undefined!");
+    }else{
+        usuarioModel.InformacoesPropriedade(NomePropriedade, QTDhectare, CEP, cidade, estado, fkEmpresa)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function BuscarPropriedades(req, res) {
+    var fkEmpresa = req.body.fkEmpresa;
+    if (fkEmpresa == undefined) {
+        res.status(400).send("Seu fkEmpresa está undefined!");
+    }
+    usuarioModel.BuscarPropriedades(fkEmpresa).then(function(resultado){
+        res.status(200).json(resultado);
+    }).catch(function(erro){
+        res.status(500).json(erro.sqlMessage);
+    })
+}
+
+function BuscarUsuarios(req, res) {
+    var fkEmpresa = req.body.fkEmpresa;
+    if (fkEmpresa == undefined) {
+        res.status(400).send("Seu fkEmpresa está undefined!");
+    }
+    usuarioModel.BuscarUsuarios(fkEmpresa).then(function(resultado){
+        res.status(200).json(resultado);
+    }).catch(function(erro){
+        res.status(500).json(erro.sqlMessage);
+    })
+}
+
+function Cadastrar_Hectares(req, res) {
+    var Status = req.body.Status_Hectare;
+    var Latitude = req.body.Latitude_Hectare;
+    var Longitude = req.body.Longitude_Hectare;
+    var FKPropriedade = req.body.FK_Propriedade;
+
+    if (Status == undefined) {
+        res.status(400).send("O Status está undefined!");
+    } else if (Latitude == undefined) {
+        res.status(400).send("A Latitude do hectare está undefined!");
+    } else if (Longitude == undefined) {
+        res.status(400).send("O Longitude do hectare está undefined!");
+    } else if (FKPropriedade == undefined) {
+        res.status(400).send("A FKPropriedade está undefined!");
+    }else{
+        usuarioModel.Cadastrar_Hectares(Status, Latitude, Longitude, FKPropriedade)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    Cadastrar_Configuracao_Hectare,
+    Informacoes_do_Contato,
+    InformacoesPropriedade,
+    BuscarPropriedades,
+    BuscarUsuarios,
+    Cadastrar_Hectares
 }

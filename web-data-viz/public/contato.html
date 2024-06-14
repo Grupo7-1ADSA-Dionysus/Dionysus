@@ -44,7 +44,8 @@
             <input id="input_idEmail" class="input_email" type="text" placeholder="Seu E-mail">
             <p class="mensagem">Mensagem</p>
             <textarea id="input_idMensagem" class="input_Mensagem" type="text"></textarea>
-            <button class="botao_enviar"><b>ENVIAR</b></button>
+            <button class="botao_enviar" onclick="botaoEnviar()"><b>ENVIAR</b></button>
+            <p class="Campo_Aviso" id="Campo_Aviso"></p>
         </div>
         <div class="caixa_texto_lateral">
             <img class="img_lateral" src="assets/imagens-contato/Group 100.png" alt="">
@@ -59,4 +60,74 @@
     function navegar(pagina) {
         window.location.href = pagina;
     }
+
+    function botaoEnviar() {
+        let nome = input_idNome.value
+        let email = input_idEmail.value
+        let mensagem = input_idMensagem.value
+
+        let QTD_Campos_Errados = 0;
+
+        if (!nome) {
+            Campo_Aviso.innerHTML = `Preencha todos os campo `
+            input_idNome.style.border = "2px solid Red"
+            QTD_Campos_Errados ++
+        }
+
+        if (!email) {
+            Campo_Aviso.innerHTML = `Preencha todos os campo`
+            input_idEmail.style.border = "2px solid Red"
+            QTD_Campos_Errados ++
+        }
+
+        if (!mensagem) {
+            Campo_Aviso.innerHTML = `Preencha todos os campo `
+            input_idMensagem.style.border = "2px solid Red"
+            QTD_Campos_Errados ++
+
+        }
+
+        if(QTD_Campos_Errados == 0){
+            fetch("usuarios/Cadastrar_Informacoes_do_Contato", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    nomeServer: nome,
+                    emailServer: email,
+                    mensagemServer: mensagem
+                }),
+            })
+
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+
+                        Campo_Aviso.innerHTML = `Sua mensagem foi enviada com sucesso!`
+                        Campo_Aviso.style.color = "Green"
+
+                        setTimeout(() => {
+                            Campo_Aviso.innerHTML = "";
+                        }, "2000");
+
+                        limparFormulario();
+
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+
+                });
+
+            return false;
+
+
+        }
+    }
 </script>
+
+input_Nome.style.border = "Red"

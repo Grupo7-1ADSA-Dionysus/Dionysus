@@ -14,7 +14,7 @@
     <title>Permissões</title>
 </head>
 
-<body>
+<body onload="BuscarUsuarios()">
     <div class="permissoes-container">
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
@@ -47,37 +47,8 @@
                 <section class="sessao-principal">
                     <div class="caixa-configuracoes">
                         <h2>Configurações de Usuários</h2>
-                        <div class="caixa-lista">
-                            <section class="barra-usuario">
-                                <img src="../assets/imagens-permissoes/iconeDono.png" alt="adm" class="icone-usuario">
-                                <span class="nome-usuario">Usúario</span>
-                                <span>Nível de permissão:</span>
-                                <select id="select_nivel">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </section>
-                            <section class="barra-usuario">
-                                <img src="../assets/imagens-permissoes/iconeAdm.png" alt="adm" class="icone-usuario">
-                                <span class="nome-usuario">Usúario</span>
-                                <span>Nível de permissão:</span>
-                                <select id="select_nivel">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </section>
-                            <section class="barra-usuario">
-                                <img src="../assets/imagens-permissoes/person.png" alt="adm" class="icone-usuario">
-                                <span class="nome-usuario">Usúario</span>
-                                <span>Nível de permissão:</span>
-                                <select id="select_nivel">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </section>
+                        <div class="caixa-lista" id="Caixa_Lista">
+
                         </div>
                         <button class="botao-salvar">Salvar</button>
                     </div>
@@ -94,5 +65,106 @@
 <script>
      function navegar(pagina){
         window.location.href = pagina;
+    }
+
+    function BuscarUsuarios(){
+        fetch("/usuarios/BuscarUsuarios", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    fkEmpresa: sessionStorage.fkEmpresa
+                  }),
+                })
+                  .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        
+                        let Nome_Usuario = ""
+                        let Nivel_Permissao = ""
+                        let Icone = ""
+                        let Id_Usuario = 1
+                        let Id_Select = "Select_Nivel_User"
+
+                        for(let Quantidade_de_Usuarios = 0; Quantidade_de_Usuarios < json.length; Quantidade_de_Usuarios++){
+                            Nome_Usuario = json[Quantidade_de_Usuarios].Nome;
+                            Nivel_Permissao = json[Quantidade_de_Usuarios].fkNivel_Permissao;
+                            Id_Select += Id_Usuario
+                            Id_Usuario++
+
+                            if (Nivel_Permissao == 1){
+                                Icone = "../assets/imagens-permissoes/iconeDono.png"
+                            }
+                            else if (Nivel_Permissao == 2){
+                                Icone = "../assets/imagens-permissoes/iconeAdm.png"
+                            }
+                            else if (Nivel_Permissao == 3){
+                                Icone = "../assets/imagens-permissoes/person.png"
+                            }
+
+                            Caixa_Lista.innerHTML = `
+                            <section class="barra-usuario">
+                                <img src="${Icone}" alt="adm" class="icone-usuario">
+                                <span class="nome-usuario">${Nome_Usuario}</span>
+                                <span>Nível de permissão:</span>
+                                <select id="${Id_Select}">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </section>
+                            `
+                        }
+
+                        });
+
+                    } else {
+                      throw "Houve um erro ao tentar realizar ao buscar os usuarios";
+                    }
+                  })
+                  .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+
+                  });
+
+                return false;
+    }
+
+    function Atualizar_Nivel_Permissão(){
+        fetch("/usuarios/BuscarUsuarios", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    fkEmpresa: sessionStorage.fkEmpresa
+                  }),
+                })
+                  .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        
+                        });
+
+                    } else {
+                      throw "Houve um erro ao tentar realizar ao buscar os usuarios";
+                    }
+                  })
+                  .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+
+                  });
+
+                return false;
     }
 </script>

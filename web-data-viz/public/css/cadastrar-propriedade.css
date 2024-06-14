@@ -489,3 +489,8 @@ b {
 .gambiarra {
     /* margin-top: 49px; */
 }
+
+.Campo_Aviso{
+    color: red;
+    margin-top: 10px;
+}
