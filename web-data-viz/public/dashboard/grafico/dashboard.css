@@ -99,6 +99,12 @@
         'opsz' 24
 }
 
+.material-symbols-outlined:hover {
+    color: #8C52FF;
+    font-variation-settings:
+        'FILL' 1
+}
+
 .dashboard-container {
     /*Tamanho*/
     width: 100%;
@@ -189,7 +195,7 @@
     /*Borda*/
     border-radius: 10px;
     /*Cor*/
-    background-color: #7000FF;
+    background-color: #00ff22;
     color: #FFF;
     /*Fonte*/
     font-size: 25px;
@@ -593,13 +599,18 @@
 }
 
 .organizando-graficos {
-    width: 50%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     /*tamanho*/
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+}
+
+.div-graficos{
+    width: 50%;
+    height: 80%;
 }
 
 .NomeDaUva {
@@ -666,7 +677,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
+    gap: 1vw;
     /*Tamanho*/
     height: 50%;
     width: 100%;
@@ -765,4 +776,8 @@
     flex-direction: column;
  height: 35%;
  width: 76%;
+}
+
+#p_cadastroInformacoes{
+    display: none;
 }

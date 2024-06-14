@@ -45,7 +45,7 @@ function obterDadosGraficoMedia(req, res) {
 
     console.log(`Recuperando medidas em tempo real`);
 
-    dashboardModel.obterDadosGraficoMedia(fkHectare).then(function (resultado) {
+    dashboardModel.obterDadosGraficoMedia().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

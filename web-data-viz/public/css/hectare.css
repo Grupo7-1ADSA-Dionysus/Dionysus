@@ -298,7 +298,7 @@
     width: 60%;
     height: 100px;
     /*Espaçamento*/
-    margin-bottom: 20%;
+    margin-bottom: 0%;
     /*Organização de elementos filhos*/
     display: flex;
     justify-content: center;
@@ -330,6 +330,13 @@
     color: #5CDD20;
 }
 
+.cinza {
+    /*Borda*/
+    border: 2px solid #7a7a7a;
+    /*Cor*/
+    color: #7a7a7a;
+}
+
 .sessao-lista-hectares {
     /*Tamanho*/
     width: 58%;
@@ -343,13 +350,12 @@
     /*Tamanho*/
     width: 90%;
     height: 95%;
-    /*Organização de elementos filhos*/
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     /*Borda*/
     border: 2px solid #000;
     border-radius: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .linha-lista-hectare {
@@ -376,8 +382,10 @@
 
 .caixa-hectare {
     /*Tamanho*/
-    width: 20%;
-    height: 100%;
+    width: 120px;
+    height: 180px;
+    margin-top: 10px;
+    margin-left: 10px;
     /*Texto*/
     text-align: center;
     /*Fonte*/
