@@ -14,14 +14,16 @@
     <title>Hectares</title>
 </head>
 
-<body>
+<body onload="BuscarHectares()">
     <div class="hectare-container">
         <aside class="menu-lateral">
             <section class="sessao botoes-principais">
-                <button class="botao-menu material-symbols-outlined">Account_Circle</button>
+                <button class="botao-menu material-symbols-outlined"
+                onclick="navegar('../editar_perfil/meu_perfil.html')">Account_Circle</button>
                 <button class="botao-menu home material-symbols-outlined"
                     onclick="navegar('propriedade.html')">Home</button>
-                <button class="botao-menu material-symbols-outlined" onclick="navegar('ticket.html')">Headset</button>
+                <button class="botao-menu material-symbols-outlined"
+                    onclick="navegar('../manual_de_instalacao/manual.html')">Import_Contacts</button>
             </section>
             <section class="sessao sair">
                 <button class="botao-menu material-symbols-outlined" onclick="navegar('../login.html')">Logout</button>
@@ -118,101 +120,8 @@
                     <div class="porcentagem-kpi verde">50%</div>
                 </section>
                 <section class="sessao-lista-hectares">
-                    <div class="lista-hectares">
-                        <div class="linha-lista-hectare">
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare ruim" onclick="navegar('grafico/index.html')">
-                                    <span class="icone-situacao material-symbols-outlined">Warning</span>
-                                    <p>22ºC</p>
-                                    <p>79%</p>
-                                </section>
-                                <p>Hectare 1</p>
-                            </div>
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare ruim">
-                                    <span class="icone-situacao material-symbols-outlined">Warning</span>
-                                    <p>20ºC</p>
-                                    <p>75%</p>
-                                </section>
-                                <p>Hectare 2</p>
-                            </div>
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare media">
-                                    <span class="icone-situacao material-symbols-outlined">Error</span>
-                                    <p>18ºC</p>
-                                    <p>56%</p>
-                                </section>
-                                <p>Hectare 3</p>
-                            </div>
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare media">
-                                    <span class="icone-situacao material-symbols-outlined">Error</span>
-                                    <p>18ºC</p>
-                                    <p>55%</p>
-                                </section>
-                                <p>Hectare 4</p>
-                            </div>
-                        </div>
-                        <div class="linha-lista-hectare">
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare media">
-                                    <span class="icone-situacao material-symbols-outlined">Error</span>
-                                    <p>17ºC</p>
-                                    <p>55%</p>
-                                </section>
-                                <p>Hectare 5</p>
-                            </div>
-                            <div class="caixa-hectare" onclick="navegar('')">
-                                <section class="situacao-hectare boa">
-                                    <span class="icone-situacao material-symbols-outlined">Check</span>
-                                    <p>25ºC</p>
-                                    <p>50%</p>
-                                </section>
-                                <p>Hectare 6</p>
-                            </div>
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare boa">
-                                    <span class="icone-situacao material-symbols-outlined">Check</span>
-                                    <p>22ºC</p>
-                                    <p>51%</p>
-                                </section>
-                                <p>Hectare 7</p>
-                            </div>
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare boa">
-                                    <span class="icone-situacao material-symbols-outlined">Check</span>
-                                    <p>20ºC</p>
-                                    <p>51%</p>
-                                </section>
-                                <p>Hectare 8</p>
-                            </div>
-                        </div>
-                        <div class="linha-lista-hectare-tres">
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare boa">
-                                    <span class="icone-situacao material-symbols-outlined">Check</span>
-                                    <p>23ºC</p>
-                                    <p>48%</p>
-                                </section>
-                                <p>Hectare 9</p>
-                            </div>
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare boa">
-                                    <span class="icone-situacao material-symbols-outlined">Check</span>
-                                    <p>21ºC</p>
-                                    <p>45%</p>
-                                </section>
-                                <p>Hectare 10</p>
-                            </div>
-                            <div class="caixa-hectare">
-                                <section class="situacao-hectare manutencao">
-                                    <span class="icone-situacao material-symbols-outlined">Build</span>
-                                    <p>20ºC</p>
-                                    <p>25%</p>
-                                </section>
-                                <p>Hectare 11</p>
-                            </div>
-                        </div>
+                    <div class="lista-hectares" id="ListaHectares">
+
                     </div>
                 </section>
                 <section class="sessao-legenda">
@@ -260,6 +169,7 @@
     function navegar(pagina) {
         window.location.href = pagina;
     }
+
 
     const nomePropriedade = sessionStorage.getItem('Propriedade');
 
@@ -313,5 +223,49 @@
 
 
 
+    
+    function BuscarHectares(){
+        fetch("/Hectares/BuscarHectares", {
+                  method: "GET"
+                })
+                  .then(function (resposta) {
+                    console.log("resposta: ", resposta);
 
+                    if (resposta.ok) {
+                        resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        Numero_Hectare = 0
+                        for(let Quantidade_de_Hectare = 0; Quantidade_de_Hectare < json.length; Quantidade_de_Hectare++){
+                            Numero_Hectare++
+                            console.log(Quantidade_de_Hectare)
+                            ListaHectares.innerHTML += `
+                            <div class="caixa-hectare" id="Hectare${Numero_Hectare}">
+                                <section class="situacao-hectare boa">
+                                    <span class="icone-situacao material-symbols-outlined">Check</span>
+                                    <p>21ºC</p>
+                                    <p>45%</p>
+                                </section>
+                                <p>Hectare ${Numero_Hectare}</p>
+                            </div>
+                            `
+                            if(Quantidade_de_Hectare % 3 == 0){
+                                ListaHectares.innerHTML += "<br>"
+                            }
+                        }
+                        
+                        });
+
+                    } else {
+                      throw "Houve um erro ao tentar realizar ao buscar os hectares";
+                    }
+                  })
+                  .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+
+                  });
+
+                return false;
+    }
 </script>

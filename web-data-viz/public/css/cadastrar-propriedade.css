@@ -386,7 +386,7 @@ b {
     /*organização de elementos filho*/
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 10px;
     /* coloca espaço em tudo*/
     /*detalhes*/
@@ -488,9 +488,4 @@ b {
 
 .gambiarra {
     /* margin-top: 49px; */
-}
-
-.Campo_Aviso{
-    color: red;
-    margin-top: 10px;
 }
