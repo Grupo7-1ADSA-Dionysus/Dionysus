@@ -154,7 +154,7 @@
 
         <!-- KPIs -->
         <aside class="caixa-conteudo">
-            <header class="cabecalho">
+            <header class="cabecalho" id="cabelhacoAlerta">
                 <div class="caixa-auxiliar-titulo-cabecalho">
                     <section class="sessao-voltar">
                         <span class="botao-cabecalho material-symbols-outlined" onclick="navegar('../hectare.html')">
@@ -372,17 +372,21 @@
                                 document.getElementById("sessao_alerta").style.backgroundColor = "#FF3838";
                                 bt_fechar_alerta.style.backgroundColor = "#FF3838"; div_alerta.style.display = 'block';
 
+                                cabelhacoAlerta.style.backgroundColor = '#FF3838';
+
                             } else if (dado.Temperatura >= 13 && dado.Temperatura < 18 && dado.Umidade >= 55 && dado.Umidade < 60 || dado.Temperatura > 25 && dado.Temperatura <= 30 && dado.Umidade >= 55 && dado.Umidade < 60) {
                                 document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"
                                 document.getElementById("p_alerta").innerHTML = "Hectare perto de atingir as condições ideais";
 
                                 div_alerta.style.display = 'block';
+                                cabelhacoAlerta.style.backgroundColor = '#FFF740';
 
                             } else if (dado.Umidade >= 55) {
                                 document.getElementById("h2_titulo_alerta").innerHTML = "ATENÇÃO!"
                                 document.getElementById("p_alerta").innerHTML = "Hectare perto de atingir as condições ideais";
 
                                 div_alerta.style.display = 'block';
+                                cabelhacoAlerta.style.backgroundColor = '#FFF740';
                             }
 
                         }
